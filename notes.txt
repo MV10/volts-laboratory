@@ -1,0 +1,35 @@
+
+DIRECT PORT (AUDIO)
+-----------------------------------------------------------------------------
+https://www.shadertoy.com/view/MdtSD8		colorbeat
+https://www.shadertoy.com/view/mdScDh		eyecandy_demo_shadertoy
+https://www.shadertoy.com/view/llB3W1       julia_set
+https://www.shadertoy.com/view/ldscRB		kali_set
+https://www.shadertoy.com/view/Xsd3Rn		holcombe_iterator
+https://www.shadertoy.com/view/sd3yW8		toni_disk
+https://www.shadertoy.com/view/XtdfW2		hypnosis_rgb
+https://www.shadertoy.com/view/7lySW1		trip_rotation
+https://www.shadertoy.com/view/lscczl		universe_within (see comments)
+
+
+DIRECT PORT (NO AUDIO)
+-----------------------------------------------------------------------------
+https://www.shadertoy.com/view/wsl3WB		hexagone
+
+
+DIRECT PORT (NEEDS WORK)
+-----------------------------------------------------------------------------
+https://www.shadertoy.com/view/ds2yWh		globaldusk
+https://www.shadertoy.com/view/DslXW2		synthwave_triangle
+
+
+NEEDS WORK: DIRECT PORT
+-----------------------------------------------------------------------------
+https://www.shadertoy.com/view/mlKSW1		noisebloom
+
+
+BROKEN: DIRECT PORT
+-----------------------------------------------------------------------------
+https://www.shadertoy.com/view/cs3GDr		gt3_sleepless  sloppy; CRASHES?!? 
+
+
