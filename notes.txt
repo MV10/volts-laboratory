@@ -1,35 +1,36 @@
 
 DIRECT PORT (AUDIO)
------------------------------------------------------------------------------
-https://www.shadertoy.com/view/MdtSD8		colorbeat
-https://www.shadertoy.com/view/mdScDh		eyecandy_demo_shadertoy
-https://www.shadertoy.com/view/llB3W1       julia_set
-https://www.shadertoy.com/view/ldscRB		kali_set
-https://www.shadertoy.com/view/Xsd3Rn		holcombe_iterator
-https://www.shadertoy.com/view/sd3yW8		toni_disk
-https://www.shadertoy.com/view/XtdfW2		hypnosis_rgb
-https://www.shadertoy.com/view/7lySW1		trip_rotation
-https://www.shadertoy.com/view/lscczl		universe_within (see comments)
+----------------------------------------------------------------------------------------------
+https://www.shadertoy.com/view/MdtSD8					colorbeat
+https://www.shadertoy.com/view/mdScDh					eyecandy_demo_shadertoy
+https://www.shadertoy.com/view/llB3W1					julia_set
+https://www.shadertoy.com/view/ldscRB					kali_set
+https://www.shadertoy.com/view/Xsd3Rn					holcombe_iterator
+https://www.shadertoy.com/view/sd3yW8					toni_disk
+https://www.shadertoy.com/view/XtdfW2					hypnosis_rgb
+https://www.shadertoy.com/view/7lySW1					trip_rotation
+https://www.shadertoy.com/view/lscczl					universe_within (needs work)
+https://www.vertexshaderart.com/art/CJqnsPPKxz3KGqWSZ	vogue_circles
+https://www.vertexshaderart.com/art/bSWJchGnG97o3HQfE	pointy_eyeball (needs work)
+https://www.vertexshaderart.com/art/eMAJ5HydzdzbnzduF	plasma_grid
 
 
 DIRECT PORT (NO AUDIO)
------------------------------------------------------------------------------
-https://www.shadertoy.com/view/wsl3WB		hexagone
+----------------------------------------------------------------------------------------------
+https://www.shadertoy.com/view/wsl3WB					hexagone
+https://www.shadertoy.com/view/ll2SRy					cube_field
+https://www.shadertoy.com/view/MdXSzS					galaxy
+https://www.shadertoy.com/view/3l23Rh					cloud_tunnel (GPU-destroyer!)
 
 
-DIRECT PORT (NEEDS WORK)
------------------------------------------------------------------------------
-https://www.shadertoy.com/view/ds2yWh		globaldusk
-https://www.shadertoy.com/view/DslXW2		synthwave_triangle
+DIRECT PORT (NEEDS MAJOR WORK)
+----------------------------------------------------------------------------------------------
+https://www.shadertoy.com/view/ds2yWh					globaldusk
+https://www.shadertoy.com/view/DslXW2					synthwave_triangle
+https://www.shadertoy.com/view/mlKSW1					noisebloom
 
 
-NEEDS WORK: DIRECT PORT
------------------------------------------------------------------------------
-https://www.shadertoy.com/view/mlKSW1		noisebloom
-
-
-BROKEN: DIRECT PORT
------------------------------------------------------------------------------
-https://www.shadertoy.com/view/cs3GDr		gt3_sleepless  sloppy; CRASHES?!? 
-
+DIRECT PORT (COMPLETELY BROKEN)
+----------------------------------------------------------------------------------------------
+https://www.shadertoy.com/view/cs3GDr					gt3_sleepless  CRASHES... 
 
