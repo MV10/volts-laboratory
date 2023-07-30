@@ -13,6 +13,10 @@ https://www.shadertoy.com/view/lscczl					universe_within (needs work)
 https://www.vertexshaderart.com/art/CJqnsPPKxz3KGqWSZ	vogue_circles
 https://www.vertexshaderart.com/art/bSWJchGnG97o3HQfE	pointy_eyeball (needs work)
 https://www.vertexshaderart.com/art/eMAJ5HydzdzbnzduF	plasma_grid
+https://www.shadertoy.com/view/ds2yWh					globaldusk
+https://www.shadertoy.com/view/DslXW2					synthwave_triangle
+https://www.shadertoy.com/view/mlKSW1					noisebloom
+https://www.shadertoy.com/view/cs3GDr					gt3_sleepless  (crashes AMD Radeon?)
 
 
 DIRECT PORT (NO AUDIO)
@@ -21,16 +25,4 @@ https://www.shadertoy.com/view/wsl3WB					hexagone
 https://www.shadertoy.com/view/ll2SRy					cube_field
 https://www.shadertoy.com/view/MdXSzS					galaxy
 https://www.shadertoy.com/view/3l23Rh					cloud_tunnel (GPU-destroyer!)
-
-
-DIRECT PORT (NEEDS MAJOR WORK)
-----------------------------------------------------------------------------------------------
-https://www.shadertoy.com/view/ds2yWh					globaldusk
-https://www.shadertoy.com/view/DslXW2					synthwave_triangle
-https://www.shadertoy.com/view/mlKSW1					noisebloom
-
-
-DIRECT PORT (COMPLETELY BROKEN)
-----------------------------------------------------------------------------------------------
-https://www.shadertoy.com/view/cs3GDr					gt3_sleepless  CRASHES... 
 
