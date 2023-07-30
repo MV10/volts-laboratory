@@ -10,4 +10,4 @@ I don't see much point in actually sharing playlists, they're easy to create and
 
 Why "Volt's Laboratory"? The name "monkey-hi-hat" was related to my wife's D&D character's familiar, which is a winged monkey-like thing named Volt. As the saying goes, "Naming things is hard."
 
-[[misc/mhh.png | height=300px ]]
+<img src="https://github.com/MV10/volts-laboratory/blob/master/misc/mhh.png" height="400px"/>
