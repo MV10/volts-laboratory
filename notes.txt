@@ -14,9 +14,7 @@ https://www.vertexshaderart.com/art/CJqnsPPKxz3KGqWSZ	vogue_circles
 https://www.vertexshaderart.com/art/bSWJchGnG97o3HQfE	pointy_eyeball (needs work)
 https://www.vertexshaderart.com/art/eMAJ5HydzdzbnzduF	plasma_grid
 https://www.shadertoy.com/view/ds2yWh					globaldusk
-https://www.shadertoy.com/view/DslXW2					synthwave_triangle
 https://www.shadertoy.com/view/mlKSW1					noisebloom
-https://www.shadertoy.com/view/cs3GDr					gt3_sleepless  (crashes AMD Radeon?)
 
 
 DIRECT PORT (NO AUDIO)
