@@ -15,6 +15,9 @@ https://www.vertexshaderart.com/art/bSWJchGnG97o3HQfE	pointy_eyeball (needs work
 https://www.vertexshaderart.com/art/eMAJ5HydzdzbnzduF	plasma_grid
 https://www.shadertoy.com/view/ds2yWh					globaldusk
 https://www.shadertoy.com/view/mlKSW1					noisebloom
+https://www.vertexshaderart.com/art/NP3rRKeHPZeXBhymB   eye_of_sauron
+https://www.vertexshaderart.com/art/ntCWzzdvXfp33a6oz   dartboard
+https://www.vertexshaderart.com/art/ke5bF6hENE8zphaSp   clown_wig
 
 
 DIRECT PORT (NO AUDIO)
@@ -24,3 +27,7 @@ https://www.shadertoy.com/view/ll2SRy					cube_field
 https://www.shadertoy.com/view/MdXSzS					galaxy
 https://www.shadertoy.com/view/3l23Rh					cloud_tunnel (GPU-destroyer!)
 
+
+NOT WORKING
+----------------------------------------------------------------------------------------------
+https://www.vertexshaderart.com/art/mmxfYzJp3mCehkHcH   wispy_blob (parts go missing?)

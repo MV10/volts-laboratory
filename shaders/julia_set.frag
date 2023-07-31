@@ -43,8 +43,6 @@ void main() {
     vec2 physCoord = fragCoord * resolution;
 
 	vec2 uv = physCoord.xy / resolution.xy;
-    //vec2 mouse = vec2(iMouse.x/iResolution.x,iMouse.y/iResolution.y);
-    vec2 mouse = vec2(0.5);
     
     vec2 position = 3. * (-0.5 + physCoord.xy / resolution.xy );
 	position.x *= resolution.x/ resolution.y;

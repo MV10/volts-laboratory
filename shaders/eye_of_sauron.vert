@@ -22,6 +22,7 @@ float hash(float p) {
 	return fract(p2.x * p2.y * 95.4337);
 }
 
+
 void main() {
   float pointsAroundCircle = 240.;
   float pointsPerCircle = pointsAroundCircle * 2.;
@@ -36,40 +37,34 @@ void main() {
   float quad = mod(floor(circleId / 2.), 2.);
   
   float tm = time * 4. - circleV;
-  float angle = mix(-PI, PI, pointV) + sin(tm + pointV * PI * 8.) * .05;
+  float angle = mix(-PI, PI, pointV) + sin(tm + pointV * PI * 8.) * .5;
   float c = cos(angle);
   float s = sin(angle);
   
   vec2 aspect = vec2(1, resolution.x / resolution.y);
   float off = mix(.0, 0.953, circleV);
 
-  // history  - freq waves/spikes
-  // realtime - circle bass-throbs
-
-  float multiplyHistory =  1.25;
-  float multiplyRealtime = 2.00;
-
   float su = hash(pointV * 13.7);
-  float snd = texture(sound, vec2(mix(0.001, 0.115, su), circleV * 0.5)).g * multiplyHistory;
+  float snd = texture(sound, vec2(mix(0.001, 0.115, su), circleV * 0.5)).g;
     
   float q = (odd + quad * 2.) / 3.;
-  float sq = texture(sound, vec2(mix(0.001, 0.115, 0.), 0)).g * multiplyRealtime;
+  float sq = texture(sound, vec2(mix(0.001, 0.115, 0.), 0)).g * 1.25;
   
-  vec2 xy = vec2(c, s) * mix(1. , 1. + off, pow(snd, 5.));
+  vec2 xy = vec2(c, s) * mix(1. , 1. + off, pow(snd, 17.)/sq);
   float scale = mix(
      mix(
-       mix(.4, .5, circleV),
-       mix(-.4, -.3, circleV),
+       mix(.04, .25, circleV),
+       mix(-.4, snd/0.7, circleV),
        odd),
      mix(
-       mix(.1, .15, circleV),
+       mix(.1, -.15+snd, circleV),
        mix(-.1, -.05, circleV),
        odd),
-     quad) + pow(sq, 10.) * .1;
+     quad) + pow(sq, 2.) * .3;
   
   gl_Position = vec4(xy * aspect * scale, circleV, 1);
 
-  float hue = 0.5 + odd * .5 + quad * .125;
+  float hue = 0.5 + odd * .25 + quad * .125;
   v_color = vec4(hsv2rgb(vec3(hue, 1, 1)), 1. - circleV);
   v_color.rgb *= v_color.a;
 }
