@@ -1,10 +1,10 @@
-#version 320 es
+#version 460
 precision highp float;
 
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
-uniform sampler2D sound;
+uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
 const int iters = 150;
@@ -34,8 +34,9 @@ vec3 color(int i) {
 
 float sampleMusicA() {
 	return 0.5 * (
-		texture( sound, vec2( 0.15, 0.25 ) ).g + 
-		texture( sound, vec2( 0.30, 0.25 ) ).g);
+		texture( eyecandyShadertoy, vec2( 0.15, 0.25 ) ).g * 0.45
+		+ 
+		texture( eyecandyShadertoy, vec2( 0.30, 0.25 ) ).g) * 0.45;
 }
 
 void main() {
@@ -51,7 +52,7 @@ void main() {
     vec2 pos2 = 2. * (-0.5 + iFC.xy / resolution.xy);
     pos2.x *= resolution.x / resolution.y;
     
-    vec4 t3 = texture(sound, vec2(length(position)/2.0,0.1) );
+    vec4 t3 = texture(eyecandyShadertoy, vec2(length(position)/2.0,0.1) ) * 0.45;
     float pulse = 0.5+sampleMusicA()*1.8;
 
     vec3 invFract = color(fractal(pos2,vec2(0.55+sin(time/3.+0.5)/2.0,pulse*.9)));

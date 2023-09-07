@@ -1,10 +1,10 @@
-#version 320 es
+#version 460
 
 layout (location = 0) in float vertexId;
 uniform vec2 resolution;
 uniform float vertexCount;
 uniform float time;
-uniform sampler2D sound;
+uniform sampler2D eyecandyFreqDB;
 out vec4 v_color;
 
 #define PI radians(180.)
@@ -50,10 +50,10 @@ void main() {
   float multiplyRealtime = 2.00;
 
   float su = hash(pointV * 13.7);
-  float snd = texture(sound, vec2(mix(0.001, 0.115, su), circleV * 0.5)).g * multiplyHistory;
+  float snd = texture(eyecandyFreqDB, vec2(mix(0.001, 0.115, su), circleV * 0.5)).g * multiplyHistory;
     
   float q = (odd + quad * 2.) / 3.;
-  float sq = texture(sound, vec2(mix(0.001, 0.115, 0.), 0)).g * multiplyRealtime;
+  float sq = texture(eyecandyFreqDB, vec2(mix(0.001, 0.115, 0.), 0)).g * multiplyRealtime;
   
   vec2 xy = vec2(c, s) * mix(1. , 1. + off, pow(snd, 5.));
   float scale = mix(

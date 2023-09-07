@@ -1,15 +1,15 @@
-#version 320 es
+#version 460
 precision highp float;
 
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
-uniform sampler2D sound;
+uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
 #define fragCoord (fragCoord * resolution)
 #define iResolution resolution
-#define iChannel0 sound
+#define iChannel0 eyecandyShadertoy
 #define iTime time
 
 vec2	march(vec3 pos, vec3 dir);

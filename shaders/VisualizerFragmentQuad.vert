@@ -1,4 +1,4 @@
-#version 320 es
+#version 460
 
 // Normally the primary processing for VisualizerFragmentQuad happens
 // in the frag shader and this default vert shader always applies.

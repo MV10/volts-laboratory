@@ -1,10 +1,10 @@
-#version 320 es
+#version 460
 precision highp float;
 
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
-uniform sampler2D sound;
+uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
 #define fragCoord (fragCoord * resolution)
@@ -31,7 +31,7 @@ void main()
     vec2 uv = (fragCoord.xy-iResolution.xy*.5)/iResolution.y;
     
     // Apply scaling factor based on audio input
-    float audio = texture(sound, vec2(iTime * 0.5, 0.5)).g;
+    float audio = texture(eyecandyShadertoy, vec2(iTime * 0.5, 0.5)).g * 2.0;
     uv *= audio * 15.0 + 15.0;
     
     // Apply rotation based on audio input

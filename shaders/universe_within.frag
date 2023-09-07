@@ -1,13 +1,13 @@
-#version 320 es
+#version 460
 precision highp float;
 
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
-uniform sampler2D sound;
+uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
-#define iChannel0 sound
+#define iChannel0 eyecandyShadertoy
 #define fragCoord (fragCoord * resolution)
 #define iResolution resolution
 #define iTime time
@@ -150,7 +150,7 @@ void main()
     }
     
 	//float fft  = texelFetch( iChannel0, ivec2(.7,0), 0 ).g;
-	float fft  = texelFetch( iChannel0, ivec2(0.05, 0.25), 0 ).g;
+	float fft  = texelFetch( iChannel0, ivec2(0.05, 0.25), 0 ).g * 3.0;
     
     //float glow = -uv.y*fft*2.;
    

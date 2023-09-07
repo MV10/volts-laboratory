@@ -1,10 +1,10 @@
-#version 320 es
+#version 460
 
 layout (location = 0) in float vertexId;
 uniform vec2 resolution;
 uniform float vertexCount;
 uniform float time;
-uniform sampler2D sound;
+uniform sampler2D eyecandyWebAudio;
 out vec4 v_color;
 
 #define W 128
@@ -29,7 +29,7 @@ void main() {
   
   float sin_u = sin(u), cos_u = cos(u);
   float sin_v = sin(v), cos_v = cos(v);
-  float f = texture(sound, vec2(abs(fu-.5)+.1,fv*.1)).g + .05;
+  float f = texture(eyecandyWebAudio, vec2(abs(fu-.5)+.1,fv*.1)).g + .05;
   vec3 p = vec3(cos_u*(cos_v*f+1.), sin_u*(cos_v*f+1.), sin_v*f);
   float sin_t = sin(time), cos_t = cos(time);
   p *= mat3(cos_t,0,sin_t, 0,1,0, -sin_t,0,cos_t);

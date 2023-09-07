@@ -1,10 +1,10 @@
-#version 320 es
+#version 460
 precision highp float;
 
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
-uniform sampler2D sound;
+uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
 vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
@@ -53,7 +53,7 @@ void main()
     
     float d0 = length(uv);
     
-    float s = (texture(sound, vec2(0.)).g - .23) * 2.;
+    float s = (texture(eyecandyShadertoy, vec2(0.)).g - .23) * 2. * 5.0;
     //s = .25 - (sin(time) / 8.);
     
     float n = snoise(uv * 5.) / 2.;

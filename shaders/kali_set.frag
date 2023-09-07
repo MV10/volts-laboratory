@@ -1,10 +1,10 @@
-#version 320 es
+#version 460
 precision highp float;
 
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
-uniform sampler2D sound;
+uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
 #define r(p, a) {p = cos(a) * p + sin(a) * vec2(p.y, -p.x);}
@@ -16,7 +16,7 @@ float fftsmooth(float a, sampler2D s)
     return audio * a + audio-1. * (1.-a);
 }
 
-#define PSD fftsmooth(.5, sound)
+#define PSD fftsmooth(.5, eyecandyShadertoy)
 
 float trap = 0.;
 

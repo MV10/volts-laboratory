@@ -1,10 +1,10 @@
-#version 320 es
+#version 460
 
 layout (location = 0) in float vertexId;
 uniform vec2 resolution;
 uniform float vertexCount;
 uniform float time;
-uniform sampler2D sound;
+uniform sampler2D eyecandyFreqDB;
 out vec4 v_color;
 
 void main() {
@@ -29,7 +29,7 @@ void main() {
   gl_Position = vec4(ux, vy, 0, 1);
   
   
-  float snd = pow(texture(sound, vec2(u * 0.01 + 0.001, v * 0.02)).g, 4.);
+  float snd = pow(texture(eyecandyFreqDB, vec2(u * 0.01 + 0.001, v * 0.02)).g * 1.5, 4.);
 
 
   

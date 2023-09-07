@@ -1,10 +1,10 @@
-#version 320 es
+#version 460
 
 layout (location = 0) in float vertexId;
 uniform vec2 resolution;
 uniform float vertexCount;
 uniform float time;
-uniform sampler2D sound;
+uniform sampler2D eyecandyFreqDB;
 out vec4 v_color;
 
 #define turning 1.4
@@ -49,7 +49,7 @@ point getPoint(float i) {
 	  spike *= pow(sin(b * spikeFactor2), 4.);
   }
   
-  float snd = pow(texture(sound, vec2(0.005, spike*0.025)).g, 4.);
+  float snd = pow(texture(eyecandyFreqDB, vec2(0.005, spike*0.025)).g, 4.);
 
   float rad = 0.35;    
   rad += spike * 0.35;

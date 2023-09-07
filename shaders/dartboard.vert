@@ -1,10 +1,10 @@
-#version 320 es
+#version 460
 
 layout (location = 0) in float vertexId;
 uniform vec2 resolution;
 uniform float vertexCount;
 uniform float time;
-uniform sampler2D sound;
+uniform sampler2D eyecandyFreqDB;
 out vec4 v_color;
 
 #define PI radians(180.)
@@ -128,7 +128,7 @@ void main() {
   float snd = 0.0;
   const int numSamplers = 10;
   for (int i = 0; i < numSamplers; ++i) {
-    snd += texture(sound, vec2(mix(0.005, 0.105, cu), float(i) * 0.002)).g;
+    snd += texture(eyecandyFreqDB, vec2(mix(0.005, 0.105, cu), float(i) * 0.002)).g * 1.5;
   }
   snd /= float(numSamplers);
 

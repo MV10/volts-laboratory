@@ -1,4 +1,4 @@
-#version 320 es
+#version 460
 precision highp float;
 
 // Normally the primary processing for VisualizerVertexIntegerArray

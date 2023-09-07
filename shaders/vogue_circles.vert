@@ -1,10 +1,10 @@
-#version 320 es
+#version 460
 
 layout (location = 0) in float vertexId;
 uniform vec2 resolution;
 uniform float vertexCount;
 uniform float time;
-uniform sampler2D sound;
+uniform sampler2D eyecandyFreqDB;
 out vec4 v_color;
 
 #define PI radians(180.)
@@ -51,7 +51,7 @@ void main() {
   soundTexCoords0.y = currentRadius * historyDepth;
   vec2 soundTexCoords1 = soundTexCoords0;
   soundTexCoords1.y = historyDepth - soundTexCoords0.y + historyDepth;
-  float outgoingR = texture(sound, soundTexCoords0).g;
+  float outgoingR = texture(eyecandyFreqDB, soundTexCoords0).g * 1.5;
   float r = outgoingR;
   r = r * (1. + soundTexCoords0.x) + 0.071;
   r = pow(r, 5.);

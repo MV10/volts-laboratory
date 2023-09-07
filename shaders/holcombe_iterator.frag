@@ -1,16 +1,16 @@
-#version 320 es
+#version 460
 precision highp float;
 
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
-uniform sampler2D sound;
+uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
 // MHH-to-Shadertoy migrations:
 #define fragCoord (fragCoord * resolution)
 #define iResolution resolution
-#define iChannel0 sound
+#define iChannel0 eyecandyShadertoy
 #define iTime time
 
 #define pi 3.14159265359
@@ -101,11 +101,11 @@ float lowAverage()
     const int iters = 32;
     float sum = 0.0;
     
-    float last = length(texture(iChannel0, vec2(0.0)));
+    float last = length(texture(iChannel0, vec2(0.0)) * 0.07);
     float next;
     for(int i = 1; i < iters/2; i++)
     {
-        next = length(texture(iChannel0, vec2(float(i)/float(iters), 0.0)));
+        next = length(texture(iChannel0, vec2(float(i)/float(iters), 0.0)) * 0.07);
         sum += last;//pow(abs(last-next), 1.0);
         last = next;
     }
@@ -117,11 +117,11 @@ float highAverage()
     const int iters = 32;
     float sum = 0.0;
     
-    float last = length(texture(iChannel0, vec2(0.0)));
+    float last = length(texture(iChannel0, vec2(0.0)) * 0.07);
     float next;
     for(int i = 17; i < iters; i++)
     {
-        next = length(texture(iChannel0, vec2(float(i)/float(iters), 0.0)));
+        next = length(texture(iChannel0, vec2(float(i)/float(iters), 0.0)) * 0.07);
         sum += last;//pow(abs(last-next), 1.0);
         last = next;
     }

@@ -1,10 +1,10 @@
-#version 320 es
+#version 460
 
 layout (location = 0) in float vertexId;
 uniform vec2 resolution;
 uniform float vertexCount;
 uniform float time;
-uniform sampler2D sound;
+uniform sampler2D eyecandyWebAudio;
 out vec4 v_color;
 
 // Remember to use the GREEN channel on audio textures (VertexShaderArt uses Alpha channel)

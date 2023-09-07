@@ -1,14 +1,14 @@
-#version 320 es
+#version 460
 precision highp float;
 
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
-uniform sampler2D sound;
+uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
 #define fragCoord (fragCoord * resolution)
-#define iChannel0 sound
+#define iChannel0 eyecandyShadertoy
 
 float shard, ssoft;
 float t,as;
@@ -36,8 +36,8 @@ float getSound()
 {
     float s=0.;
     for (float i=0.; i<20.; i++) {
-        s+=texture(iChannel0,vec2(0.,i/20.)).g;
-        s+=texture(iChannel0,vec2(i/20.,0.)).g;
+        s+=texture(iChannel0,vec2(0.,i/20.)).g * 0.7;
+        s+=texture(iChannel0,vec2(i/20.,0.)).g * 0.7;
     }
     return s/20.;
 }

@@ -1,10 +1,10 @@
-#version 320 es
+#version 460
 precision highp float;
 
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
-uniform sampler2D sound;
+uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
 vec3 palette( float t ) 
@@ -19,7 +19,7 @@ vec3 palette( float t )
 
 float sample_at(float f)
 {
-    return texture(sound, vec2(f / 10.0, 0.25)).g;
+    return texture(eyecandyShadertoy, vec2(f / 10.0, 0.25)).g;
 }
 
 float sm(float f)

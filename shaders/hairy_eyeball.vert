@@ -1,10 +1,10 @@
-#version 320 es
+#version 460
 
 layout (location = 0) in float vertexId;
 uniform vec2 resolution;
 uniform float vertexCount;
 uniform float time;
-uniform sampler2D sound;
+uniform sampler2D eyecandyWebAudio;
 out vec4 v_color;
 
 #define PI radians(180.)
@@ -45,10 +45,10 @@ void main() {
   float off = mix(.0, 0.953, circleV);
 
   float su = hash(pointV * 13.7);
-  float snd = texture(sound, vec2(mix(0.001, 0.115, su), circleV * 0.5)).g;
+  float snd = texture(eyecandyWebAudio, vec2(mix(0.001, 0.115, su), circleV * 0.5)).g;
     
   float q = (odd + quad * 2.) / 3.;
-  float sq = texture(sound, vec2(mix(0.001, 0.115, 0.), 0)).g * 1.25;
+  float sq = texture(eyecandyWebAudio, vec2(mix(0.001, 0.115, 0.), 0)).g * 1.25;
   
   vec2 xy = vec2(c, s) * mix(1. , 1. + off, pow(snd, 17.)/sq);
   float scale = mix(
