@@ -24,7 +24,11 @@ https://www.shadertoy.com/view/Dtd3z2                   shader_jam
 https://www.shadertoy.com/view/cst3zl                   dive_into_music (needs work)
 https://www.shadertoy.com/view/7tGfRD                   unstable_plasma
 https://www.shadertoy.com/view/3dXSDB                   twisty_thing
-
+https://www.shadertoy.com/view/XtdGR7                   warp_tunnel
+https://www.shadertoy.com/view/DtBSWw                   darkstar
+https://www.shadertoy.com/view/4ttGDH                   glassy_field
+https://www.shadertoy.com/view/ftK3zc                   flower_of_life
+https://www.shadertoy.com/view/wlGGDc                   galaxy_corridors
 
 MODIFIED WITH AUDIO
 ----------------------------------------------------------------------------------------------
