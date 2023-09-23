@@ -1,4 +1,4 @@
-# volts-laboratory
+# Volt's Laboratory
 
 A collection of visualizations and FX files for the [Monkey Hi Hat](https://github.com/MV10/monkey-hi-hat) music visualization program. Refer to the README in that repository for more information.
 

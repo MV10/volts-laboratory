@@ -30,6 +30,7 @@ https://www.shadertoy.com/view/4ttGDH                   glassy_field
 https://www.shadertoy.com/view/ftK3zc                   flower_of_life
 https://www.shadertoy.com/view/wlGGDc                   galaxy_corridors
 
+
 MODIFIED WITH AUDIO
 ----------------------------------------------------------------------------------------------
 https://www.shadertoy.com/view/mt3SWs                   fractal_neon
@@ -40,7 +41,7 @@ DIRECT PORT, NO AUDIO ... YET :)
 https://www.shadertoy.com/view/wsl3WB					hexagone
 https://www.shadertoy.com/view/ll2SRy					cube_field
 https://www.shadertoy.com/view/MdXSzS					galaxy
-https://www.shadertoy.com/view/3l23Rh					cloud_tunnel (GPU-destroyer!)
+https://www.shadertoy.com/view/3l23Rh					cloud_tunnel (res-limited, GPU-destroyer!)
 https://www.youtube.com/watch?v=9fgGnWdObN4             vsa_tutorial
 https://www.shadertoy.com/view/Wl3fzM                   apollonian_twist
 https://www.shadertoy.com/view/4ddSDS                   fur_space
@@ -49,6 +50,14 @@ https://www.shadertoy.com/view/ldGyWW					neon_bowling
 https://www.shadertoy.com/view/DlB3WG					mindflower
 https://www.shadertoy.com/view/Msl3WH                   warp_speed
 
+
+FX (POST-PROCESSING)
+----------------------------------------------------------------------------------------------
+https://www.shadertoy.com/view/Msd3W2                   diffusion_warp (tweak/randomize parameters?)
+https://www.shadertoy.com/view/wljfzd                   wispy_cuts
+https://www.shadertoy.com/view/3lKXRG                   rolling_feedback
+https://www.shadertoy.com/view/Wdfyz2                   rainbow_borders
+https://www.shadertoy.com/view/MtGXzG                   worms
 
 
 NOT WORKING
