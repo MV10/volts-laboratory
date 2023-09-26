@@ -1,63 +1,63 @@
 
 PORTED VISUALIZERS
 ----------------------------------------------------------------------------------------------
-https://www.shadertoy.com/view/MdtSD8					colorbeat
-https://www.shadertoy.com/view/llB3W1					julia_set
-https://www.shadertoy.com/view/ldscRB					kali_set
-https://www.shadertoy.com/view/Xsd3Rn					shadow_vessels
-https://www.shadertoy.com/view/sd3yW8					toni_disk
-https://www.shadertoy.com/view/XtdfW2					jitterbugs
-https://www.shadertoy.com/view/7lySW1					red_vs_blue
-https://www.vertexshaderart.com/art/CJqnsPPKxz3KGqWSZ	lisa_simpson
-https://www.vertexshaderart.com/art/bSWJchGnG97o3HQfE	pointy_eyeball
-https://www.vertexshaderart.com/art/eMAJ5HydzdzbnzduF	plasma_grid
-https://www.shadertoy.com/view/ds2yWh					neon_rings
-https://www.vertexshaderart.com/art/NP3rRKeHPZeXBhymB   pointy_eyeball
-https://www.vertexshaderart.com/art/ntCWzzdvXfp33a6oz   dartboard
-https://www.vertexshaderart.com/art/ke5bF6hENE8zphaSp   clown_wig
-https://www.shadertoy.com/view/Dtj3zW                   dancefloor
-https://www.shadertoy.com/view/csfyzS                   party_tunnel
-https://www.shadertoy.com/view/Dtd3z2                   rollerbox
-https://www.shadertoy.com/view/7tGfRD                   unstable_plasma
-https://www.shadertoy.com/view/3dXSDB                   fractal_dragon
-https://www.shadertoy.com/view/XtdGR7                   warp_tunnel
-https://www.shadertoy.com/view/lscczl					star_sticks
-https://www.shadertoy.com/view/mt3SWs                   fractured (audio added)
-https://www.shadertoy.com/view/wsl3WB					hexagone
-https://www.shadertoy.com/view/ll2SRy					cube_field
-https://www.shadertoy.com/view/MdXSzS					galaxy
-https://www.shadertoy.com/view/3l23Rh					cloud_tunnel (res-limited, GPU-destroyer!)
-https://www.youtube.com/watch?v=9fgGnWdObN4             ripple_grid
 https://www.shadertoy.com/view/Wl3fzM                   apollonian_twist
-https://www.shadertoy.com/view/4ddSDS                   fur_space
-https://www.shadertoy.com/view/dtK3Rh					first_ones (res-limited)
-https://www.shadertoy.com/view/ldGyWW					tron_bowling
-https://www.shadertoy.com/view/DlB3WG					hypercolor
-https://www.shadertoy.com/view/Msl3WH                   warp_speed
+https://www.shadertoy.com/view/3l23Rh					cloud_tunnel (res-limited, GPU-destroyer!)
+https://www.vertexshaderart.com/art/ke5bF6hENE8zphaSp   clown_wig
+https://www.shadertoy.com/view/MdtSD8					colorbeat
+https://www.shadertoy.com/view/ll2SRy					cube_field
+https://www.shadertoy.com/view/Dtj3zW                   dancefloor
 https://www.shadertoy.com/view/DtBSWw                   darkstar
+https://www.vertexshaderart.com/art/ntCWzzdvXfp33a6oz   dartboard
+https://www.shadertoy.com/view/dtK3Rh					first_ones (res-limited)
+https://www.shadertoy.com/view/3dXSDB                   fractal_dragon
+https://www.shadertoy.com/view/mt3SWs                   fractured (audio added)
+https://www.shadertoy.com/view/4ddSDS                   fur_space
+https://www.shadertoy.com/view/MdXSzS					galaxy
+https://www.shadertoy.com/view/XtdfW2					jitterbugs
+https://www.shadertoy.com/view/llB3W1					julia_set
+https://www.vertexshaderart.com/art/NP3rRKeHPZeXBhymB   hairy_eyeball
+https://www.shadertoy.com/view/wsl3WB					hexagone
+https://www.shadertoy.com/view/DlB3WG					hypercolor
+https://www.shadertoy.com/view/ldscRB					kali_set
+https://www.vertexshaderart.com/art/CJqnsPPKxz3KGqWSZ	lisa_simpson
 https://www.shadertoy.com/view/4ttGDH                   molten_glass
+https://www.shadertoy.com/view/ds2yWh					neon_rings
+https://www.shadertoy.com/view/csfyzS                   party_tunnel
+https://www.vertexshaderart.com/art/eMAJ5HydzdzbnzduF	plasma_grid
+https://www.vertexshaderart.com/art/bSWJchGnG97o3HQfE	pointy_eyeball
+https://www.shadertoy.com/view/7lySW1					red_vs_blue
+https://www.youtube.com/watch?v=9fgGnWdObN4             ripple_grid
+https://www.shadertoy.com/view/Dtd3z2                   rollerbox
 https://www.shadertoy.com/view/ftK3zc                   seizure_kitty
+https://www.shadertoy.com/view/Xsd3Rn					shadow_vessels
 https://www.shadertoy.com/view/wlGGDc                   stained_glass
+https://www.shadertoy.com/view/lscczl					star_sticks
 https://www.shadertoy.com/view/cst3zl                   the_ring (needs work)
+https://www.shadertoy.com/view/sd3yW8					toni_disk
+https://www.shadertoy.com/view/ldGyWW					tron_bowling
+https://www.shadertoy.com/view/7tGfRD                   unstable_plasma
+https://www.shadertoy.com/view/Msl3WH                   warp_speed
+https://www.shadertoy.com/view/XtdGR7                   warp_tunnel
 
 
 PORTED FX
 ----------------------------------------------------------------------------------------------
+https://www.shadertoy.com/view/tsdXDB                   extrusion
+https://www.shadertoy.com/view/ctVGWw                   glitch_fork
+https://www.shadertoy.com/view/MtGXzG                   palette_knife
 https://www.shadertoy.com/view/3lKXRG                   rolling_feedback
 https://www.shadertoy.com/view/Wdfyz2                   rainbow_borders
-https://www.shadertoy.com/view/MtGXzG                   palette_knife
-https://www.shadertoy.com/view/ctVGWw                   glitch_fork
 https://www.shadertoy.com/view/tdcczN                   swirly
 
 
 PORTED VISUALIZERS NOT WORKING / NEEDS WORK
 ----------------------------------------------------------------------------------------------
-https://www.vertexshaderart.com/art/mmxfYzJp3mCehkHcH   wispy_blob (sphere surface is black)
 https://www.shadertoy.com/view/mlKSW1                   noisebloom (not very active)
+https://www.vertexshaderart.com/art/mmxfYzJp3mCehkHcH   wispy_blob (sphere surface is black)
 
 
 PORTED FX NOT WORKING / NEEDS WORK
 ----------------------------------------------------------------------------------------------
-https://www.shadertoy.com/view/MdlBDn                   time_blur (looks good w/video...)
 https://www.shadertoy.com/view/Msd3W2                   diffusion_warp (too slow/subtle)
-https://www.shadertoy.com/view/tsdXDB                   extrusion (exposes a resize bug...)
+https://www.shadertoy.com/view/MdlBDn                   time_blur (looks good w/video...)
