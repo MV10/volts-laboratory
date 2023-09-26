@@ -20,13 +20,13 @@ void main()
     const float _K0 = -20.0/6.0; // center weight
     const float _K1 = 4.0/6.0; // edge-neighbors
     const float _K2 = 1.0/6.0; // vertex-neighbors
-    const float cs = -0.1; // curl scale
+    const float cs = 3.0; // -0.1; // curl scale
     const float ls = 0.3; // laplacian scale
     const float ps = -0.05; // laplacian of divergence scale
     const float ds = 0.05; // divergence scale
     const float is = 0.01; // image derivative scale
-    const float pwr = 1.0; // power when deriving rotation angle from curl
-    const float amp = 1.0; // self-amplification
+    const float pwr = 2.0; // 1.0; // power when deriving rotation angle from curl
+    const float amp = 2.0; // 1.0; // self-amplification
     const float sq2 = 0.7; // diagonal weight
 
     vec2 vUv = fragCoord.xy / resolution.xy;

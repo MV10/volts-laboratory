@@ -17,10 +17,10 @@ out vec4 fragColor;
 
 void main()
 {
-    const float ds = 1.5; //0.4; // diffusion rate
+    const float ds = 5.5; //0.4; // diffusion rate
     const float darken = 0.01; // darkening
-    const float D1 = 0.2;  // edge neighbors
-    const float D2 = 0.05; // vertex neighbors
+    const float D1 = 0.5; // 0.2;  // edge neighbors
+    const float D2 = 0.25; // 0.05; // vertex neighbors
     
     vec2 vUv = fragCoord.xy / resolution.xy;
     vec2 texel = 1. / resolution.xy;

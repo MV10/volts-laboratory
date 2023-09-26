@@ -54,7 +54,7 @@ void main()
 	vec2 uv = fragCoord - 0.5;
     
     // Fun effect to go with the fractal from https://www.shadertoy.com/view/XtSGDK
-    #define DEFORM
+    //#define DEFORM
     #ifdef DEFORM
     float r2 = dot(uv, uv);
     uv /= r2;

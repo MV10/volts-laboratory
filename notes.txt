@@ -1,65 +1,63 @@
 
-DIRECT PORT WITH AUDIO
+PORTED VISUALIZERS
 ----------------------------------------------------------------------------------------------
 https://www.shadertoy.com/view/MdtSD8					colorbeat
-https://www.shadertoy.com/view/mdScDh					eyecandy_demo_shadertoy
 https://www.shadertoy.com/view/llB3W1					julia_set
 https://www.shadertoy.com/view/ldscRB					kali_set
-https://www.shadertoy.com/view/Xsd3Rn					holcombe_iterator
+https://www.shadertoy.com/view/Xsd3Rn					shadow_vessels
 https://www.shadertoy.com/view/sd3yW8					toni_disk
-https://www.shadertoy.com/view/XtdfW2					hypnosis_rgb
-https://www.shadertoy.com/view/7lySW1					trip_rotation
-https://www.shadertoy.com/view/lscczl					universe_within (needs work)
-https://www.vertexshaderart.com/art/CJqnsPPKxz3KGqWSZ	vogue_circles
-https://www.vertexshaderart.com/art/bSWJchGnG97o3HQfE	pointy_eyeball (needs work)
+https://www.shadertoy.com/view/XtdfW2					jitterbugs
+https://www.shadertoy.com/view/7lySW1					red_vs_blue
+https://www.vertexshaderart.com/art/CJqnsPPKxz3KGqWSZ	lisa_simpson
+https://www.vertexshaderart.com/art/bSWJchGnG97o3HQfE	pointy_eyeball
 https://www.vertexshaderart.com/art/eMAJ5HydzdzbnzduF	plasma_grid
-https://www.shadertoy.com/view/ds2yWh					globaldusk
-https://www.shadertoy.com/view/mlKSW1					noisebloom
-https://www.vertexshaderart.com/art/NP3rRKeHPZeXBhymB   eye_of_sauron
+https://www.shadertoy.com/view/ds2yWh					neon_rings
+https://www.vertexshaderart.com/art/NP3rRKeHPZeXBhymB   pointy_eyeball
 https://www.vertexshaderart.com/art/ntCWzzdvXfp33a6oz   dartboard
 https://www.vertexshaderart.com/art/ke5bF6hENE8zphaSp   clown_wig
 https://www.shadertoy.com/view/Dtj3zW                   dancefloor
-https://www.shadertoy.com/view/csfyzS                   complicating_things
-https://www.shadertoy.com/view/Dtd3z2                   shader_jam
-https://www.shadertoy.com/view/cst3zl                   dive_into_music (needs work)
+https://www.shadertoy.com/view/csfyzS                   party_tunnel
+https://www.shadertoy.com/view/Dtd3z2                   rollerbox
 https://www.shadertoy.com/view/7tGfRD                   unstable_plasma
-https://www.shadertoy.com/view/3dXSDB                   twisty_thing
+https://www.shadertoy.com/view/3dXSDB                   fractal_dragon
 https://www.shadertoy.com/view/XtdGR7                   warp_tunnel
-https://www.shadertoy.com/view/DtBSWw                   darkstar
-https://www.shadertoy.com/view/4ttGDH                   glassy_field
-https://www.shadertoy.com/view/ftK3zc                   flower_of_life
-https://www.shadertoy.com/view/wlGGDc                   galaxy_corridors
-
-
-MODIFIED WITH AUDIO
-----------------------------------------------------------------------------------------------
-https://www.shadertoy.com/view/mt3SWs                   fractal_neon
-
-
-DIRECT PORT, NO AUDIO ... YET :)
-----------------------------------------------------------------------------------------------
+https://www.shadertoy.com/view/lscczl					star_sticks
+https://www.shadertoy.com/view/mt3SWs                   fractured (audio added)
 https://www.shadertoy.com/view/wsl3WB					hexagone
 https://www.shadertoy.com/view/ll2SRy					cube_field
 https://www.shadertoy.com/view/MdXSzS					galaxy
 https://www.shadertoy.com/view/3l23Rh					cloud_tunnel (res-limited, GPU-destroyer!)
-https://www.youtube.com/watch?v=9fgGnWdObN4             vsa_tutorial
+https://www.youtube.com/watch?v=9fgGnWdObN4             ripple_grid
 https://www.shadertoy.com/view/Wl3fzM                   apollonian_twist
 https://www.shadertoy.com/view/4ddSDS                   fur_space
-https://www.shadertoy.com/view/dtK3Rh					old_glow
-https://www.shadertoy.com/view/ldGyWW					neon_bowling
-https://www.shadertoy.com/view/DlB3WG					mindflower
+https://www.shadertoy.com/view/dtK3Rh					first_ones (res-limited)
+https://www.shadertoy.com/view/ldGyWW					tron_bowling
+https://www.shadertoy.com/view/DlB3WG					hypercolor
 https://www.shadertoy.com/view/Msl3WH                   warp_speed
+https://www.shadertoy.com/view/DtBSWw                   darkstar
+https://www.shadertoy.com/view/4ttGDH                   molten_glass
+https://www.shadertoy.com/view/ftK3zc                   seizure_kitty
+https://www.shadertoy.com/view/wlGGDc                   stained_glass
+https://www.shadertoy.com/view/cst3zl                   the_ring (needs work)
 
 
-FX (POST-PROCESSING)
+PORTED FX
 ----------------------------------------------------------------------------------------------
-https://www.shadertoy.com/view/Msd3W2                   diffusion_warp (tweak/randomize parameters?)
 https://www.shadertoy.com/view/3lKXRG                   rolling_feedback
 https://www.shadertoy.com/view/Wdfyz2                   rainbow_borders
 https://www.shadertoy.com/view/MtGXzG                   palette_knife
 https://www.shadertoy.com/view/ctVGWw                   glitch_fork
+https://www.shadertoy.com/view/tdcczN                   swirly
 
 
-NOT WORKING
+PORTED VISUALIZERS NOT WORKING / NEEDS WORK
 ----------------------------------------------------------------------------------------------
-https://www.vertexshaderart.com/art/mmxfYzJp3mCehkHcH   wispy_blob (parts go missing?)
+https://www.vertexshaderart.com/art/mmxfYzJp3mCehkHcH   wispy_blob (sphere surface is black)
+https://www.shadertoy.com/view/mlKSW1                   noisebloom (not very active)
+
+
+PORTED FX NOT WORKING / NEEDS WORK
+----------------------------------------------------------------------------------------------
+https://www.shadertoy.com/view/MdlBDn                   time_blur (looks good w/video...)
+https://www.shadertoy.com/view/Msd3W2                   diffusion_warp (too slow/subtle)
+https://www.shadertoy.com/view/tsdXDB                   extrusion (exposes a resize bug...)
