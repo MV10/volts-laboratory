@@ -14,11 +14,11 @@ https://www.shadertoy.com/view/3dXSDB                   fractal_dragon
 https://www.shadertoy.com/view/mt3SWs                   fractured (audio added)
 https://www.shadertoy.com/view/4ddSDS                   fur_space
 https://www.shadertoy.com/view/MdXSzS					galaxy
-https://www.shadertoy.com/view/XtdfW2					jitterbugs
-https://www.shadertoy.com/view/llB3W1					julia_set
 https://www.vertexshaderart.com/art/NP3rRKeHPZeXBhymB   hairy_eyeball
 https://www.shadertoy.com/view/wsl3WB					hexagone
 https://www.shadertoy.com/view/DlB3WG					hypercolor
+https://www.shadertoy.com/view/XtdfW2					jitterbugs
+https://www.shadertoy.com/view/llB3W1					julia_set
 https://www.shadertoy.com/view/ldscRB					kali_set
 https://www.vertexshaderart.com/art/CJqnsPPKxz3KGqWSZ	lisa_simpson
 https://www.shadertoy.com/view/4ttGDH                   molten_glass
@@ -49,9 +49,9 @@ https://www.shadertoy.com/view/tsdXDB                   extrusion
 https://www.shadertoy.com/view/Ds2Sz1                   glass_blocks
 https://www.shadertoy.com/view/ltyGR3                   mirror_strips (could be improved...)
 https://www.shadertoy.com/view/MtGXzG                   palette_knife
-https://www.shadertoy.com/view/3lKXRG                   rolling_feedback
 https://www.shadertoy.com/view/Wdfyz2                   rainbow_borders
 https://www.shadertoy.com/view/XdlfWj                   reaction
+https://www.shadertoy.com/view/3lKXRG                   rolling_feedback (colors/brightness sucks)
 https://www.shadertoy.com/view/tdcczN                   swirly
 https://www.shadertoy.com/view/ltyGWD                   time_diffusion
 https://www.shadertoy.com/view/XdycRK                   whorls
