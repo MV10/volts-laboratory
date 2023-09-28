@@ -23,6 +23,7 @@ https://www.shadertoy.com/view/ldscRB					kali_set
 https://www.vertexshaderart.com/art/CJqnsPPKxz3KGqWSZ	lisa_simpson
 https://www.shadertoy.com/view/4ttGDH                   molten_glass
 https://www.shadertoy.com/view/ds2yWh					neon_rings
+(multiple sources, see oil_slick.conf)                  oil_slick
 https://www.shadertoy.com/view/csfyzS                   party_tunnel
 https://www.vertexshaderart.com/art/eMAJ5HydzdzbnzduF	plasma_grid
 https://www.vertexshaderart.com/art/bSWJchGnG97o3HQfE	pointy_eyeball
@@ -45,7 +46,6 @@ PORTED FX
 ----------------------------------------------------------------------------------------------
 https://www.shadertoy.com/view/tsdXDB                   extrusion
 https://www.shadertoy.com/view/Ds2Sz1                   glass_blocks
-https://www.shadertoy.com/view/ctVGWw                   glitch_fork
 https://www.shadertoy.com/view/ltyGR3                   mirror_strips (could be improved...)
 https://www.shadertoy.com/view/MtGXzG                   palette_knife
 https://www.shadertoy.com/view/3lKXRG                   rolling_feedback
@@ -57,14 +57,19 @@ https://www.shadertoy.com/view/XdycRK                   whorls
 https://www.shadertoy.com/view/ltyGR3                   wiggle_scope
 
 
-PORTED VISUALIZERS NOT WORKING / NEEDS WORK
+PORTED VISUALIZERS NOT WORKING or NEEDS WORK
 ----------------------------------------------------------------------------------------------
 https://www.shadertoy.com/view/mlKSW1                   noisebloom (not very active)
 https://www.vertexshaderart.com/art/mmxfYzJp3mCehkHcH   wispy_blob (sphere surface is black)
 
 
-PORTED FX NOT WORKING / NEEDS WORK
+PORTED FX NOT WORKING or NEEDS WORK
 ----------------------------------------------------------------------------------------------
 https://www.shadertoy.com/view/tdS3DR                   motion_dilation (works, some viz need to exclude)
 https://www.shadertoy.com/view/Msd3W2                   diffusion_warp (too slow/subtle)
 https://www.shadertoy.com/view/MdlBDn                   time_blur (looks good w/video...)
+
+
+PORTED FX AVAILABLE BUT NOT DISTRIBUTED (I don't like them much, but you might...)
+----------------------------------------------------------------------------------------------
+https://www.shadertoy.com/view/ctVGWw                   glitch_fork
