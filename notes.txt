@@ -32,6 +32,7 @@ https://www.youtube.com/watch?v=9fgGnWdObN4             ripple_grid
 https://www.shadertoy.com/view/Dtd3z2                   rollerbox
 https://www.shadertoy.com/view/ftK3zc                   seizure_kitty
 https://www.shadertoy.com/view/Xsd3Rn					shadow_vessels
+https://www.shadertoy.com/view/XsVSzW                   simple_plasma
 https://www.shadertoy.com/view/wlGGDc                   stained_glass
 https://www.shadertoy.com/view/lscczl					star_sticks
 https://www.shadertoy.com/view/cst3zl                   the_ring (needs work)
