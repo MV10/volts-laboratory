@@ -4,6 +4,8 @@ precision highp float;
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
+uniform float randomrun;
+uniform float baseScale;
 uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
@@ -12,6 +14,13 @@ out vec4 fragColor;
 #define iChannel0 eyecandyShadertoy
 #define iChannel1 eyecandyShadertoy
 #define iTime time
+
+// randomized value defined in the visualizer config file
+#define iChannel0_ScalingBase baseScale
+
+// generated once by monkey-hi-hat at visualizer startup
+#define iChannel0_ScalingFactor randomrun
+
 
 // Define constants
 #define TWO_PI 6.2831853072
@@ -77,7 +86,8 @@ void main()
     float time = iTime * timeScale;
 
     // Sample audio input from iChannel0 (you might need to adjust the scaling factor)
-    float audioInput = texture(iChannel0, vec2(0.5, 0.5)).g * 2.0;
+    float scaleFactor = (iChannel0_ScalingBase + iChannel0_ScalingFactor);
+    float audioInput = texture(iChannel0, vec2(0.5, 0.5)).g * scaleFactor;
 
     vec3 rgb = vec3(0., 0., 0.);
     for (int i = 0; i < 3; i++) {
