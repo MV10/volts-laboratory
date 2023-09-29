@@ -40,7 +40,11 @@ float accum; // Used to create the glow, by accumulating values in the raymarchi
 
 // 2x2 matrix rotation. Note the absence of "cos." It's there, but in disguise, and comes courtesy
 // of Fabrice Neyret's "ouside the box" thinking. :)
-mat2 rot2( float a ){ vec2 v = sin(vec2(1.570796, 0) - a);	return mat2(v, -v.y, v.x); }
+mat2 rot2( float a )
+{ 
+    vec2 v = sin(vec2(1.570796, 0) - a);
+    return mat2(v, -v.y, v.x); 
+}
 
 // Tri-Planar blending function. Based on an old Nvidia writeup:
 // GPU Gems 3 - Ryan Geiss: https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch01.html

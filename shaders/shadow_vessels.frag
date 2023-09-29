@@ -7,11 +7,11 @@ uniform float time;
 uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
-// MHH-to-Shadertoy migrations:
 #define fragCoord (fragCoord * resolution)
 #define iResolution resolution
 #define iChannel0 eyecandyShadertoy
 #define iTime time
+
 
 #define pi 3.14159265359
 

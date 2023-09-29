@@ -7,8 +7,6 @@ uniform float time;
 uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
-// Unsure what iChannelTime[] represents... looks better without it, to me.
-
 #define fragCoord (fragCoord * resolution)
 #define iResolution resolution
 #define iChannel0 eyecandyShadertoy
