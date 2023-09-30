@@ -6,7 +6,6 @@ uniform vec2 resolution;
 uniform float time;
 uniform float frame;
 uniform sampler2D input0;
-uniform sampler2D inputB;
 out vec4 fragColor;
 
 #define fragCoord (fragCoord * resolution)
