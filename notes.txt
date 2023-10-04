@@ -41,10 +41,12 @@ https://www.shadertoy.com/view/ldGyWW					tron_bowling
 https://www.shadertoy.com/view/7tGfRD                   unstable_plasma
 https://www.shadertoy.com/view/Msl3WH                   warp_speed
 https://www.shadertoy.com/view/XtdGR7                   warp_tunnel
+https://www.shadertoy.com/view/wddGWM                   what_dreams
 
 
 PORTED FX
 ----------------------------------------------------------------------------------------------
+https://www.shadertoy.com/view/MscGWX                   blaze
 https://www.shadertoy.com/view/XlV3zR                   bumpy_spiral
 https://www.shadertoy.com/view/tsdXDB                   extrusion
 https://www.shadertoy.com/view/Ds2Sz1                   glass_blocks
@@ -54,6 +56,7 @@ https://www.shadertoy.com/view/Wdfyz2                   rainbow_borders
 https://www.shadertoy.com/view/XdlfWj                   reaction
 https://www.shadertoy.com/view/3lKXRG                   rolling_feedback (colors/brightness sucks)
 https://www.shadertoy.com/view/4l2XWK                   sinusoid_warp
+https://www.shadertoy.com/view/ltySRt                   staircase
 https://www.shadertoy.com/view/tdcczN                   swirly
 https://www.shadertoy.com/view/ltyGWD                   time_diffusion
 https://www.shadertoy.com/view/XdycRK                   whorls
@@ -62,15 +65,16 @@ https://www.shadertoy.com/view/ltyGR3                   wiggle_scope
 
 PORTED VISUALIZERS NOT WORKING or NEEDS WORK
 ----------------------------------------------------------------------------------------------
+https://www.shadertoy.com/view/XtGBzy                   chaos_wave (almost works if you look closely)
 https://www.shadertoy.com/view/mlKSW1                   noisebloom (not very active)
-https://www.vertexshaderart.com/art/mmxfYzJp3mCehkHcH   wispy_blob (sphere surface is black)
 https://www.shadertoy.com/view/wdyfDD                   rainbow_gatekeeper (not working at all)
+https://www.vertexshaderart.com/art/mmxfYzJp3mCehkHcH   wispy_blob (sphere surface is black)
 
 
 PORTED FX NOT WORKING or NEEDS WORK
 ----------------------------------------------------------------------------------------------
-https://www.shadertoy.com/view/tdS3DR                   motion_dilation (works, some viz need to exclude)
 https://www.shadertoy.com/view/Msd3W2                   diffusion_warp (too slow/subtle)
+https://www.shadertoy.com/view/tdS3DR                   motion_dilation (works, some viz need to exclude)
 https://www.shadertoy.com/view/MdlBDn                   time_blur (looks good w/video...)
 
 
