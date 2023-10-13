@@ -11,6 +11,7 @@ https://www.shadertoy.com/view/DtBSWw                   darkstar
 https://www.vertexshaderart.com/art/ntCWzzdvXfp33a6oz   dartboard
 https://www.shadertoy.com/view/dtK3Rh					first_ones (res-limited)
 https://www.shadertoy.com/view/3dXSDB                   fractal_dragon
+https://www.shadertoy.com/view/WtV3W3                   fractal_sampler
 https://www.shadertoy.com/view/mt3SWs                   fractured (audio added)
 https://www.shadertoy.com/view/4ddSDS                   fur_space
 https://www.shadertoy.com/view/MdXSzS					galaxy
@@ -34,6 +35,7 @@ https://www.shadertoy.com/view/ftK3zc                   seizure_kitty
 https://www.shadertoy.com/view/Xsd3Rn					shadow_vessels
 https://www.shadertoy.com/view/XsVSzW                   simple_plasma
 https://www.shadertoy.com/view/wlGGDc                   stained_glass
+https://www.shadertoy.com/view/mlfSWn                   stained_glass_orchid (darker than shadertoy?)
 https://www.shadertoy.com/view/lscczl					star_sticks
 https://www.shadertoy.com/view/cst3zl                   the_ring (needs work)
 https://www.shadertoy.com/view/sd3yW8					toni_disk
@@ -74,6 +76,7 @@ https://www.vertexshaderart.com/art/mmxfYzJp3mCehkHcH   wispy_blob (sphere surfa
 PORTED FX NOT WORKING or NEEDS WORK
 ----------------------------------------------------------------------------------------------
 https://www.shadertoy.com/view/Msd3W2                   diffusion_warp (too slow/subtle)
+https://www.shadertoy.com/view/3d2fzK                   hex_sound (has audio, but extrusion not working?)
 https://www.shadertoy.com/view/tdS3DR                   motion_dilation (works, some viz need to exclude)
 https://www.shadertoy.com/view/MdlBDn                   time_blur (looks good w/video...)
 
