@@ -18,7 +18,8 @@ out vec4 fragColor;
 #define EPS .001
 
 #define MAX_DIM (max(iResolution.x,iResolution.y))
-#define time ((saw(float(__LINE__)/GR)+1.0)*(iTime/E+1234.4321)/E)
+// mcguirev10: replaced the god-awful __LINE__ nonsense with random value 20; see: https://www.shadertoy.com/view/ttf3R4
+#define time ((saw(20./GR)+1.0)*(iTime/E+1234.4321)/E)
 #define flux(x) (vec3(cos(x),cos(4.0*PI/3.0+x),cos(2.0*PI/3.0+x))*.5+.5)
 
 float cross2d( in vec2 a, in vec2 b ) { return a.x*b.y - a.y*b.x; }

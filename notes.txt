@@ -11,7 +11,6 @@ https://www.shadertoy.com/view/DtBSWw                   darkstar
 https://www.vertexshaderart.com/art/ntCWzzdvXfp33a6oz   dartboard
 https://www.shadertoy.com/view/dtK3Rh					first_ones (res-limited)
 https://www.shadertoy.com/view/3dXSDB                   fractal_dragon
-https://www.shadertoy.com/view/WtV3W3                   fractal_sampler
 https://www.shadertoy.com/view/mt3SWs                   fractured (audio added)
 https://www.shadertoy.com/view/4ddSDS                   fur_space
 https://www.shadertoy.com/view/MdXSzS					galaxy
@@ -40,6 +39,7 @@ https://www.shadertoy.com/view/wlGGDc                   stained_glass
 https://www.shadertoy.com/view/mlfSWn                   stained_glass_orchid (darker than shadertoy?)
 https://www.shadertoy.com/view/lscczl					star_sticks
 https://www.shadertoy.com/view/cst3zl                   the_ring (needs work)
+https://www.shadertoy.com/view/WtV3W3                   tiedye
 https://www.shadertoy.com/view/sd3yW8					toni_disk
 https://www.shadertoy.com/view/ldGyWW					tron_bowling
 https://www.shadertoy.com/view/7tGfRD                   unstable_plasma
