@@ -2,8 +2,10 @@
 precision highp float;
 
 in vec2 fragCoord;
+//uniform float randomrun;
 uniform vec2 resolution;
 uniform float time;
+uniform sampler2D noisetexture;
 uniform sampler2D input0;
 out vec4 fragColor;
 
@@ -39,8 +41,13 @@ vec2 rotuv(vec2 uv, float angle, vec2 center)
 
 float hash(float n)
 {
-   return fract(sin(dot(vec2(n,n) ,vec2(12.9898,78.233))) * 43758.5453);  
-}  
+    // mcguirev10 monkey-hi-hat note:
+    // This pseudo-random generator doesn't work correctly on all GPUs / drivers.
+    // See "GPUs Are Not Identical" on the monkey-hi-hat wiki "Creating Visualizations" page.
+    // See also my fork of the original here: https://www.shadertoy.com/view/mdcfzX
+    //return fract(sin(dot(vec2(n,n) ,vec2(12.9898,78.233))) * 43758.5453);  
+    return texture(noisetexture, vec2(n)).r;
+}
 
 float metaBall(vec2 uv)
 {
