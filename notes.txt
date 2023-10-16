@@ -9,6 +9,7 @@ https://www.shadertoy.com/view/ll2SRy					cube_field
 https://www.shadertoy.com/view/Dtj3zW                   dancefloor
 https://www.shadertoy.com/view/DtBSWw                   darkstar
 https://www.vertexshaderart.com/art/ntCWzzdvXfp33a6oz   dartboard
+https://www.shadertoy.com/view/tdjfDR                   disco_tunnel (desperately needs audio reactivity!)
 https://www.shadertoy.com/view/dtK3Rh					first_ones (res-limited)
 https://www.shadertoy.com/view/3dXSDB                   fractal_dragon
 https://www.shadertoy.com/view/mt3SWs                   fractured (audio added)
