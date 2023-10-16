@@ -17,7 +17,7 @@ void main()
     vec2 uv = fragCoord/iResolution.xy;
 
     vec2 offset_uv = (uv-0.5);
-    uv-=length(offset_uv) * normalize(offset_uv)*texelFetch(iChannel1,ivec2((((atan(-abs(offset_uv.x),offset_uv.y)/(2.0*3.141592))+1.0)/1.0)*512.0,0),0).x;
+    uv-=length(offset_uv) * normalize(offset_uv)*texelFetch(iChannel1,ivec2((((atan(-abs(offset_uv.x),offset_uv.y)/(2.0*3.141592))+1.0)/1.0)*512.0,0),0).g;
     
     vec3 a = texture(iChannel0,uv).rgb;
     

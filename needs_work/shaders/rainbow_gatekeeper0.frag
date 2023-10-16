@@ -8,13 +8,12 @@ out vec4 fragColor;
 
 #define fragCoord (fragCoord * resolution)
 #define iResolution resolution
-#define iChannel0 inputA
 
 // LICENSE:
 // Creative Commons Attribution 4.0 International License.
 // https://creativecommons.org/licenses/by/4.0/
 
-#define T(x) texture(iChannel0, fract((x)/iResolution.xy))
+#define T(x) texture(inputA, fract((x)/iResolution.xy))
 
 void main()
 {   
