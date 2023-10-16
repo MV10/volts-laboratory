@@ -34,6 +34,7 @@ https://www.youtube.com/watch?v=9fgGnWdObN4             ripple_grid
 https://www.shadertoy.com/view/Dtd3z2                   rollerbox
 https://www.shadertoy.com/view/ftK3zc                   seizure_kitty
 https://www.shadertoy.com/view/Xsd3Rn					shadow_vessels
+https://www.shadertoy.com/view/7tsSRB                   shattergrid
 https://www.shadertoy.com/view/XsVSzW                   simple_plasma
 https://www.shadertoy.com/view/wlGGDc                   stained_glass
 https://www.shadertoy.com/view/mlfSWn                   stained_glass_orchid (darker than shadertoy?)
@@ -73,6 +74,7 @@ PORTED VISUALIZERS NOT WORKING or NEEDS WORK
 ----------------------------------------------------------------------------------------------
 https://www.shadertoy.com/view/XtGBzy                   chaos_wave (almost works if you look closely)
 https://www.shadertoy.com/view/mlKSW1                   noisebloom (not very active)
+https://www.shadertoy.com/view/XtGSRD                   particle_bombs (not working at all)
 https://www.shadertoy.com/view/wdyfDD                   rainbow_gatekeeper (not working at all)
 https://www.vertexshaderart.com/art/mmxfYzJp3mCehkHcH   wispy_blob (sphere surface is black)
 
