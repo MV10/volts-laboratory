@@ -75,6 +75,7 @@ https://www.shadertoy.com/view/ltyGR3                   wiggle_scope
 PORTED VISUALIZERS NOT WORKING or NEEDS WORK
 ----------------------------------------------------------------------------------------------
 https://www.shadertoy.com/view/XtGBzy                   chaos_wave (almost works if you look closely)
+https://www.shadertoy.com/view/XdVGWt                   lightsabers (has audio, doesn't work right)
 https://www.shadertoy.com/view/mlKSW1                   noisebloom (not very active)
 https://www.shadertoy.com/view/XtGSRD                   particle_bombs (not working at all)
 https://www.shadertoy.com/view/wdyfDD                   rainbow_gatekeeper (not working at all)
@@ -87,6 +88,7 @@ https://www.shadertoy.com/view/Msd3W2                   diffusion_warp (too slow
 https://www.shadertoy.com/view/3d2fzK                   hex_sound (has audio, but extrusion not working?)
 https://www.shadertoy.com/view/tdS3DR                   motion_dilation (works, some viz need to exclude)
 https://www.shadertoy.com/view/MdlBDn                   time_blur (looks good w/video...)
+
 
 
 PORTED FX AVAILABLE BUT NOT DISTRIBUTED (I don't like them much, but you might...)
