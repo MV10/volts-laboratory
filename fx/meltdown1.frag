@@ -6,6 +6,9 @@ uniform vec2 resolution;
 uniform float frame;
 uniform sampler2D input0;
 uniform sampler2D inputB;
+uniform float option_mix_frame = 4.;    // mix primary content every Nth frame
+uniform float option_mix_value = 0.1;   // pixel HSV value must be above this to mix the primary
+uniform float option_mix_factor = 0.15; // how much of the primary buffer gets mixed in
 out vec4 fragColor;
 
 #define iChannel0 inputB
@@ -14,6 +17,9 @@ out vec4 fragColor;
 #define U (fragCoord * resolution)
 #define O fragColor
 int iFrame = int(frame);
+int mix_frame = int(option_mix_frame);
+
+vec3 rgb2hsv(vec3 c);
 
 #define C(x,y) textureLod(iChannel0, t*(U+float(1<<s)*vec2(x,y)),float(s))
 
@@ -30,8 +36,17 @@ void main()
     // mix in some new content every few frames
 
     // frame-based which worked on Shadertoy with a video
-	if(iFrame % 8 == 0)
-        O = mix(texture(iChannel0, U*t), texture(iChannel1,U*t), 0.15);
+	if(iFrame % mix_frame == 0)
+    {
+        // only mix if the primary shader pixel HSV value is above 
+        // a lower threshold to avoid wiping out stuff with black
+        vec4 primary = texture(iChannel1,U*t);
+        vec3 p_hsv = rgb2hsv(primary.rgb);
+        if(p_hsv.z > option_mix_value)
+        {
+            O = mix(texture(iChannel0, U*t), primary, option_mix_factor);
+        }
+    }
 
 	// no mixing
 	//if(frame == 1)
