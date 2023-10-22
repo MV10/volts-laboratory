@@ -7,6 +7,7 @@
 //      OKLab
 //
 // Utilities:
+//      desaturate
 //      chroma-key foreground/background mixer
 //      color similarity (0-maximally dissimilar, 1-identical)
 //
@@ -142,4 +143,12 @@ float color_difference(vec3 rgb1, vec3 rgb2)
     vec3 oklab1 = rgb2oklab(rgb1);
     vec3 oklab2 = rgb2oklab(rgb2);
     return distance(oklab1, oklab2);
+}
+
+// http://stackoverflow.com/questions/9320953/what-algorithm-does-photoshop-use-to-desaturate-an-image
+vec4 desaturate(vec3 rgb, float factor)
+{
+	vec3 lum = vec3(0.299, 0.587, 0.114);
+	vec3 gray = vec3(dot(lum, rgb));
+	return vec4(mix(rgb, gray, factor), 1.0);
 }
