@@ -73,6 +73,8 @@ void main() {
 			// mcguirev10 - quality improvements
 			if(i > 0)
 			{
+				// https://www.shadertoy.com/view/cscBDM
+
 				// border attenuation (still not hiding the hard edges...)
 				//vec2 fade_coords = 1.0 - smoothstep(vec2(center_size), vec2(1.0), abs(2.0 * uv - 1.0));
 				//float fade_factor = fade_coords.x * fade_coords.y;
