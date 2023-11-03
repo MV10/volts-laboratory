@@ -6,6 +6,7 @@ uniform vec2 resolution;
 uniform float frame;
 uniform float time;
 uniform sampler2D inputA;
+uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
 #define fragCoord (fragCoord * resolution)
@@ -15,6 +16,7 @@ out vec4 fragColor;
 #define iChannel1 inputA
 float iTimeDelta = 1. / 60.; // fake perfect 60 FPS
 
+#define THICKNESS 0.02
 
 vec2 noise(vec2 id){
     float r = fract(sin(id.y*21422.125)*31455.31531);
@@ -81,8 +83,19 @@ void main()
     
     if(iFrame > 0)
     	col = mix(g, texture(iChannel1,nc).xyz, 0.999);
+
     if(iFrame == 0)
         col = vec3(0);
-
+    
     fragColor = vec4(col,1.0);
+    
+    // Overlay PCM sound wave
+    vec2 xy = fragCoord.xy / iResolution.xy;
+    float pcm = texture(eyecandyShadertoy, vec2(xy.x, 0.75)).g;
+    float py = smoothstep(xy.y - THICKNESS, xy.y, pcm) - smoothstep(xy.y, xy.y + THICKNESS, pcm);
+    if(py > 0.0) 
+    {
+        vec3 pc = vec3(py);
+        fragColor = vec4(mix(col, pc, py), abs(py) * 0.25);
+    }
 }
