@@ -52,8 +52,12 @@ void main() {
     vec2 pos2 = 2. * (-0.5 + iFC.xy / resolution.xy);
     pos2.x *= resolution.x / resolution.y;
     
-    vec4 t3 = texture(eyecandyShadertoy, vec2(length(position)/2.0,0.1) ) * 0.45;
-    float pulse = 0.5+sampleMusicA()*1.8;
+	// mcguirev10: put sound in alpha channel to eliminate big choppy-looking rings
+    //vec4 t3 = texture(eyecandyShadertoy, vec2(length(position)/2.0,0.1) ) * 0.45;
+	float snd = texture(eyecandyShadertoy, vec2(length(position)/2.0,0.1)).g * 0.45;
+	vec4 t3 = vec4(0.0, 0.0, 0.0, snd);
+    
+	float pulse = 0.5+sampleMusicA()*1.8;
 
     vec3 invFract = color(fractal(pos2,vec2(0.55+sin(time/3.+0.5)/2.0,pulse*.9)));
     
