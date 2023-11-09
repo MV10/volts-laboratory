@@ -7,6 +7,7 @@ uniform float frame;
 uniform float time;
 uniform sampler2D inputA;
 uniform sampler2D eyecandyShadertoy;
+uniform float randomrun;
 out vec4 fragColor;
 
 #define fragCoord (fragCoord * resolution)
@@ -27,32 +28,20 @@ vec2 noise(vec2 id){
 vec3 get( vec2 fc )
 {
     vec2 uv = fc/iResolution.xy;
-
     vec3 col = vec3(0);
 
     #define pal(a,b,c,d,e) ((a) + (b)*sin((c)*(d) + (e)))
     
     vec2 id = floor(uv*1000.);
-    
-    //vec2 n = noise(vec2(id.x + iTime*0.00001,id.y - iTime*0.000000));
     vec2 n = noise(vec2(id.x + iTime*0.00001,id.y - iTime*0.000000));
-    
-    //col += pal(-0., 3., vec3(0.8,8.9,4.3), 1. + id.x *20. + n.y*2000.,0.9 + id.y*20.4 + n.x*20. + iTime);
-    //col += pal(-0., 3., vec3(0.8,8.9,4.3), 1. + sin(id.x *20.) + sin(n.y*2000.),0.9 + id.y*20.4 + n.x*20. + iTime);
     col += pal(-0., 5., vec3(4.8,2.9,9.3), 4. + sin(id.x *20.) + sin(n.y*2000.),0.9 + id.y*20.4 + n.x*20. + iTime);
-    
-    
-    //col = smoothstep(0.,1.,col);
-    
     
     return col;
 }
 
 void main()
 {
-
     vec2 uv = (fragCoord - 0.5*iResolution.xy)/iResolution.y;
- 
     vec2 cuv = fragCoord/iResolution.xy;   
     
     vec3 col = vec3(0);
@@ -71,15 +60,13 @@ void main()
     
     vec2 grb = (vec2( r.b - l.b, u.b - d.b));
     vec2 gr = normalize(vec2( r.r - l.r, u.r - d.r));
+
     #define rot(x) mat2(cos(x),-sin(x),sin(x),cos(x))
     
     gr *= rot(3.14/4.);
     grb *= rot(3.14/8./8.);
-    //ddb *= rot(3.14/2. - 3. - sin(iTime)*0.5 - 0.1);
     
     nc += grb*st*2.9;
-    //nc += grb*st*2.9*iTimeDelta*100.;
-    //nc -= gr*st*0.;
     
     if(iFrame > 0)
     	col = mix(g, texture(iChannel1,nc).xyz, 0.999);
@@ -89,13 +76,15 @@ void main()
     
     fragColor = vec4(col,1.0);
     
-    // Overlay PCM sound wave
-    vec2 xy = fragCoord.xy / iResolution.xy;
-    float pcm = texture(eyecandyShadertoy, vec2(xy.x, 0.75)).g;
-    float py = smoothstep(xy.y - THICKNESS, xy.y, pcm) - smoothstep(xy.y, xy.y + THICKNESS, pcm);
-    if(py > 0.0) 
+    // 75% chance to overlay PCM sound wave
+    if(randomrun < 0.75)
     {
-        vec3 pc = vec3(py);
-        fragColor = vec4(mix(col, pc, py), abs(py) * 0.25);
+        float pcm = texture(eyecandyShadertoy, vec2(cuv.x, 0.75)).g + 0.5;
+        float py = smoothstep(cuv.y - THICKNESS, cuv.y, pcm) - smoothstep(cuv.y, cuv.y + THICKNESS, pcm);
+        if(py > 0.0) 
+        {
+            vec3 pc = vec3(py);
+            fragColor = vec4(mix(col, pc, py), 1.0);
+        }
     }
 }
