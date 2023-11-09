@@ -14,8 +14,6 @@ out vec4 fragColor;
 #define r resolution
 #define t time
 
-// Adapted from Dark Star on Shadertoy: https://www.shadertoy.com/view/DtBSWw
-
 #define R(a) mat2(cos(a+vec4(0,11,33,0)))
 
 vec4 Image(out vec4 O, vec2 u, sampler2D ch)

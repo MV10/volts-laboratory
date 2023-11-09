@@ -6,6 +6,7 @@ uniform vec2 resolution;
 uniform float time;
 uniform float frame;
 uniform sampler2D inputA;
+uniform float random_hole_size = 0.2;
 out vec4 fragColor;
 
 #define fragCoord (fragCoord * resolution)
@@ -135,11 +136,8 @@ void main()
         }
     }
 
-	// Mouse click
-    if(length(uvMouse-uv)<.13 && mouseDown > 0.5) 
-        next = vec3(0.,1.,0.);//vec3(nextFloat(rngSeed, 1.0),nextFloat(rngSeed, 1.0),nextFloat(rngSeed, 1.0));
 	// Set up the first frame
-    if((iFrame == 0)&&length(uv-0.5)>0.2) 
+    if(iFrame == 0 && length(uv - 0.5) > random_hole_size) 
     {
         next = initial_cols;
         previous = next;
