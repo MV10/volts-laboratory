@@ -2,20 +2,24 @@
 
 /*
 
-Adapted from foodini's "font renderer" at https://www.shadertoy.com/view/cdtBWl
-
-You may wish to use the text_v1a version instead, which assumes the font texture
-uniform name and caches the uv value instead of requiring it on every function call.
+Simplified. See text_v1.glsl for a version with original code and comments.
 
 See testing\shadertoy_pcm.conf and testing\shadertoy_pcm1.frag for an example.
 
-Use "Shadertoy Font 1024x1024.png" as the print functions' sampler2D arguments.
+Requires "Shadertoy Font 1024x1024.png" as a uniform named "font". The shader
+using this library does not need to declare the uniform, only to load the texture
+in the visualization config file, like this:
 
-At the bottom of the file are a series of DECL_PRINT_STRING(n) entries where
-"n" is the size of the int array representing a character string. Array sizes
-of 1 to 12 characters are supported. If you need more, add another declaration.
+[textures]
+font : Shadertoy Font 1024x1024.png
 
 */
+
+uniform sampler2D font;
+vec2 buffer_uv;
+float accumulating_left;
+vec2 accumulating_pos;
+float accumulating_size;
 
 #define DC(name, val) const int name = val
 
@@ -71,16 +75,8 @@ DC(_ACCENT, 180); DC(_MU,181); DC(_PARAGRAPH,182); DC(_DOT,183);
                   DC(_superscript_1,185); DC(_superscript_0,186); DC(_RIGHT_SHIFT,187); 
 DC(_QUARTER,188); DC(_HALF,189); DC(_THREE_QUARTERS,190); DC(_NOITSEUQ,191); 
 
-vec4 print_char(sampler2D font_channel, int c, float size, vec2 char_pos, vec2 uv) {
-    //This took me a while to get my brain around: uv and char_pos are in the same
-    //vector space. What that space is is irrelevant. It can be fragCoord, a
-    //square-pixel uv, a 0->1 by 0->1 uv, a -1->1 by -1->1 uv, or anything else. The
-    //only thing that matters is whether uv is within a box "size" units on a side.
-    //Check to make sure that uv lies within the extents of the character to be printed:
-
-    //font_uv_offset goes from -1.0->1.0 in both dimensions and is the position 
-    //within the rendered character of uv.
-    vec2 font_uv_offset = (uv - char_pos) / size;
+vec4 print_char(int c, float size, vec2 char_pos) {
+    vec2 font_uv_offset = (buffer_uv - char_pos) / size;
     
     if(font_uv_offset.x < -1.0 ||
        font_uv_offset.x >  1.0 ||
@@ -89,27 +85,22 @@ vec4 print_char(sampler2D font_channel, int c, float size, vec2 char_pos, vec2 u
         return vec4(0.0);
     }
     
-    
     float row = float(15 - c/16);
     float col = float(c%16);
     
     const float half_char_width = 1.0/32.0;
     const float char_width = 1.0/16.0;
     
-    vec2 font_uv = 
-        vec2(half_char_width + char_width * col, half_char_width + char_width * row); 
+    vec2 font_uv = vec2(half_char_width + char_width * col, half_char_width + char_width * row); 
     font_uv += font_uv_offset * half_char_width;
     
-    return texture(font_channel, font_uv);
+    return texture(font, font_uv);
 }
 
 const float log10 = log(10.0);
 int digits(int i) {
     i = abs(i);
     int retval = 0;
-    //TODO: this might be faster as a for loop with a break because of the way
-    //      for loops are unrolled? It would certainly be faster with a binary
-    //      search of ifs.
     do {
         retval++;
         i /= 10;
@@ -117,7 +108,7 @@ int digits(int i) {
     return retval;
 }
 
-vec4 print_int(sampler2D font_channel, int i, float size, vec2 pos, vec2 uv, bool right, out int count) {
+vec4 print_int(int i, float size, vec2 pos, bool right, out int count) {
     vec4 retval = vec4(0.0);
     bool neg = i<0;
     i = abs(i);
@@ -133,23 +124,24 @@ vec4 print_int(sampler2D font_channel, int i, float size, vec2 pos, vec2 uv, boo
     do {
         int c = 48 + i%10;
         i /= 10;
-        retval += print_char(font_channel, c, size, pos, uv);
+        retval += print_char(c, size, pos);
         pos.x -= size;
         count ++;
     } while(i > 0);
 
     if(neg) {
-        retval += print_char(font_channel, 45, size, pos, uv);
+        retval += print_char(45, size, pos);
         count++;
     }
     return retval;
 }
-vec4 print_int(sampler2D font_channel, int i, float size, vec2 pos, vec2 uv, bool right) {
+
+vec4 print_int(int i, float size, vec2 pos, bool right) {
     int _count;
-    return print_int(font_channel, i, size, pos, uv, right, _count);
+    return print_int(i, size, pos, right, _count);
 }
 
-vec4 print_float(sampler2D font_channel, float f, float size, vec2 pos, vec2 uv, bool right, int frac_digits, out int count) {
+vec4 print_float(float f, float size, vec2 pos, bool right, int frac_digits, out int count) {
     vec4 retval = vec4(0.0);
     count = 0;
     bool neg = false;
@@ -168,46 +160,42 @@ vec4 print_float(sampler2D font_channel, float f, float size, vec2 pos, vec2 uv,
             width += 1 + frac_digits;
         }
         pos.x += size * float(width-1);
-
-        //retval += print_int(font_channel, digits(frac_int), size/2.0, pos + vec2(0.0, size), uv, true, tmp); 
     }
     
     
     if(frac_digits > 0) {
-        retval += print_int(font_channel, frac_int, size, pos, uv, true, count);
+        retval += print_int(frac_int, size, pos, true, count);
         pos.x -= size * float(count);
         while(count < frac_digits) {
-            retval += print_char(font_channel, 48, size, pos, uv);
+            retval += print_char(48, size, pos);
             pos.x -= size;
             count ++;
         }
-        retval += print_char(font_channel, 46, size, pos, uv);
+        retval += print_char(46, size, pos);
         pos.x -= size;
     }
     int printed;
-    retval += print_int(font_channel, mant_int, size, pos, uv, true, printed);
+    retval += print_int(mant_int, size, pos, true, printed);
     count += printed;
     if(neg) {
         pos.x -= size * float(printed);
-        retval += print_char(font_channel, 45, size, pos, uv);
+        retval += print_char(45, size, pos);
         count ++;
     }
    
     return retval;
 }
 
-vec4 print_float(sampler2D font_channel, float f, float size, vec2 pos, vec2 uv, bool right, int frac_digits) {
+vec4 print_float(float f, float size, vec2 pos, bool right, int frac_digits) {
     int _count;
-    return print_float(font_channel, f, size, pos, uv, right, frac_digits, _count);
+    return print_float(f, size, pos, right, frac_digits, _count);
 }
 
-float accumulating_left;
-vec2 accumulating_pos;
-float accumulating_size;
-void init_printing(vec2 pos, float size) {
+void init_printing(vec2 pos, float size, vec2 uv) {
     accumulating_pos = pos;
     accumulating_left = pos.x;
     accumulating_size = size;
+    buffer_uv = uv;
 }
 
 void newline() {
@@ -216,6 +204,7 @@ void newline() {
 }
 
 const float tab_width = 8.0;
+
 void tab() {
     float x = accumulating_pos.x;
     float printed = (x-accumulating_left)/accumulating_size;
@@ -223,31 +212,29 @@ void tab() {
     accumulating_pos.x += accumulating_size * dx;
 }
 
-vec4 print(sampler2D font_channel, int i, vec2 uv) {
+vec4 print(int i) {
     int printed;
     vec4 retval;
-    retval = print_int(font_channel, i, accumulating_size, accumulating_pos, uv, false, printed);
+    retval = print_int(i, accumulating_size, accumulating_pos, false, printed);
     accumulating_pos.x += float(printed) * accumulating_size;
     
     return retval;
 }
 
-vec4 print(sampler2D font_channel, float f, vec2 uv, int frac_digits) {
+vec4 print(float f, int frac_digits) {
     int printed;
     vec4 retval;
-    //return print_float(font_channel, f, size, pos, uv, right, frac_digits, _count);
-    retval = print_float(font_channel, f, accumulating_size, accumulating_pos, 
-                         uv, false, frac_digits, printed);
+    retval = print_float(f, accumulating_size, accumulating_pos, false, frac_digits, printed);
     accumulating_pos.x += float(printed+1) * accumulating_size;
     
     return retval;
 }
 
 #define DECL_PRINT_STRING(len) \
-vec4 print(sampler2D font_channel, int c[len], vec2 uv) { \
+vec4 print(int c[len]) { \
     vec4 retval; \
     for(int i=0; i<len; i++) { \
-        retval += print_char(font_channel, c[i], accumulating_size, accumulating_pos, uv); \
+        retval += print_char(c[i], accumulating_size, accumulating_pos); \
         accumulating_pos.x += accumulating_size; \
     } \
     return retval; \
