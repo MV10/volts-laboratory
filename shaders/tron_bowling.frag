@@ -4,7 +4,6 @@ precision highp float;
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
-uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
 #define fragCoord (fragCoord * resolution)

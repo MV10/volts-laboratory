@@ -173,6 +173,7 @@ void main()
           sound.x += texture(iChannel1, vec2((fragCoord.x*N_BINS + is)/iResolution.x, 0.0)).g;
           // mcguirev10: never used, and shadertoy y has no data anyway
           //sound.y += texture(iChannel1, vec2((fragCoord.x*N_BINS + is)/iResolution.x, 1.0)).y; 
+          sound.y = 0.0;
         }
         
         sound /= SOUND_BIN_SIZE;

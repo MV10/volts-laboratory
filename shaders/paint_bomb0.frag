@@ -79,7 +79,8 @@ void main()
     // 75% chance to overlay PCM sound wave
     if(randomrun < 0.75)
     {
-        float pcm = texture(eyecandyShadertoy, vec2(cuv.x, 0.75)).g + 0.5;
+        float offset = sin(time * 0.1) * 0.5;
+        float pcm = texture(eyecandyShadertoy, vec2(cuv.x, 0.75)).g + offset;
         float py = smoothstep(cuv.y - THICKNESS, cuv.y, pcm) - smoothstep(cuv.y, cuv.y + THICKNESS, pcm);
         if(py > 0.0) 
         {

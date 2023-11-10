@@ -34,9 +34,9 @@ void main()
 	F c;
 	for(;i++<99.&&e>.0001;){
 		pI=p=d*rd;
-		F sz=.25*BB.x;
+		F sz=.25*BB.g;
 		sz = max(sz,.1);
-		p.z+=(time*.5)+B.x*.01;
+		p.z+=(time*.5)+B.g*.01;
 		p.zy=p.yz;
 		F s,ss=1.5;
         //p.xz*=   s=1.+.5*S(pI.y*2.-time);
@@ -51,7 +51,7 @@ void main()
 			p*=s;
 			p.y+=.5+j/10.;//+B.x;
 			p.y=fract(p.y)-.5;
-			p=abs(p)-.5-B.x*.1 + .2*S(pI.z*.1+time*.1);
+			p=abs(p)-.5-B.g*.1 + .2*S(pI.z*.1+time*.1);
 			if(p.z<p.x)p.xz=p.zx;
 			if(p.y>p.x)p.xy=p.yx;
 			c+=L(p)*.01;
