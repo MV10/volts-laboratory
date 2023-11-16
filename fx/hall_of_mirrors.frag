@@ -67,7 +67,7 @@ void main() {
 		if (pos.x >= 0.0 && pos.x <= 1.0 && pos.y >= 0.0 && pos.y <= 1.0) {
 			vec4 color = texture(iChannel0, pos);
 
-			// mcguirev10 - quality improvements
+			// mcguirev10 - border attenuation
 			if(i > 0)
 			{
 				vec2 fade_coords = 1.0 - smoothstep(vec2(center_size), vec2(1.0), abs(2.0 * pos - 1.0));
