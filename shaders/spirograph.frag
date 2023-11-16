@@ -44,7 +44,7 @@ void main()
         a1 += sin(length(p) * 3. + iTime * PI / 2.) * 0.3;
         vec2 c1 = vec2(cos(a1), sin(a1));
         
-        float a2 = aa * (4.0 + beat);            
+        float a2 = aa * (4.0 + beat * 0.2);            
         vec2 c2 = vec2(cos(a2), sin(a2)) * 0.3 + c1;
         col.r += .001 / abs(length(p - c2) - size);
         col.g += .0013 / abs(length(p - c2) - size * 1.05);        
