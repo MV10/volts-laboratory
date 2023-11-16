@@ -19,12 +19,9 @@ out vec4 fragColor;
 
 void main() {
 
-    // mcguirev10 - randomized layer transparency
-    float vignette_strength = randomrun + 0.75;
-
 	// mcguirev10 - border attenuation (https://www.shadertoy.com/view/cscBDM)
 	// 0.1 = small center, 0.9 = nearly no border
-	float center_size = 0.3; 
+	float center_size = 0.6; 
 	
 	// Number of images to display (mcguirev10 - randomized)
 	int images = int(random_number_of_images); //33;
@@ -73,19 +70,9 @@ void main() {
 			// mcguirev10 - quality improvements
 			if(i > 0)
 			{
-				// https://www.shadertoy.com/view/cscBDM
-
-				// border attenuation (still not hiding the hard edges...)
-				//vec2 fade_coords = 1.0 - smoothstep(vec2(center_size), vec2(1.0), abs(2.0 * uv - 1.0));
-				//float fade_factor = fade_coords.x * fade_coords.y;
-				//color = mix(vec4(0), color, fade_factor);
-
-				// override randomization for testing (0.75 to 1.75 is possible)
-				//vignette_strength = 1.75; 
-
-				// add a mild vignette which lets the layers mix a little
-				float center_distance = sqrt(dot(uv - 0.5, uv - 0.5));
-				color = mix(color, vec4(0), center_distance * vignette_strength);
+				vec2 fade_coords = 1.0 - smoothstep(vec2(center_size), vec2(1.0), abs(2.0 * pos - 1.0));
+				float fade_factor = fade_coords.x * fade_coords.y;
+				color = mix(vec4(0), color, fade_factor);
 			}
             
 			// Alpha blending, see shadertoy.com/view/msSGDm for working example
