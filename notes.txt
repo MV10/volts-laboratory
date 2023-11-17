@@ -26,6 +26,7 @@ https://www.shadertoy.com/view/XtdfW2					jitterbugs
 https://www.shadertoy.com/view/llB3W1					julia_set
 https://www.shadertoy.com/view/ldscRB					kali_set
 https://www.vertexshaderart.com/art/CJqnsPPKxz3KGqWSZ	lisa_simpson
+https://www.shadertoy.com/view/DdSGzG                   lysergic_inception
 https://www.shadertoy.com/view/4ttGDH                   molten_glass
 https://www.shadertoy.com/view/NdG3zw                   nebula
 https://www.shadertoy.com/view/ds2yWh					neon_rings
