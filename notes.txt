@@ -12,6 +12,7 @@ https://www.vertexshaderart.com/art/ntCWzzdvXfp33a6oz   dartboard
 https://www.shadertoy.com/view/tdjfDR                   disco_tunnel
 https://www.shadertoy.com/view/dtK3Rh					first_ones
 https://www.shadertoy.com/view/3dXSDB                   fractal_dragon
+https://www.shadertoy.com/view/dlVyWD                   fractaloscopic
 https://www.shadertoy.com/view/mt3SWs                   fractured
 https://www.shadertoy.com/view/4ddSDS                   fur_space
 https://www.shadertoy.com/view/MdXSzS					galaxy
