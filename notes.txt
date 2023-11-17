@@ -3,6 +3,7 @@ PORTED VISUALIZERS
 ----------------------------------------------------------------------------------------------
 https://www.shadertoy.com/view/DttcWl                   acrylic
 https://www.shadertoy.com/view/Wl3fzM                   apollonian_twist
+https://www.shadertoy.com/view/3tcBz7                   butterfly_effect
 https://www.shadertoy.com/view/3l23Rh					cloud_tunnel
 https://www.vertexshaderart.com/art/ke5bF6hENE8zphaSp   clown_wig
 https://www.shadertoy.com/view/MdtSD8					colorbeat
