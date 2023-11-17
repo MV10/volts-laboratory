@@ -2,17 +2,17 @@
 PORTED VISUALIZERS
 ----------------------------------------------------------------------------------------------
 https://www.shadertoy.com/view/Wl3fzM                   apollonian_twist
-https://www.shadertoy.com/view/3l23Rh					cloud_tunnel (res-limited, GPU-destroyer!)
+https://www.shadertoy.com/view/3l23Rh					cloud_tunnel
 https://www.vertexshaderart.com/art/ke5bF6hENE8zphaSp   clown_wig
 https://www.shadertoy.com/view/MdtSD8					colorbeat
 https://www.shadertoy.com/view/ll2SRy					cube_field
 https://www.shadertoy.com/view/Dtj3zW                   dancefloor
 https://www.shadertoy.com/view/DtBSWw                   darkstar
 https://www.vertexshaderart.com/art/ntCWzzdvXfp33a6oz   dartboard
-https://www.shadertoy.com/view/tdjfDR                   disco_tunnel (desperately needs audio reactivity!)
-https://www.shadertoy.com/view/dtK3Rh					first_ones (res-limited)
+https://www.shadertoy.com/view/tdjfDR                   disco_tunnel
+https://www.shadertoy.com/view/dtK3Rh					first_ones
 https://www.shadertoy.com/view/3dXSDB                   fractal_dragon
-https://www.shadertoy.com/view/mt3SWs                   fractured (audio added)
+https://www.shadertoy.com/view/mt3SWs                   fractured
 https://www.shadertoy.com/view/4ddSDS                   fur_space
 https://www.shadertoy.com/view/MdXSzS					galaxy
 https://www.vertexshaderart.com/art/NP3rRKeHPZeXBhymB   hairy_eyeball
@@ -41,9 +41,10 @@ https://www.shadertoy.com/view/7tsSRB                   shattergrid
 https://www.shadertoy.com/view/XsVSzW                   simple_plasma
 https://www.shadertoy.com/view/mtyyW1                   spirograph
 https://www.shadertoy.com/view/wlGGDc                   stained_glass
-https://www.shadertoy.com/view/mlfSWn                   stained_glass_orchid (darker than shadertoy?)
+https://www.shadertoy.com/view/mlfSWn                   stained_glass_orchid
 https://www.shadertoy.com/view/lscczl					star_sticks
-https://www.shadertoy.com/view/cst3zl                   the_ring (needs work)
+https://www.shadertoy.com/view/mds3WN                   the_machine
+https://www.shadertoy.com/view/cst3zl                   the_ring
 https://www.shadertoy.com/view/WtV3W3                   tiedye
 https://www.shadertoy.com/view/sd3yW8					toni_disk
 https://www.shadertoy.com/view/ldGyWW					tron_bowling
@@ -58,17 +59,17 @@ PORTED FX
 https://www.shadertoy.com/view/MscGWX                   blaze
 https://www.shadertoy.com/view/tsdXDB                   extrusion
 https://www.shadertoy.com/view/Ds2Sz1                   glass_blocks
-https://www.shadertoy.com/view/dsSGWm                   hall_of_mirrors (modified)
-https://www.shadertoy.com/view/DddBRj                   meltdown (aka BFD / Britney Fluid Dynamics)
+https://www.shadertoy.com/view/dsSGWm                   hall_of_mirrors
+https://www.shadertoy.com/view/DddBRj                   meltdown
 https://www.shadertoy.com/view/XlV3zR                   nautilus
 https://www.shadertoy.com/view/MtGXzG                   palette_knife
 https://www.shadertoy.com/view/Wdfyz2                   rainbow_borders
 https://www.shadertoy.com/view/XdlfWj                   reaction
-https://www.shadertoy.com/view/3lKXRG                   rolling_feedback (colors/brightness sucks)
+https://www.shadertoy.com/view/3lKXRG                   rolling_feedback
 https://www.shadertoy.com/view/4l2XWK                   sinusoid_warp
 https://www.shadertoy.com/view/ltdGDn                   splash
 https://www.shadertoy.com/view/ltySRt                   staircase
-https://www.shadertoy.com/view/tdcczN                   swirly (modified, uses audio)
+https://www.shadertoy.com/view/tdcczN                   swirly
 https://www.shadertoy.com/view/ltyGWD                   time_diffusion
 https://www.shadertoy.com/view/XdycRK                   whorls
 https://www.shadertoy.com/view/ltyGR3                   wiggle_scope
@@ -91,7 +92,6 @@ https://www.shadertoy.com/view/Msd3W2                   diffusion_warp (too slow
 https://www.shadertoy.com/view/3d2fzK                   hex_sound (has audio, but extrusion not working?)
 https://www.shadertoy.com/view/tdS3DR                   motion_dilation (works, some viz need to exclude)
 https://www.shadertoy.com/view/MdlBDn                   time_blur (looks good w/video...)
-
 
 
 PORTED FX AVAILABLE BUT NOT DISTRIBUTED (I don't like them much, but you might...)
