@@ -29,6 +29,7 @@ https://www.shadertoy.com/view/ldscRB					kali_set
 https://www.vertexshaderart.com/art/CJqnsPPKxz3KGqWSZ	lisa_simpson
 https://www.shadertoy.com/view/DdSGzG                   lysergic_inception
 https://www.shadertoy.com/view/mlKyRK                   maze
+https://www.shadertoy.com/view/7dVyDh                   mobius_maze
 https://www.shadertoy.com/view/mlKyRG                   moire_scope
 https://www.shadertoy.com/view/4ttGDH                   molten_glass
 https://www.shadertoy.com/view/NdG3zw                   nebula
