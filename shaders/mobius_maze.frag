@@ -18,7 +18,7 @@ vec3 hsv2rgb(vec3 c);
 
 void main() 
 {
-    // mcguirev10 - make it more interesting
+    // mcguirev10 - time-twitch based on beat
     float fft = texture(eyecandyShadertoy, vec2(0.07, 0.5)).g;
     float iTime = time + (fft - 0.45);
 
@@ -44,9 +44,9 @@ void main()
         p =   log(length(p = p*mat2(z,-z.y,z)/dot(p,p) +.5 )) *vec2(5,-5)
             + atan(p.y,p.x) / .314  +  iTime;
 
-    // mcguirev10 - color shifts to make it more interesting
+    // mcguirev10 - time based color shift (sound makes it too spazzy)
     vec3 hsv = rgb2hsv(O.rgb);
-    float hue = fft;
+    float hue = hsv.x + abs(sin(time * 0.1));
     vec3 rgb = hsv2rgb(vec3(hue, 1.0, hsv.z));
     O = vec4(rgb.rgb, 1.0);
 }
