@@ -7,12 +7,14 @@ uniform float time;
 uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
+#define iTime (time * 0.15)
+
 #define r(p, a) {p = cos(a) * p + sin(a) * vec2(p.y, -p.x);}
 float fftsmooth(float a, sampler2D s)
 {
     //from nick shelton
     //FFT_smooth_n = FFTRaw_n * alpha + FFT_smooth_n-1 * (1 - alpha)
-    float audio = texture(s, vec2(.5)).g;
+    float audio = texture(s, vec2(.5)).g * 0.5;
     return audio * a + audio-1. * (1.-a);
 }
 
@@ -28,9 +30,9 @@ float map(vec3 pos)
 	{
         // Kali set formula: abs(p) / dot(p, p)
 		p = abs(p)/clamp(dot(p,p), -1., 1.)-vec4(1., 1.3, .6, .4);
-		r(p.xz, time + PSD);
-		r(p.yz, time + PSD);
-		r(p.xy, time + PSD);
+		r(p.xz, iTime + PSD);
+		r(p.yz, iTime + PSD);
+		r(p.xy, iTime + PSD);
 		
 		d = min(d, length(p.x*p.y*p.z*p.w)-.5);
         
@@ -91,6 +93,6 @@ void main()
 	
 	vec3 col = vec3(trap, trap*trap, pow(trap, 4.)) * ((diff+amb)+spec)*atten;
 	
-	col /= abs(sin(vec3(.5, .2, .9) + col + time + PSD));
+	col /= abs(sin(vec3(.5, .2, .9) + col + iTime + PSD));
 	fragColor = vec4( col, 1.0 );
 }
