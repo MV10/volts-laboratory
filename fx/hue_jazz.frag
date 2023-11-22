@@ -14,6 +14,6 @@ vec3 hsv2rgb(vec3 c);
 void main()
 {
 	vec3 hsv = rgb2hsv(texture(input0, fragCoord).rgb);
-	float hue = sin(time * hsv.x);
+	float hue = hsv.x + abs(sin(time * (randomrun * 0.3)));
 	fragColor = vec4(hsv2rgb(vec3(hue, max(0.5, hsv.y), hsv.z)).rgb, 1.0);
 }
