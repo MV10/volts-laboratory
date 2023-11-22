@@ -14,6 +14,7 @@ https://www.vertexshaderart.com/art/ntCWzzdvXfp33a6oz   dartboard
 https://www.shadertoy.com/view/mlfBDX                   discotheque
 https://www.shadertoy.com/view/tdjfDR                   disco_tunnel
 https://www.shadertoy.com/view/dtK3Rh					first_ones
+https://www.shadertoy.com/view/4tBXRh                   fractal_anxiety
 https://www.shadertoy.com/view/3dXSDB                   fractal_dragon
 https://www.shadertoy.com/view/dlVyWD                   fractaloscopic
 https://www.shadertoy.com/view/mt3SWs                   fractured
