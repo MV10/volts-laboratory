@@ -92,9 +92,20 @@ vec3 spiral(vec2 uv, float z)
     return triangle(uv, 0.05, blur)*spectral_zucconi6(fract(2.*z+.2*tt+uv.x*.2+.4*bass*sqrt(z)*2.*FFT))*luma;
 }
 
+mat2 rotationMatrix(float angle)
+{
+	angle *= PI / 180.0;
+    float s=sin(angle), c=cos(angle);
+    return mat2( c, -s, 
+                 s,  c );
+}
+
 void main() 
 {
     vec2 uv = (fragCoord - .5*iResolution.xy)/iResolution.y;
+    
+    // mcguirev10 - rotation is fun
+    uv *= rotationMatrix(time * (randomrun - 0.5) * 30.0);
 
     vec3 col = vec3(0);
     vec4 tex = texture(iChannel0, fragCoord/iResolution.xy);
