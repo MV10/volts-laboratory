@@ -51,6 +51,7 @@ https://www.shadertoy.com/view/Xsd3Rn					shadow_vessels
 https://www.shadertoy.com/view/7tsSRB                   shattergrid
 https://www.shadertoy.com/view/XsVSzW                   simple_plasma
 https://www.shadertoy.com/view/mtyyW1                   spirograph
+https://www.shadertoy.com/view/DslyWS                   sportsball
 https://www.shadertoy.com/view/wlGGDc                   stained_glass
 https://www.shadertoy.com/view/mlfSWn                   stained_glass_orchid
 https://www.shadertoy.com/view/lscczl					star_sticks
