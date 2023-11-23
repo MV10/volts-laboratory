@@ -12,10 +12,13 @@ out vec4 fragColor;
 // For this FX, the color key defines the area NOT to mix from the primary
 // visualization. The idea is that key areas are "allowed" to apply the
 // effect without "interference" from large blank areas in the primary.
+// Viz apollonian_twist.conf has all combinations as comments you can copy.
+// For viz that covers the entire screen on every frame, sometimes just
+// specifying option_frame=1 creates a cool "liquid 3D" sort of effect.
 
 // mode:
 // 0 - HSV, "value" must be above minvalue (good for viz without large solid colors)
-// 1 - YCC, rgb1 specifies the color key, factor is not used
+// 1 - YCC, rgb1 specifies the color key
 // 2 - OKLab, rgb1 is the color key, tolerance1 is applied
 // 3 - OKLab, color keys rgb1 and rgb1, and tolerances are applied
 uniform float option_mode = 0;
