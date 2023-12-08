@@ -12,10 +12,19 @@ out vec4 fragColor;
 #define iResolution resolution
 #define iChannel0 eyecandyShadertoy
 
-// mcguirev10
-#define iTime (time+(texture(eyecandyShadertoy, vec2(0.08, 0.5)).g - 0.5)*1.5)
+// mcguirev10 - audio is why we're here
+#define iTime (time + texture(eyecandyShadertoy, vec2(0.02, 0.5)).g)
 
 #define H(a) (cos(radians(vec3(0, 60, 120))+(a)*6.2832)*.5+.5)  // hue
+
+#define PI 3.141592
+mat2 rotationMatrix(float angle)
+{
+	angle *= PI / 180.0;
+    float s=sin(angle), c=cos(angle);
+    return mat2( c, -s, 
+                 s,  c );
+}
 
 void main()
 {
@@ -26,15 +35,15 @@ void main()
     
     vec2 R = iResolution.xy,
          q = s*cos(t*2.*n - vec2(0, n/4.)), // circle movement
-         //m = (iMouse.xy - R/2.)/R.y*s - q,  // mouse coords
+         
+         // mcguirev10 - no mouse here, stick with something simple
+         m = s*vec2(sin(t*n)*2., sin(t*n*2.)), // fig-8 movement
+
          v = (U+U-R)/R.y;                   // cartesian coords
 
-    // mcguirev10
-    float b = texture(iChannel0, vec2(0.07, 0.5)).g;
-    b *= sin(0.5 - randomrun);
-    vec2 m = vec2(-b, -b);
-    m = (m - R / 2.0) / R.y * s - q;
-    
+    // mcguirev10 - rotation makes everything better
+    v *= rotationMatrix(time * (randomrun - 0.5) * 30.0);
+
     k = dot(v, v); // transformed coords
     r = length(v); // screen y radius
     

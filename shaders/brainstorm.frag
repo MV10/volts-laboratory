@@ -4,6 +4,7 @@ precision highp float;
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
+uniform float randomrun;
 uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
@@ -11,10 +12,10 @@ out vec4 fragColor;
 #define iResolution resolution
 
 // mcguirev10
-#define iTime (time * 0.01 + (texture(eyecandyShadertoy, vec2(0.07, 0.5)).g * 25.0))
+#define iTime (time * 0.2 + (texture(eyecandyShadertoy, vec2(0.07, 0.5)).g * 5.0))
 
-#define R(p,a,r)mix(a*dot(p,a),p,cos(r))+sin(r)*cross(p,a)
-#define H(h)(cos((h)*6.3+vec3(0,23,21))*.5+.5)
+#define R(p,a,r) mix(a*dot(p,a),p,cos(r))+sin(r)*cross(p,a)
+#define H(h) (cos((h)*6.3+vec3(0,23,21))*.5+.5)
 
 float hash(float n) {
   return fract(sin(n) * 43758.5453123);
@@ -35,29 +36,13 @@ vec3 aces_approx(vec3 v) {
   return clamp((v * (a * v + b)) / (v * (c * v + d) + e), 0.0, 1.0);
 }
 
-vec3 godray(vec3 bg, vec3 r) {
-  float x = atan(r.x, r.z); 
-  float y = acos(r.y) - 3.14159 * 0.5;   
-  
-  x *= 0.5;
-  y *= 0.5;
-    
-  vec3 col = bg * (1.0 + y);
-    
-  float t = iTime + hash(r.xy);
-
-  float a = sin(r.x);
-    
-  float beam = clamp(sin(10.0 * x + a * y * 5.0 + t), 0.0, 1.0);
-  beam *= clamp(sin(7.0 * x + a * y * 3.5 - t), 0.0, 1.0);
-    
-  float beam2 = clamp(sin(42.0 * x + a * y * 21.0 - t), 0.0, 1.0);
-  beam2 *= clamp(sin(34.0 * x + a * y * 17.0 + t), 0.0, 1.0);
-    
-  beam += beam2;
-  
-  col += beam * 0.25 * sqrt(bg);
-  return col;
+#define PI 3.141592
+mat2 rotationMatrix(float angle)
+{
+	angle *= PI / 180.0;
+    float s=sin(angle), c=cos(angle);
+    return mat2( c, -s, 
+                 s,  c );
 }
 
 void main()
@@ -66,7 +51,12 @@ void main()
   vec3 p = vec3(0);
   vec3 q = vec3(0);
   vec3 r = vec3(resolution.xy, 0.0);
-  vec3 d = normalize(vec3((fragCoord * 2. - r.xy) / r.y, 1.));  
+  
+  // mcguirev10
+  vec2 uv = (fragCoord * 2. - r.xy) / r.y;
+  uv *= rotationMatrix(time * (randomrun - 0.5) * 30.0);
+  vec3 d = normalize(vec3(uv, 1.));
+
 
   for (float i = 0., a, s, e, g = 0.; ++i < 110.;) {
     float randomOffset = hash(vec2(i, iTime));
@@ -91,7 +81,7 @@ void main()
     fragColor.xyz += mix(vec3(1), H(g * .1), sin(.8)) * 1. / e / 8e3;
   }
 
-  vec3 godrayEffect = godray(fragColor.xyz, normalize(vec3((fragCoord * 2.0 - iResolution.xy) / iResolution.y, 1.0)));
-  fragColor.xyz = mix(fragColor.xyz, godrayEffect, 0.5);
+  //vec3 godrayEffect = godray(fragColor.xyz, normalize(vec3((fragCoord * 2.0 - iResolution.xy) / iResolution.y, 1.0)));
+  //fragColor.xyz = mix(fragColor.xyz, godrayEffect, 0.5);
   fragColor.xyz = aces_approx(fragColor.xyz);
 }

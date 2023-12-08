@@ -16,6 +16,14 @@ out vec4 fragColor;
 #define iChannel1 eyecandyShadertoy
 
 #define PI 3.141592
+mat2 rotationMatrix(float angle)
+{
+	angle *= PI / 180.0;
+    float s=sin(angle), c=cos(angle);
+    return mat2( c, -s, 
+                 s,  c );
+}
+
 #define TAU 2.*PI
 #define hue(v) ( .6 + .6 * cos( 6.3*(v) + vec3(0,23,21) ) )
 #define SIN(x) (sin(x)*.5+.5)
@@ -90,14 +98,6 @@ vec3 spiral(vec2 uv, float z)
     float blur = exp(-19.*z);
     float luma = exp(-22.5*z);
     return triangle(uv, 0.05, blur)*spectral_zucconi6(fract(2.*z+.2*tt+uv.x*.2+.4*bass*sqrt(z)*2.*FFT))*luma;
-}
-
-mat2 rotationMatrix(float angle)
-{
-	angle *= PI / 180.0;
-    float s=sin(angle), c=cos(angle);
-    return mat2( c, -s, 
-                 s,  c );
 }
 
 void main() 

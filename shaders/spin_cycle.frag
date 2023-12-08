@@ -16,15 +16,15 @@ const float segmentsNumVariants[] = float[](1.0, 3.0, 7.0, 11.0);
 
 void main()
 {
-    vec2 centerCoord = iResolution.xy / 2.0; /*iMouse.xy*/
+    vec2 centerCoord = iResolution.xy / 2.0;
 
     float normalDist = distance( fragCoord.xy, centerCoord )
                      / ( sqrt( 2.0 * iResolution.x * iResolution.x ) * 1.25);
     float reverseNormalDist = 1.0 - normalDist;
     vec2 normalCoord = normalize( fragCoord.xy - centerCoord );
     
-    float sound = texture( iChannel0, vec2( cos( normalDist ), 0.25 )).g 
-                + texture( iChannel0, vec2( sin( normalDist ), 0.25 )).g;
+    float sound = texture( iChannel0, vec2( cos( normalDist ), 0.5 )).g 
+                + texture( iChannel0, vec2( sin( normalDist ), 0.5 )).g;
                 
     float segmentsNum = segmentsNumVariants[ int( floor( sound * 2.0 + normalDist )) ];
                 
