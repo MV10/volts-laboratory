@@ -22,6 +22,15 @@ void smallKoleidoscope(inout vec2 uv)
   uv = length(uv) * vec2(cos(angle), sin(angle));
 }
 
+#define PI 3.141592
+mat2 rotationMatrix(float angle)
+{
+	angle *= PI / 180.0;
+    float s=sin(angle), c=cos(angle);
+    return mat2( c, -s, 
+                 s,  c );
+}
+
 void main() 
 {
     NUM_SIDES = 4.0 + (clamp(sin(time), -0.2, 0.2) * 6.0);
@@ -29,6 +38,9 @@ void main()
 
     vec2 uv = 12.0*(2.0 * fragCoord.xy / resolution.xy - 1.0);
     uv.x *= resolution.x / resolution.y;
+
+    // mcguirev10 - rotation is fun
+    uv *= rotationMatrix(time * (randomrun - 0.5) * 30.0);
 
     // average several rows of history data
     vec2 mouse;

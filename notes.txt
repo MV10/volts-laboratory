@@ -87,6 +87,7 @@ https://www.shadertoy.com/view/Wdfyz2                   rainbow_borders
 https://www.shadertoy.com/view/XdlfWj                   reaction
 https://www.shadertoy.com/view/3lKXRG                   rolling_feedback
 https://www.shadertoy.com/view/4l2XWK                   sinusoid_warp
+https://www.shadertoy.com/view/cd2BD1                   slimed
 https://www.shadertoy.com/view/ltdGDn                   splash
 https://www.shadertoy.com/view/ltySRt                   staircase
 https://www.shadertoy.com/view/tdcczN                   swirly
