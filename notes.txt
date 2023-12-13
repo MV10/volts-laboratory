@@ -3,6 +3,7 @@ PORTED VISUALIZERS
 ----------------------------------------------------------------------------------------------
 https://www.shadertoy.com/view/DttcWl                   acrylic
 https://www.shadertoy.com/view/Wl3fzM                   apollonian_twist
+https://www.shadertoy.com/view/4tcXRr                   auditory_nerve
 https://www.shadertoy.com/view/mlyyWz                   brainstorm
 https://www.shadertoy.com/view/3tcBz7                   butterfly_effect
 https://www.shadertoy.com/view/ctyfRh                   cathedral
@@ -76,6 +77,7 @@ PORTED FX
 ----------------------------------------------------------------------------------------------
 https://www.shadertoy.com/view/MscGWX                   blaze
 https://www.shadertoy.com/view/DtGfzV                   color_puddle
+https://www.shadertoy.com/view/4t3Szj                   double_vision
 https://www.shadertoy.com/view/tsdXDB                   extrusion
 https://www.shadertoy.com/view/Ds2Sz1                   glass_blocks
 https://www.shadertoy.com/view/dsSGWm                   hall_of_mirrors
