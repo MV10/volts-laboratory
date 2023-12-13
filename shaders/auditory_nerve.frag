@@ -4,17 +4,15 @@ precision highp float;
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
+uniform float randomrun;
 uniform sampler2D eyecandyShadertoy;
 uniform sampler2D iChannel1;
 out vec4 fragColor;
 
 #define fragCoord (fragCoord * resolution)
+#define iTime time
 #define iResolution resolution
 #define iChannel0 eyecandyShadertoy
-#define iTime time
-
-// mcguirev10
-//#define iTime (time * 0.2 + (texture(eyecandyShadertoy, vec2(0.07, 0.5)).g * 5.0))
 
 vec3 rotateY(vec3 v, float t){
     float cost = cos(t); float sint = sin(t);
@@ -64,15 +62,6 @@ float map(vec3 p){
 
 float color( vec3 p){
    return 0.; 
-}
-
-#define PI 3.141592
-mat2 rotationMatrix(float angle)
-{
-	angle *= PI / 180.0;
-    float s=sin(angle), c=cos(angle);
-    return mat2( c, -s, 
-                 s,  c );
 }
 
 void main()
