@@ -48,7 +48,8 @@ void main()
 
             //fragColor = texture(iChannel0, vec2(tu, tv)).rgga * 1.4;
 
-            if(grayscale_factor == 0.0)
+            // account for float inaccuracies (especially bad on AMD)
+            if(grayscale_factor < 0.0001)
             {
 	            vec3 hsv = rgb2hsv(texture(iChannel0, vec2(tu, tv)).rgb);
 	            float hue = hsv.x + abs(sin(time * (randomrun * 0.3)));
