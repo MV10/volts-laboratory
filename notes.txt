@@ -83,6 +83,7 @@ https://www.shadertoy.com/view/4t3Szj                   double_vision
 https://www.shadertoy.com/view/tsdXDB                   extrusion
 https://www.shadertoy.com/view/Ds2Sz1                   glass_blocks
 https://www.shadertoy.com/view/dsSGWm                   hall_of_mirrors
+https://www.shadertoy.com/view/lltSRB                   mandelbrot
 https://www.shadertoy.com/view/DddBRj                   meltdown (has uniform parameters)
 https://www.shadertoy.com/view/XlV3zR                   nautilus
 https://www.shadertoy.com/view/4lKGDz                   neon_motion (has uniform parameters)
