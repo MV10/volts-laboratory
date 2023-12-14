@@ -8,12 +8,18 @@ uniform float randomrun;
 uniform sampler2D input0;
 out vec4 fragColor;
 
+// grayscale_factor 0.0 uses hue_jazz-style hue-shifting instead
+// grayscale_factor 1.0 is 100% desaturation in the detail copies
+uniform float grayscale_factor = 0.0;
+
 #define fragCoord (fragCoord * resolution)
 #define iResolution resolution
 #define iTime time
 #define iChannel0 input0
 
 vec4 desaturate(vec3 rgb, float factor);
+vec3 rgb2hsv(vec3 c);
+vec3 hsv2rgb(vec3 c);
 
 #define PI 3.141592
 mat2 rotationMatrix(float angle)
@@ -39,8 +45,20 @@ void main()
         {
             float tu = mod(atan(z.y, z.x) / 6.283185 + iTime * 0.5, 1.0); 
             float tv = log2(log(dot(z, z)) / log(1e4)); 
+
             //fragColor = texture(iChannel0, vec2(tu, tv)).rgga * 1.4;
-            fragColor = desaturate(texture(iChannel0, vec2(tu, tv)).rgb, 0.5);
+
+            if(grayscale_factor == 0.0)
+            {
+	            vec3 hsv = rgb2hsv(texture(iChannel0, vec2(tu, tv)).rgb);
+	            float hue = hsv.x + abs(sin(time * (randomrun * 0.3)));
+	            fragColor = vec4(hsv2rgb(vec3(hue, max(0.5, hsv.y), hsv.z)).rgb, 1.0);
+            }
+            else
+            {
+                fragColor = desaturate(texture(iChannel0, vec2(tu, tv)).rgb, grayscale_factor);
+            }
+
             return;
         }
     }
