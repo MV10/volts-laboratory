@@ -4,13 +4,23 @@ precision highp float;
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
+uniform float randomrun;
 uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
+
+const float pi_deg = 3.141592 / 180.0;
+mat2 rotationMatrix(float angle)
+{
+	angle *= pi_deg;
+    float s=sin(angle), c=cos(angle);
+    return mat2(c, -s, s, c);
+}
 
 void main()
 {
  	vec2 uv = fragCoord - 0.5;
     uv.y *= (resolution.y / resolution.x);
+    uv *= rotationMatrix(time * 24.0 * (randomrun - 0.5) + (4.0 * sign(randomrun - 0.5)));
 
     float beat = texture(eyecandyShadertoy, vec2(0.1,0.25)).g * 0.5;
     

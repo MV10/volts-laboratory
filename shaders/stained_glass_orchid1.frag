@@ -4,6 +4,7 @@ precision highp float;
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
+uniform float randomrun;
 uniform sampler2D input0;
 out vec4 fragColor;
 
@@ -241,9 +242,19 @@ vec4 angularLayer(in vec2 uv, in vec2 grid, in float layer, float invRes, float 
     return vec4(col, yroad);
 }
 
+const float pi_deg = 3.141592 / 180.0;
+mat2 rotationMatrix(float angle)
+{
+	angle *= pi_deg;
+    float s=sin(angle), c=cos(angle);
+    return mat2(c, -s, s, c);
+}
+
 void main()
 {
     vec2 uv = (2.*fragCoord - iResolution.xy)/iResolution.y;
+    uv *= rotationMatrix(time * 24.0 * (randomrun - 0.5) + (4.0 * sign(randomrun - 0.5)));
+
     float invRes = 1./iResolution.y;
     
     vec4 fcol;

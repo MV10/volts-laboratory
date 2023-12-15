@@ -105,7 +105,7 @@ void main()
     vec2 uv = (fragCoord - .5*iResolution.xy)/iResolution.y;
     
     // mcguirev10 - rotation is fun
-    uv *= rotationMatrix(time * (randomrun - 0.5) * 30.0);
+    uv *= rotationMatrix(time * 24.0 * (randomrun - 0.5) + (4.0 * sign(randomrun - 0.5)));
 
     vec3 col = vec3(0);
     vec4 tex = texture(iChannel0, fragCoord/iResolution.xy);

@@ -40,7 +40,7 @@ void main()
     uv.x *= resolution.x / resolution.y;
 
     // mcguirev10 - rotation is fun
-    uv *= rotationMatrix(time * (randomrun - 0.5) * 30.0);
+    uv *= rotationMatrix(time * 24.0 * (randomrun - 0.5) + (4.0 * sign(randomrun - 0.5)));
 
     // average several rows of history data
     vec2 mouse;

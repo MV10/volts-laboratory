@@ -107,7 +107,7 @@ void main()
   uv.x *= iResolution.x / iResolution.y;
   
   // mcguirev10 - rotation is fun
-  uv *= rotationMatrix(time * (randomrun - 0.5) * 30.0);
+  uv *= rotationMatrix(time * 24.0 * (randomrun - 0.5) + (4.0 * sign(randomrun - 0.5)));
   
   tCur = iTime;
   vuPos = vec3 (0., 0., -5.5 + mod (0.05 * tCur + 1., 9.5));
