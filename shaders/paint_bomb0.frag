@@ -76,8 +76,8 @@ void main()
     
     fragColor = vec4(col,1.0);
     
-    // 75% chance to overlay PCM sound wave
-    if(randomrun < 0.75)
+    // 50% chance to overlay PCM sound wave
+    if(randomrun < 0.5)
     {
         float offset = sin(time * 0.3) * 0.5;
         float pcm = texture(eyecandyShadertoy, vec2(cuv.x, 0.75)).g + offset;
