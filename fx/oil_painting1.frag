@@ -16,8 +16,8 @@ out vec4 fragColor;
 
 #define Res  resolution.xy
 #define Res0 resolution.xy
-#define Res1 vec2(256,256)
-#define Res2 vec2(64,64)
+#define Res1 vec2(textureSize(iChannel1,0))
+#define Res2 vec2(textureSize(iChannel2,0))
 
 #define PI2 6.28318531
 

@@ -18,7 +18,7 @@ out vec4 fragColor;
 #define iChannel1 randSamp
 
 #define Res0 resolution.xy
-#define Res1 vec2(256,256)
+#define Res1 vec2(textureSize(randSamp,0))
 #define Res  resolution.xy
 
 vec4 getRand(vec2 pos)
