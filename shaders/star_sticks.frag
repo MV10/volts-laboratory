@@ -13,161 +13,120 @@ out vec4 fragColor;
 #define iTime time
 #define iMouse vec2(0.5)
 
-// The Universe Within - by Martijn Steinrucken aka BigWings 2018
-// Email:countfrolic@gmail.com Twitter:@The_ArtOfCode
-// License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+#define S(a, b, t) smoothstep(a,b,t)
 
-// After listening to an interview with Michael Pollan on the Joe Rogan
-// podcast I got interested in mystic experiences that people seem to
-// have when using certain psycoactive substances. 
-//
-// For best results, watch fullscreen, with music, in a dark room.
-// 
-// I had an unused 'blockchain effect' lying around and used it as
-// a base for this effect. Uncomment the SIMPLE define to see where
-// this came from.
-// 
-// Use the mouse to get some 3d parallax.
-
-// Music - Terrence McKenna Mashup - Jason Burruss Remixes
-// https://soundcloud.com/jason-burruss-remixes/terrence-mckenna-mashup
-//
-// YouTube video of this effect:
-// https://youtu.be/GAhu4ngQa48
-//
-// YouTube Tutorial for this effect:
-// https://youtu.be/3CycKKJiwis
-
-
-#define S(a, b, t) smoothstep(a, b, t)
-#define NUM_LAYERS 4.
-
-//#define SIMPLE
-
-float N21(vec2 p) {
-	vec3 a = fract(vec3(p.xyx) * vec3(213.897, 653.453, 253.098));
-    a += dot(a, a.yzx + 79.76);
-    return fract((a.x + a.y) * a.z);
-}
-
-vec2 GetPos(vec2 id, vec2 offs, float t) {
-    float n = N21(id+offs);
-    float n1 = fract(n*10.);
-    float n2 = fract(n*100.);
-    float a = t+n;
-    return offs + vec2(sin(a*n1), cos(a*n2))*.4;
-}
-
-float GetT(vec2 ro, vec2 rd, vec2 p) {
-	return dot(p-ro, rd); 
-}
-
-float LineDist(vec3 a, vec3 b, vec3 p) {
-	return length(cross(b-a, p-a))/length(p-a);
-}
-
-float df_line( in vec2 a, in vec2 b, in vec2 p)
+float DistLine(vec2 p, vec2 a, vec2 b)
 {
-    vec2 pa = p - a, ba = b - a;
-	float h = clamp(dot(pa,ba) / dot(ba,ba), 0., 1.);	
-	return length(pa - ba * h);
+    vec2 pa = p-a;
+    vec2 ba = b-a;
+    float t = clamp(dot(pa, ba)/dot(ba, ba),0.0,1.0);
+    return length(pa-ba*t);
 }
 
-float line(vec2 a, vec2 b, vec2 uv) {
-    float r1 = .04;
-    float r2 = .01;
-    
-    float d = df_line(a, b, uv);
+float N21(vec2 p)
+{
+    p = fract(p*vec2(562.54, 853.12));
+    p += dot(p, p+213.85);
+    return fract(p.x*p.y);
+}
+
+vec2 N22(vec2 p)
+{
+    float n = N21(p);
+    return vec2(n, N21(p+n));
+}
+
+vec2 GetPos(vec2 id, vec2 offset)
+{
+    vec2 n = N22(id+offset)*iTime;
+    return offset+sin(n)*0.4;
+}
+
+float Line(vec2 p, vec2 a, vec2 b)
+{
+
+    float d = DistLine(p,a,b);
+    float m = S(0.03, 0.005, d);
     float d2 = length(a-b);
-    float fade = S(1.5, .5, d2);
-    
-    fade += S(.05, .02, abs(d2-.75));
-    return S(r1, r2, d)*fade;
+    m*= S(1.2,0.8,d2)*0.2 + S(0.05,0.03, abs(d2-0.75));
+    return m;
 }
 
-float NetLayer(vec2 st, float n, float t) {
-    vec2 id = floor(st)+n;
-
-    st = fract(st)-.5;
-   
+float Layer(vec2 uv)
+{
+    float m = 0.0;
+    vec2 gv = fract(uv)-0.5;
+    vec2 id = floor(uv);
+    
     vec2 p[9];
-    int i=0;
-    for(float y=-1.; y<=1.; y++) {
-    	for(float x=-1.; x<=1.; x++) {
-            p[i++] = GetPos(id, vec2(x,y), t);
-    	}
+    int i = 0;
+    for(float y = -1.0;y<=1.0;y++)
+    {
+       for(float x=-1.0;x<=1.0;x++)
+       {
+           p[i++] = GetPos(id, vec2(x,y));
+       }
     }
-    
-    float m = 0.;
-    float sparkle = 0.;
-    
-    for(int i=0; i<9; i++) {
-        m += line(p[4], p[i], st);
-
-        float d = length(st-p[i]);
-
-        float s = (.005/(d*d));
-        s *= S(1., .7, d);
-        float pulse = sin((fract(p[i].x)+fract(p[i].y)+t)*5.)*.4+.6;
-        pulse = pow(pulse, 20.);
-
-        s *= pulse;
-        sparkle += s;
+    float t = iTime*10.0;
+    for(int i =0;i<9;i++)
+    {
+        m+= Line(gv, p[4], p[i]);
+        vec2 j = (p[i] - gv)*20.0;
+        float sparkle = 1.0/(dot(j,j));
+        m+= sparkle*(sin(t+fract(p[i].x)*10.0)*0.5+0.5);
+        
     }
-    
-    m += line(p[1], p[3], st);
-	m += line(p[1], p[5], st);
-    m += line(p[7], p[5], st);
-    m += line(p[7], p[3], st);
-    
-    float sPhase = (sin(t+n)+sin(t*.1))*.25+.5;
-    sPhase += pow(sin(t*.1)*.5+.5, 50.)*5.;
-    m += sparkle*sPhase;//(*.5+.5);
-    
+    m+= Line(gv, p[1], p[3]);
+    m+= Line(gv, p[1], p[5]);
+    m+= Line(gv, p[7], p[3]);
+    m+= Line(gv, p[7], p[5]);
     return m;
 }
 
 void main()
 {
-    vec2 uv = (fragCoord-iResolution.xy*.5)/iResolution.y;
-	vec2 M = iMouse.xy/iResolution.xy-.5;
+    vec2 uv = (fragCoord-0.5*iResolution.xy)/iResolution.y;
     
-    float t = iTime*.1;
+    //float d = DistLine(uv, vec2(0), vec2(1));
     
-    float s = sin(t);
-    float c = cos(t);
-    mat2 rot = mat2(c, -s, s, c);
-    vec2 st = uv*rot;  
-	M *= rot*2.;
+    float fft = texelFetch(iChannel0, ivec2(0.7,0.0),0).g;
+    vec2 mouse = (iMouse.xy/iResolution.xy)-0.5;
+    float t = iTime*0.05;
+    float modif = abs(sin(sin(fft*0.07)*fft));
+    clamp(modif, 0.25, 1.5);
+    modif*=0.5;
+    t += modif;
+    float m = 0.0;
     
-    float m = 0.;
-    for(float i=0.; i<1.; i+=1./NUM_LAYERS) {
-        float z = fract(t+i);
-        float size = mix(15., 1., z);
-        float fade = S(0., .6, z)*S(1., .8, z);
-        
-        m += fade * NetLayer(st*size-M*z, i, iTime);
+    float rotScale = 5.0;
+    float s = sin(t*rotScale);
+    float c = cos(t*rotScale);
+    //add some offset to rotScale for bobbing: 1.0-5.0)
+    
+    float gradient = uv.y;
+    mat2 rot = mat2(c,-s, s, c);
+    uv*=rot;
+    mouse*=rot;
+    
+    for(float i=0.0;i<1.0;i+=1.0/4.0)
+    {
+        float z = fract(i+t);
+        float size = mix(10.0, 0.5,z);
+        float fade =  S(0.0, 0.5, z)*S(1.0, 0.8,z); 
+        m += Layer(uv*size+i*20.0-mouse)*fade;
     }
     
-	//float fft  = texelFetch( iChannel0, ivec2(.7,0), 0 ).g;
-	float fft  = texelFetch( iChannel0, ivec2(0.05, 0.25), 0 ).g * 3.0;
+    vec3 base = sin(t*20.0*vec3(0.235, 0.69, 0.53))*0.4+0.6;
+    vec3 col = m*base;
+    gradient*=fft*1.5;
+    col-=gradient*base;
+    //col.rg= id*0.2;
     
-    //float glow = -uv.y*fft*2.;
-   
-    vec3 baseCol = vec3(s, cos(t*.4), -sin(t*.24))*.4+.6;
-    vec3 col = baseCol*m;
-    //col += baseCol*glow;
+    /*if(gv.x>0.48||gv.y>0.48)
+    {
+        col=vec3(1,0,0);
+    }*/
     
-    #ifdef SIMPLE
-    uv *= 10.;
-    col = vec3(1)*NetLayer(uv, 0., iTime);
-    uv = fract(uv);
-    //if(uv.x>.98 || uv.y>.98) col += 1.;
-    #else
-    col *= 1.-dot(uv,uv);
-    t = mod(iTime, 230.);
-    col *= S(0., 20., t)*S(224., 200., t);
-    #endif
     
-    fragColor = vec4(col,1);
+    fragColor = vec4(col,1.0);
 }
