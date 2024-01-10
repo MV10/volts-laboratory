@@ -62,6 +62,7 @@ https://www.shadertoy.com/view/Xsd3Rn					shadow_vessels
 https://www.shadertoy.com/view/7tsSRB                   shattergrid
 https://www.shadertoy.com/view/Mdj3RV                   snap
 https://www.shadertoy.com/view/XsVSzW                   simple_plasma
+https://www.shadertoy.com/view/XtVGDz                   spectrasound
 https://www.shadertoy.com/view/mlcfW2                   spin_cycle
 https://www.shadertoy.com/view/mtyyW1                   spirograph
 https://www.shadertoy.com/view/DslyWS                   sportsball
