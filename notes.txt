@@ -120,6 +120,7 @@ https://www.shadertoy.com/view/XdVGWt                   lightsabers (has audio, 
 https://www.shadertoy.com/view/ml3cDj                   lightning_waves (colors are weirded out)
 https://www.shadertoy.com/view/mlKSW1                   noisebloom (not very active)
 https://www.shadertoy.com/view/XtGSRD                   particle_bombs (not working at all)
+https://www.shadertoy.com/view/4tKBRm                   spectrum (requires texture LOD support)
 https://www.shadertoy.com/view/wdyfDD                   rainbow_gatekeeper (not working at all)
 https://www.vertexshaderart.com/art/mmxfYzJp3mCehkHcH   wispy_blob (sphere surface is black)
 
