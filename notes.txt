@@ -47,6 +47,7 @@ https://www.shadertoy.com/view/NdG3zw                   nebula
 https://www.shadertoy.com/view/ds2yWh					neon_rings
 (multiple sources, see oil_slick.conf)                  oil_slick
 https://www.shadertoy.com/view/wssyDX                   paint_bomb
+https://www.shadertoy.com/view/mlKSWh                   parametric
 https://www.shadertoy.com/view/ttGGDc                   party_tree
 https://www.shadertoy.com/view/csfyzS                   party_tunnel
 https://www.shadertoy.com/view/dlycDW                   peacock_feathers
