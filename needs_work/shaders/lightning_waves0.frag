@@ -4,6 +4,7 @@ precision highp float;
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
+uniform float randomrun;
 uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
@@ -13,9 +14,10 @@ out vec4 fragColor;
 #define iTime time
 
 float random (in vec2 st) {
-    return fract(sin(dot(st.xy,
-        vec2(12.9898,78.233)))*
-        43758.5453123);
+    return fract(randomrun * st.x * st.y);
+//    return fract(sin(dot(st.xy,
+//        vec2(12.9898,78.233)))*
+//        43758.5453123);
 }
 
 float lerp(float a, float b, float f) {
@@ -26,7 +28,7 @@ const float ROTATION_SPEED = 2.7;
 vec2 getGradient(vec2 p) {
 
     float beat = texture(iChannel0, vec2(0.1, 0.5)).g * 1.0;
-    float t = iTime + sin(beat) * beat;
+    float t = iTime;// + sin(beat) * beat;
 
     float deg = random(p)*8. + t * ROTATION_SPEED*(random(p)*.5+.5);
     vec2 grd = vec2(cos(deg), sin(deg));

@@ -3,7 +3,7 @@ precision highp float;
 
 in vec2 fragCoord;
 uniform vec2 resolution;
-uniform float time;
+uniform sampler2D input0; // here for debug only
 uniform sampler2D input1;
 uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
@@ -12,7 +12,6 @@ out vec4 fragColor;
 #define iResolution resolution
 #define iChannel0 input1
 #define iChannel2 eyecandyShadertoy
-#define iTime time
 
 float divergence(vec2 uv) {
 
@@ -34,7 +33,7 @@ void main()
     
     float beat = texture(iChannel2, vec2(0.07, 0.5)).g;
 
-    float v = divergence(uv) * 2.5 * (beat + 1.0);
+    float v = divergence(uv);// * 2.5 * (beat + 1.0);
     
     vec3 col = (0.5 + 0.5*cos(6.*v*uv.xyx+vec3(0,2,4)));
     
@@ -44,4 +43,7 @@ void main()
         fragColor = vec4(vec3(0.0), 1.0);
     }
     
+    // debug
+    //fragColor = texture(input0, uv);
+    //fragColor = texture(input1, uv);
 }

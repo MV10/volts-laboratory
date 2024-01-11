@@ -117,8 +117,8 @@ https://www.shadertoy.com/view/llScz1                   zoom_blur
 
 VISUALIZERS PORTED, NOT WORKING or NEEDS WORK
 ----------------------------------------------------------------------------------------------
+https://www.shadertoy.com/view/ml3cDj                   lightning_waves (audio disabled; pass 1 output banded/wrong)
 https://www.shadertoy.com/view/XdVGWt                   lightsabers (has audio; doesn't work right)
-https://www.shadertoy.com/view/ml3cDj                   lightning_waves (colors are weirded out)
 https://www.shadertoy.com/view/mlKSW1                   noisebloom (not very active)
 https://www.shadertoy.com/view/XtGSRD                   particle_bombs (not working at all)
 https://www.shadertoy.com/view/4tKBRm                   spectrum (requires texture LOD support)

@@ -3,14 +3,12 @@ precision highp float;
 
 in vec2 fragCoord;
 uniform vec2 resolution;
-uniform float time;
 uniform sampler2D input0;
 out vec4 fragColor;
 
 #define fragCoord (fragCoord * resolution)
 #define iResolution resolution
 #define iChannel0 input0
-#define iTime time
 
 vec2 gradient(vec2 uv) {
     
