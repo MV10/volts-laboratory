@@ -28,6 +28,7 @@ https://www.shadertoy.com/view/mt3SWs                   fractured
 https://www.shadertoy.com/view/4ddSDS                   fur_space
 https://www.shadertoy.com/view/MdXSzS					galaxy
 https://www.vertexshaderart.com/art/NP3rRKeHPZeXBhymB   hairy_eyeball
+https://www.shadertoy.com/view/3d2fzK                   hex_sound
 https://www.shadertoy.com/view/wsl3WB					hexagone
 https://www.shadertoy.com/view/DlB3WG					hypercolor
 https://www.shadertoy.com/view/4lB3WV                   hyperlepsy
@@ -114,24 +115,23 @@ https://www.shadertoy.com/view/ltyGR3                   wiggle_scope
 https://www.shadertoy.com/view/llScz1                   zoom_blur
 
 
-PORTED VISUALIZERS NOT WORKING or NEEDS WORK
+VISUALIZERS PORTED, NOT WORKING or NEEDS WORK
 ----------------------------------------------------------------------------------------------
-https://www.shadertoy.com/view/XtGBzy                   chaos_wave (almost works if you look closely)
-https://www.shadertoy.com/view/XdVGWt                   lightsabers (has audio, doesn't work right)
+https://www.shadertoy.com/view/XdVGWt                   lightsabers (has audio; doesn't work right)
 https://www.shadertoy.com/view/ml3cDj                   lightning_waves (colors are weirded out)
 https://www.shadertoy.com/view/mlKSW1                   noisebloom (not very active)
 https://www.shadertoy.com/view/XtGSRD                   particle_bombs (not working at all)
 https://www.shadertoy.com/view/4tKBRm                   spectrum (requires texture LOD support)
 https://www.shadertoy.com/view/wdyfDD                   rainbow_gatekeeper (not working at all)
-https://www.vertexshaderart.com/art/mmxfYzJp3mCehkHcH   wispy_blob (sphere surface is black)
+https://www.vertexshaderart.com/art/mmxfYzJp3mCehkHcH   wispy_blob (partly works, sphere surface is black)
 
 
-PORTED FX NOT WORKING or NEEDS WORK
+FX PORTED, NOT WORKING or NEEDS WORK
 ----------------------------------------------------------------------------------------------
-https://www.shadertoy.com/view/Msd3W2                   diffusion_warp (too slow/subtle)
-https://www.shadertoy.com/view/3d2fzK                   hex_sound (has audio, but extrusion not working?)
+https://www.shadertoy.com/view/XtGBzy                   chaos_wave (almost works if you look closely)
+https://www.shadertoy.com/view/Msd3W2                   diffusion_warp (too slow/subtle at full-screen res)
 https://www.shadertoy.com/view/tdS3DR                   motion_dilation (works, some viz need to exclude)
-https://www.shadertoy.com/view/MdlBDn                   time_blur (looks good w/video...)
+https://www.shadertoy.com/view/MdlBDn                   offset_blur (looks good w/video...)
 
 
 PORTED FX AVAILABLE BUT NOT DISTRIBUTED (I don't like them much, but you might...)
