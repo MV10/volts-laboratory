@@ -1,7 +1,7 @@
 #version 460
 precision highp float;
 
-// Adapted from https://www.shadertoy.com/view/mtdcWn (1 of 6)
+// Adapted from https://www.shadertoy.com/view/mtdcWn
 // My revisions https://www.shadertoy.com/view/MffXWM
 
 in vec2 fragCoord;
