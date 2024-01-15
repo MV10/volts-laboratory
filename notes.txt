@@ -115,6 +115,12 @@ https://www.shadertoy.com/view/ltyGR3                   wiggle_scope
 https://www.shadertoy.com/view/llScz1                   zoom_blur
 
 
+PORTED CROSSFADE TRANSITIONS (crossfade_*.frag filenames in "libraries" directory)
+----------------------------------------------------------------------------------------------
+https://www.shadertoy.com/view/lfXXWM                   burning
+https://www.shadertoy.com/view/lfXSWM                   diagonal_strips
+
+
 VISUALIZERS PORTED, NOT WORKING or NEEDS WORK
 ----------------------------------------------------------------------------------------------
 https://www.shadertoy.com/view/ml3cDj                   lightning_waves (audio disabled; pass 1 output banded/wrong)
