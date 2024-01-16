@@ -22,6 +22,21 @@ void main()
 {
     float diff = uv.x - uv.y;
 
+    // Has a one-frame flash of the new buffer at the start,
+    // and a one-frame flash of the old buffer at the end.
+    // 0.003 is the fadeLevel step at 60 FPS for 5 sec.
+    if(fadeLevel <= 0.003)
+    {
+        fragColor = texture(oldBuffer, uv);
+        return;
+    }
+
+    if(fadeLevel >= 0.997)
+    {
+        fragColor = texture(newBuffer, uv);
+        return;
+    }
+
     float t = fadeLevel * PI / 2.0;
     t = sin(-t - floor(-t * 2.0 / PI) * PI / 2.0);
 
