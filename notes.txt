@@ -119,6 +119,7 @@ PORTED CROSSFADE TRANSITIONS (crossfade_*.frag filenames in "libraries" director
 ----------------------------------------------------------------------------------------------
 https://www.shadertoy.com/view/lfXXWM                   burning
 https://www.shadertoy.com/view/lfXSWM                   diagonal_strips
+https://www.shadertoy.com/view/ftVBDd                   gritty_fade
 https://www.shadertoy.com/view/MffXWM					tiles (multiple)
 
 
