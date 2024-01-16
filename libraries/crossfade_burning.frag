@@ -12,17 +12,22 @@ out vec4 fragColor;
 
 uniform float fadeDuration;
 uniform vec2 resolution;
+uniform float randomrun;
 
 #define uv fragCoord
 #define iResolution resolution
 #define iChannel0 oldBuffer
 #define iChannel1 newBuffer
 
-#define tint 50.0     // original was 100
+// original was 100
+#define tint (50.0 + 50.0 * randomrun)
+
+// add some real randomness to the cornball Shadertoy hack for pseudo-random numbers
+#define pseudorandom max(0.15, randomrun)
 
 float random(vec2 st) 
 {
-    return fract(sin(dot(st, vec2(94.23, 48.127)) + 14.23) * 1124.23);
+    return fract(sin(dot(st, vec2(94.23, 48.127)) + 14.23) * 1124.23 * pseudorandom);
 }
 
 float noise(vec2 st) 
@@ -39,7 +44,7 @@ float noise(vec2 st)
 
 float fractalNoise(vec2 uv) 
 {
-    uv *= 30.0;
+    uv *= 20.0 + (40.0 * randomrun); // "graininess" of the yellow-orange flame area
     float amp = 0.6;
     float n = 0.0;
     for (int i = 0; i < 6; i++)
