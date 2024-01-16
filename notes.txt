@@ -121,6 +121,7 @@ https://www.shadertoy.com/view/lfXXWM                   burning
 https://www.shadertoy.com/view/lfXSWM                   diagonal_strips
 https://www.shadertoy.com/view/ftVBDd                   gritty_fade
 https://www.shadertoy.com/view/MffXWM					tiles (multiple)
+https://www.shadertoy.com/view/lcfXzj					plane (multiple)
 
 
 VISUALIZERS PORTED, NOT WORKING or NEEDS WORK
@@ -147,3 +148,8 @@ PORTED FX AVAILABLE BUT NOT DISTRIBUTED (I don't like them much, but you might..
 https://www.shadertoy.com/view/ctVGWw                   glitch_fork
 https://www.shadertoy.com/view/WslyWn                   mirror_strips (could be improved...)
 https://www.shadertoy.com/view/Dlt3D7                   submerged (weird banding artifacts)
+
+
+CROSSFADE PORTED, NOT WORKING or NEEDS WORK
+----------------------------------------------------------------------------------------------
+https://www.shadertoy.com/view/MffSzj                   grid_zoom
