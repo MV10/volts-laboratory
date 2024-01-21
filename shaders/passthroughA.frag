@@ -1,4 +1,4 @@
-#version 460
+#version 450
 precision highp float;
 
 // When migrating multi-pass Shadertoy code, it's pretty common for the

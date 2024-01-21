@@ -1,4 +1,4 @@
-#version 460
+#version 450
 precision highp float;
 
 // Adapted from https://www.shadertoy.com/view/dtdyWf

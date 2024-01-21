@@ -1,4 +1,4 @@
-#version 460
+#version 450
 precision highp float;
 
 // Based on my border attenuation https://www.shadertoy.com/view/cscBDM

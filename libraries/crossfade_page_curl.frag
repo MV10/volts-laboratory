@@ -1,4 +1,4 @@
-#version 460
+#version 450
 precision highp float;
 
 // Adapted from https://www.shadertoy.com/view/lstGWN
@@ -44,7 +44,7 @@ const float specint = 0.6;
 
 const vec2 shadowoffset = vec2(0.07, -0.04);
 const float shadowsmoothness = 0.012;
-const float shadowint = 0.25;
+const float shadowint = 0.65;
 
 const float aawidth = 0.7;
 const int aasamples = 3;
@@ -91,7 +91,6 @@ vec4 turnPage(vec2 coord)
     if(swap_x) Mouse2.x = iResolution.x - Mouse2.x;
     
     vec2 mpoint = Mouse2.xy;
-    bool firstcycle = true;
 
     vec2 midmpoint = mpoint * 0.5;
     float mdist = distance(coord, mpoint);
@@ -137,10 +136,7 @@ vec4 turnPage(vec2 coord)
             
             float difft = intfac * (1.0 - ambientt) + ambientt;
         	difft = difft * (shadow*shadowint + 1.0 - shadowint) / 2.0 + mix(1.0 - shadowint, difft, shadow) / 2.0;
-            if (firstcycle)
-                i = difft * (texture(oldBuffer, mod((uvr3b - uvrcorr3) / vec2(-ratio, 1.0), 1.0)));
-            else
-                i = difft * (texture(newBuffer, mod((uvr3b - uvrcorr3) / vec2(-ratio, 1.0), 1.0)));
+            i = difft * (texture(oldBuffer, mod((uvr3b - uvrcorr3) / vec2(-ratio, 1.0), 1.0)));
         }
         else
         {
@@ -148,10 +144,7 @@ vec4 turnPage(vec2 coord)
             float diffb = intfac * (1.0 - ambientb) + ambientb;
         	float spec = pow(smoothstep(specpos.x - 0.35, specpos.x, intfac) * smoothstep(specpos.x + 0.35, specpos.x, intfac), specpow);
         	spec *= specint * pow(1.0 - pow(clamp(abs(uvr.y - specpos.y), 0.0, specwidth * 2.0), 2.0) / specwidth, specpow);
-			if (firstcycle)
-                i = diffb * (mix(texture(oldBuffer, mod((uvr3 - uvrcorr3) / vec2(-ratio, 1.0), 1.0)), getPagebackColor(), bcolorMix));
-            else
-                i = diffb * (mix(texture(newBuffer, mod((uvr3 - uvrcorr3) / vec2(-ratio, 1.0), 1.0)), getPagebackColor(), bcolorMix));
+            i = diffb * (mix(texture(oldBuffer, mod((uvr3 - uvrcorr3) / vec2(-ratio, 1.0), 1.0)), getPagebackColor(), bcolorMix));
          	i = mix(i, vec4(1.0), spec);
         }
     }
@@ -181,12 +174,9 @@ vec4 turnPage(vec2 coord)
         float intfacbg = 1.0 - diffint * (1.0 - 1.0 / pagefuncderbg);
         float difftbg = intfacbg * (1.0 - ambientt) + ambientt;
         
-        if (firstcycle) 
-            i = texture(newBuffer, mod((uvr3bbg - uvrcorr3bg) / vec2(-ratio, 1.0), 1.0));
-        else
-            i = texture(oldBuffer, mod((uvr3bbg - uvrcorr3bg) / vec2(-ratio, 1.0), 1.0));
+        i = texture(newBuffer, mod((uvr3bbg - uvrcorr3bg) / vec2(-ratio, 1.0), 1.0));
+
         float bgshadow = 1.0 + shadowint * smoothstep(-0.08 + shadowsmoothness * 4.0, -0.08, uvr3b.y) - shadowint;
-        
         if (uvr3b.y < 0.0)
            i *= bgshadow;
     }
@@ -195,6 +185,14 @@ vec4 turnPage(vec2 coord)
 
 void main()
 {
+    // On AMD, has a one-frame flash of the new buffer at the start.
+    // 0.003 is the fadeLevel step at 60 FPS for 5 sec.
+    if(fadeLevel <= 0.003)
+    {
+        fragColor = texture(oldBuffer, fragCoord / resolution);
+        return;
+    }
+
     // Antialiasing
     vec4 vs = vec4(0.);
     for (int j = 0; j < aasamples; j++)
