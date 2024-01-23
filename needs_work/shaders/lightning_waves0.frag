@@ -27,7 +27,7 @@ float lerp(float a, float b, float f) {
 const float ROTATION_SPEED = 2.7;
 vec2 getGradient(vec2 p) {
 
-    float beat = texture(iChannel0, vec2(0.1, 0.5)).g * 1.0;
+    float beat = texture(iChannel0, vec2(0.1, 0.25)).g * 1.0;
     float t = iTime;// + sin(beat) * beat;
 
     float deg = random(p)*8. + t * ROTATION_SPEED*(random(p)*.5+.5);

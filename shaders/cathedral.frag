@@ -13,7 +13,7 @@ out vec4 fragColor;
 #define iChannel0 eyecandyShadertoy
 
 // mcguirev10 - audio is why we're here
-#define iTime (time + texture(eyecandyShadertoy, vec2(0.02, 0.5)).g)
+#define iTime (time + texture(eyecandyShadertoy, vec2(0.02, 0.25)).g)
 
 #define H(a) (cos(radians(vec3(0, 60, 120))+(a)*6.2832)*.5+.5)  // hue
 

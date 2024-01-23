@@ -12,7 +12,7 @@ out vec4 fragColor;
 #define fragCoord (fragCoord * resolution)
 #define iResolution resolution
 #define iChannel0 inputA
-#define iTime (time+(texture(eyecandyShadertoy, vec2(0.08, 0.5)).g - 0.5)*1.5)
+#define iTime (time+(texture(eyecandyShadertoy, vec2(0.08, 0.25)).g - 0.5)*1.5)
 
 #define PI 3.141592
 #define TAU 2.*PI

@@ -20,7 +20,7 @@ out vec4 fragColor;
 void main()
 {
     float blur_samples = 10 + (10.0 * randomrun);
-    float amp = texture(iChannel1, vec2(0.1, 0.5)).g * randomrun;
+    float amp = texture(iChannel1, vec2(0.1, 0.25)).g * randomrun;
 
     vec2 uv = fragCoord/iResolution.xy;
 

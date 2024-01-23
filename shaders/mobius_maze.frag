@@ -19,7 +19,7 @@ vec3 hsv2rgb(vec3 c);
 void main() 
 {
     // mcguirev10 - time-twitch based on beat
-    float fft = texture(eyecandyShadertoy, vec2(0.07, 0.5)).g;
+    float fft = texture(eyecandyShadertoy, vec2(0.07, 0.25)).g;
     float iTime = time + (fft - 0.45);
 
     //Clear fragcolor

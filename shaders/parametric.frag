@@ -16,7 +16,7 @@ vec4 saturate(vec4 value) { return max(vec4(0), min(value, vec4(1))); }
 vec4 col(vec2 uv) 
 {
   // mcguirev10
-  float fft = texture(eyecandyShadertoy, vec2(0.07, 0.5)).g;
+  float fft = texture(eyecandyShadertoy, vec2(0.07, 0.25)).g;
   float iTime = time + (fft - 0.45) * 0.75;
 
   // float t = sin(iTime * 0.17 + length(uv) * 3.0)*2.0;

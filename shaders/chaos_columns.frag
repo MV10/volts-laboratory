@@ -74,7 +74,7 @@ float BallHit (vec3 ro, vec3 rd)
   
   //bRad = 0.025 
   // mcguirev10 - alter sphere radius with music beat
-  bRad = 0.005 + texture(iChannel0, vec2(0.1, 0.5)).g * 0.1;
+  bRad = 0.005 + texture(iChannel0, vec2(0.07, 0.25)).g * 0.1;
   
   b = dot (rd, ro);
   d = b * b + bRad * bRad - dot (ro, ro);

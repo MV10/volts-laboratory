@@ -27,7 +27,7 @@ void main()
     
     float i, a, d, t = iTime;
     
-    t += texture(iChannel0, vec2(0.05, 0.5)).g * (0.5 + randomrun);
+    t += texture(iChannel0, vec2(0.05, 0.25)).g * (0.5 + randomrun);
     
     while(i++ < 69.) 
         p = a * u,

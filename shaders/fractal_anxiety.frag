@@ -50,7 +50,7 @@ vec3 getsmcolor(float c, float s)
 
 void main() 
 {
-	float fft = texture(eyecandyShadertoy, vec2(0.07, 0.5)).g;
+	float fft = texture(eyecandyShadertoy, vec2(0.07, 0.25)).g;
 	float iTime = time + (fft - 0.45);
 
 	// define the colors 

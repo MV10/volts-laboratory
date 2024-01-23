@@ -35,7 +35,7 @@ void main()
         float t = fi / float(N);
         float aa = (t + iTime / 12.) * 2. * PI;
         
-        float beat = texture(iChannel0, vec2(0.05, 0.5)).g * 0.25;
+        float beat = texture(iChannel0, vec2(0.05, 0.25)).g * 0.25;
 
         float size = .3 + sin(t * 6.* PI) * .1 + beat;
     

@@ -140,9 +140,8 @@ float lowAverage()
     
     for(int i = 0; i < iters; i++)
     {
-        float sound = texture(iChannel0, vec2(float(i)/float(iters), 0.5)).g;
-        smallest = 
-        
+        float sound = texture(iChannel0, vec2(float(i)/float(iters), 0.25)).g;
+        smallest =      
         product *= sound;
         sum += sound;
     }

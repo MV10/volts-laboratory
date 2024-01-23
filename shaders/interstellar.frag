@@ -111,7 +111,7 @@ vec3  c = vec3(0),
     //if (iMouse.z < 1.)
     //{
         // mcguirev10 - tweak rotation time with the beat
-        float fft = texture(eyecandyShadertoy, vec2(0.07, 0.5)).g;
+        float fft = texture(eyecandyShadertoy, vec2(0.07, 0.25)).g;
         t2 = (time + (fft - 0.45)) / 5.0;
 
         m = vec2(sin(t2/2.)*.6, sin(t2)*.4); // rotate with time

@@ -31,7 +31,7 @@ mat2 rotationMatrix(float angle)
 
 void main() 
 {
-    float iTime = (time + texture(eyecandyShadertoy, vec2(0.07, 0.5)).g * 5.0);
+    float iTime = (time + texture(eyecandyShadertoy, vec2(0.07, 0.25)).g * 5.0);
 
     vec2 uv = (fragCoord * 2.0 - iResolution.xy) / iResolution.y;
     

@@ -58,10 +58,10 @@ void main()
     
     float t = iTime;
     
-    freqs.x = texture( iChannel1, vec2( 0.02, 0.55 ) ).g;
-	freqs.y = texture( iChannel1, vec2( 0.07, 0.55 ) ).g;
-	freqs.z = texture( iChannel1, vec2( 0.15, 0.55 ) ).g;
-	freqs.w = texture( iChannel1, vec2( 0.30, 0.55 ) ).g;
+    freqs.x = texture( iChannel1, vec2( 0.02, 0.25 ) ).g;
+	freqs.y = texture( iChannel1, vec2( 0.07, 0.25 ) ).g;
+	freqs.z = texture( iChannel1, vec2( 0.15, 0.25 ) ).g;
+	freqs.w = texture( iChannel1, vec2( 0.30, 0.25 ) ).g;
     
     fragColor = vec4(0.);
     float ca = t*.2; // angle z

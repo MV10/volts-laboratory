@@ -22,7 +22,7 @@ vec3 hsv2rgb(vec3 c);
 #define iTime getTime()
 float getTime()
 {
-    float fft = texture(eyecandyShadertoy, vec2(0.07, 0.5)).g;
+    float fft = texture(eyecandyShadertoy, vec2(0.07, 0.25)).g;
     return time + (fft - 0.45);
 }
 

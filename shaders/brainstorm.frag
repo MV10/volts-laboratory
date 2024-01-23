@@ -12,7 +12,7 @@ out vec4 fragColor;
 #define iResolution resolution
 
 // mcguirev10
-#define iTime (time * 0.2 + (texture(eyecandyShadertoy, vec2(0.07, 0.5)).g * 5.0))
+#define iTime (time * 0.2 + (texture(eyecandyShadertoy, vec2(0.07, 0.25)).g * 5.0))
 
 #define R(p,a,r) mix(a*dot(p,a),p,cos(r))+sin(r)*cross(p,a)
 #define H(h) (cos((h)*6.3+vec3(0,23,21))*.5+.5)

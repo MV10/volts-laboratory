@@ -38,7 +38,9 @@ void formula(vec2 z, float c) {
 	shape+=max(pow(max(0.,w-ot)/w,.25),circ);
 	vec3 col=normalize(.1+texture(iChannel1,vec2(minit*.1)).rgb);
 	color+=col*(.4+mod(minit/9.-time*10.+ot2*2.,1.)*1.6);
-	color+=vec3(1.,.7,.3)*circ*(10.-minit)*3.*smoothstep(0.,.5,.15+texture(iChannel0,vec2(.0,1.)).g-.5);
+	
+	// mcguirev10 - fixed audio texture sampling point for stronger effect
+	color+=vec3(1.,.7,.3)*circ*(10.-minit)*3.*smoothstep(0.,.5,.15+texture(iChannel0,vec2(0.07, 0.25)).g-.5);
 }
 
 void main() 

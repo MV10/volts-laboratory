@@ -31,7 +31,7 @@ void main()
 {
     vec2 uv = fragCoord.xy / iResolution.xy;
     
-    float beat = texture(iChannel2, vec2(0.07, 0.5)).g;
+    float beat = texture(iChannel2, vec2(0.07, 0.25)).g;
 
     float v = divergence(uv);// * 2.5 * (beat + 1.0);
     

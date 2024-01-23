@@ -13,6 +13,6 @@ out vec4 fragColor;
 void main()
 {
     // mv10: flicker brightness with the music
-    vec3 col = texture(iChannel0, fragCoord).rgb * (texture(iChannel1, vec2(0.08, 0.5)).g * 5.0);
+    vec3 col = texture(iChannel0, fragCoord).rgb * (texture(iChannel1, vec2(0.08, 0.25)).g * 5.0);
     fragColor = vec4(col, 1);
 }

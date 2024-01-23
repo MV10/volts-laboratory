@@ -28,7 +28,7 @@ void main()
     vec2 uv = (fragCoord.xy-iResolution.xy*.5)/iResolution.y;
     
     // Apply scaling factor based on audio input
-    float audio = texture(eyecandyShadertoy, vec2(iTime * 0.5, 0.5)).g * 2.0;
+    float audio = texture(eyecandyShadertoy, vec2(iTime * 0.5, 0.25)).g * 2.0;
     uv *= audio * 15.0 + 15.0;
     
     // Apply rotation based on audio input
