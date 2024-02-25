@@ -15,6 +15,12 @@ At the bottom of the file are a series of DECL_PRINT_STRING(n) entries where
 "n" is the size of the int array representing a character string. Array sizes
 of 1 to 12 characters are supported. If you need more, add another declaration.
 
+Origin of the Shadertoy font and to make new ones:
+	https://timmaffett.github.io/shadertoy_fontgen/generate_sdf.html
+	https://www.shadertoy.com/view/llcXRl
+	https://github.com/otaviogood/shader_fontgen
+	https://github.com/timmaffett/shader_fontgen
+
 */
 
 #define DC(name, val) const int name = val
