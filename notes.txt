@@ -53,6 +53,7 @@ https://www.shadertoy.com/view/ttGGDc                   party_tree
 https://www.shadertoy.com/view/csfyzS                   party_tunnel
 https://www.shadertoy.com/view/dlycDW                   peacock_feathers
 https://www.vertexshaderart.com/art/eMAJ5HydzdzbnzduF	plasma_grid
+https://www.shadertoy.com/view/MXlXzl                   plasma_wave
 https://www.vertexshaderart.com/art/bSWJchGnG97o3HQfE	pointy_eyeball
 https://www.shadertoy.com/view/dtBBRc                   psych_spin
 https://www.shadertoy.com/view/7lySW1					red_vs_blue
