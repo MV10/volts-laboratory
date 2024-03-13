@@ -110,6 +110,7 @@ https://www.shadertoy.com/view/Wt2yWz                   skinimax
 https://www.shadertoy.com/view/cd2BD1                   slimed
 https://www.shadertoy.com/view/4cBSRz                   sparkle
 https://www.shadertoy.com/view/ltdGDn                   splash
+https://www.shadertoy.com/view/X3XXRM                   splitter
 https://www.shadertoy.com/view/ltySRt                   staircase
 https://www.shadertoy.com/view/tdcczN                   swirly
 https://www.shadertoy.com/view/XlGXzw                   time_blur
