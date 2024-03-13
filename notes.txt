@@ -95,6 +95,7 @@ https://www.shadertoy.com/view/ct3yz8                   duplizoom
 https://www.shadertoy.com/view/tsdXDB                   extrusion
 https://www.shadertoy.com/view/Ds2Sz1                   glass_blocks
 https://www.shadertoy.com/view/dsSGWm                   hall_of_mirrors
+https://www.shadertoy.com/view/4Xl3Rj                   lumiglass
 https://www.shadertoy.com/view/lltSRB                   mandelbrot
 https://www.shadertoy.com/view/DddBRj                   meltdown (has uniform parameters)
 https://www.shadertoy.com/view/XlV3zR                   nautilus
