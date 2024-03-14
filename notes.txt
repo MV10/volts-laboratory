@@ -35,6 +35,7 @@ https://www.shadertoy.com/view/DlB3WG					hypercolor
 https://www.shadertoy.com/view/4lB3WV                   hyperlepsy
 https://www.shadertoy.com/view/mlKyRV                   hypno_flower
 https://www.shadertoy.com/view/mltBDl                   interstellar
+https://www.shadertoy.com/view/ssjfDG                   jello_cubes
 https://www.shadertoy.com/view/msXXzs                   jester
 https://www.shadertoy.com/view/XtdfW2					jitterbugs
 https://www.shadertoy.com/view/llB3W1					julia_set
