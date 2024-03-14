@@ -75,8 +75,7 @@ float rand()
 }
 
 //#define FFT(a) ((texture(iChannel2, vec2(a,0)).r+.05)*10.)
-// mcguirev10 - needs tweaking (original was pretty weakly responsive too)
-#define FFT(a) ((texture(iChannel2, vec2(a / 4.0, 0.25)).r + 0.05) * 40.0)
+#define FFT(a) ((texture(iChannel2, vec2(a, 0.25)).g + 0.05) * 10.0)
 
 vec2 map(vec3 p)
 {
