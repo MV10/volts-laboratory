@@ -9,13 +9,13 @@ Unless you build your own copy of Monkey Hi Hat from the source repo, you should
 
 > YES: I am interested in PRs for new visualizations and FX!
 
-Since the project is still new and under active new-feature development, most of these are adaptations from [Shadertoy](https://www.shadertoy.com/) or [VertexShaderArt](https://www.vertexshaderart.com/). Attribution links to the originals are available in the comments at the start of each `.conf` file (when applicable). I have tried to avoid any content which explicitly states usage-restrictions or restrictive copyright terms, but if you see any content here which you own, or which you know is not openly available for this type of adapation, please open an issue and I will review (and thanks in advance).
+Since the project is still new and under active new-feature development, most of these are adaptations from [Shadertoy](https://www.shadertoy.com/) or [VertexShaderArt](https://www.vertexshaderart.com/). Attribution links to the originals are available in the comments at the start of each `.conf` file (when applicable) and the `notes.txt` file in this repo. I have tried to avoid any content which explicitly states usage-restrictions or restrictive copyright terms, but if you see any content here which you own, or which you know is not openly available for this type of adaptation, please open an issue and I will review (and thanks in advance).
 
-I don't see much point in actually sharing playlists, they're easy to create and "favorites" will be highly subjective, but [`demo_playlist.conf`](playlists/demo_playlist.conf) is here as a reference for playlist configuration and all supported settings and options. The others are here simply as offsite safekeeping.
+I don't see much point in actually sharing playlists, they're easy to create and "favorites" will be highly subjective, but [`demo_playlist.conf`](playlists/demo_playlist.conf) is here as a reference for playlist configuration and all supported settings and options. The others are here simply as offsite safekeeping. The `variety.conf` is distributed with the program because it references all of the visualizers available here (but this is not guaranteed).
 
 ## Content
 
-Refer to [`notes.txt`](./notes.txt) to see where each came from and what I think about the status of each, and in some cases there may be additional details in the notes in the `.conf` files. But despite those warnings, the MHH program and these shaders _do_ seem to work quite well. I've left this running with all the interesting (non-demo, non-utilitiarn) shaders running for 10+ hours while streaming Spotify.
+Refer to [`notes.txt`](./notes.txt) to see where each came from and what I think about the status of each, and in some cases there may be additional details in the notes in the `.conf` files. But despite those warnings, the MHH program and these shaders _do_ seem to work quite well. I've left this running with all the interesting (non-demo, non-utilitiarn) shaders running for 24+ hours while streaming Spotify.
 
 Note that _some_ of these are not audio-responsive. They either just look cool, or (more likely) I hope to  add audio support some day.
 
