@@ -25,9 +25,14 @@ out vec4 fragColor;
 #define displaceMode 1
 #define displaceAmt .75
 #define lightMode 2
+
 //distFormula 0 is linear, 1 is manhattan, you can mix between
 #define distFormula 0.0
-#define uvOffset vec2(0.07,0.02)
+
+// mcguirev10 - not sure what the point of this was, but it's ugly in monkey-hi-hat
+//#define uvOffset vec2(0.07,0.02)
+#define uvOffset vec2(0)
+
 #define zoom 0.01
 //N vec4(0.) for no holes on facet
 //#define N vec4(0.0,0.0,0.0,0.)
