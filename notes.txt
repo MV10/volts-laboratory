@@ -133,34 +133,3 @@ https://www.shadertoy.com/view/lfXSWM                   diagonal_strips
 https://www.shadertoy.com/view/ftVBDd                   gritty_fade
 https://www.shadertoy.com/view/MffXWM					tiles (multiple)
 https://www.shadertoy.com/view/lcfXzj					plane (multiple)
-
-
-VISUALIZERS PORTED, NOT WORKING or NEEDS WORK
-----------------------------------------------------------------------------------------------
-https://www.shadertoy.com/view/ml3cDj                   lightning_waves (audio disabled; pass 1 output banded/wrong)
-https://www.shadertoy.com/view/XdVGWt                   lightsabers (has audio; doesn't work right)
-https://www.shadertoy.com/view/mlKSW1                   noisebloom (not very active)
-https://www.shadertoy.com/view/XtGSRD                   particle_bombs (not working at all)
-https://www.shadertoy.com/view/4tKBRm                   spectrum (requires texture LOD support)
-https://www.shadertoy.com/view/wdyfDD                   rainbow_gatekeeper (not working at all)
-https://www.vertexshaderart.com/art/mmxfYzJp3mCehkHcH   wispy_blob (partly works, sphere surface is black)
-
-
-FX PORTED, NOT WORKING or NEEDS WORK
-----------------------------------------------------------------------------------------------
-https://www.shadertoy.com/view/XtGBzy                   chaos_wave (almost works if you look closely)
-https://www.shadertoy.com/view/Msd3W2                   diffusion_warp (too slow/subtle at full-screen res)
-https://www.shadertoy.com/view/tdS3DR                   motion_dilation (works, some viz need to exclude)
-https://www.shadertoy.com/view/MdlBDn                   offset_blur (looks good w/video...)
-
-
-PORTED FX AVAILABLE BUT NOT DISTRIBUTED (I don't like them much, but you might...)
-----------------------------------------------------------------------------------------------
-https://www.shadertoy.com/view/ctVGWw                   glitch_fork
-https://www.shadertoy.com/view/WslyWn                   mirror_strips (could be improved...)
-https://www.shadertoy.com/view/Dlt3D7                   submerged (weird banding artifacts)
-
-
-CROSSFADE PORTED, NOT WORKING or NEEDS WORK
-----------------------------------------------------------------------------------------------
-https://www.shadertoy.com/view/MffSzj                   grid_zoom
