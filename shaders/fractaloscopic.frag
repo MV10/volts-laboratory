@@ -8,6 +8,12 @@ uniform float randomrun;
 uniform sampler2D eyecandyWebAudio;
 out vec4 fragColor;
 
+// mcguirev10 - how many rows of history data to average (~23ms each)
+uniform float history = 12.0;
+
+// mcguirev10 - bigger is less spazzy
+uniform float spazFactor = 4.0;
+
 #define fragCoord (fragCoord * resolution)
 #define iChannel0 eyecandyWebAudio
 
@@ -44,9 +50,9 @@ void main()
 
     // average several rows of history data
     vec2 mouse;
-    for(float y = 0.0; y < 4.0; y++)
-        mouse = vec2(texture(iChannel0, vec2(0.6, y + 0.5)).y);
-    mouse /= 4.0;
+    for(float y = 0.0; y < history; y++)
+        mouse += vec2(texture(iChannel0, vec2(0.07, y + 0.5)).y);
+    mouse /= (history * spazFactor);
 
     uv *= 0.1+mouse.x;
 
