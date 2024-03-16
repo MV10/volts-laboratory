@@ -21,6 +21,7 @@ https://www.shadertoy.com/view/DtBSWw                   darkstar
 https://www.vertexshaderart.com/art/ntCWzzdvXfp33a6oz   dartboard
 https://www.shadertoy.com/view/mlfBDX                   discotheque
 https://www.shadertoy.com/view/tdjfDR                   disco_tunnel
+https://www.shadertoy.com/view/432XWD                   dragon_ring
 https://www.shadertoy.com/view/dtK3Rh					first_ones
 https://www.shadertoy.com/view/MlfSWX                   first_ones_corridor
 (multiple sources, see foggy.conf)                      foggy
