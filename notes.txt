@@ -48,6 +48,7 @@ https://www.shadertoy.com/view/l3fSDr                   lava_lamp
 https://www.vertexshaderart.com/art/CJqnsPPKxz3KGqWSZ	lisa_simpson
 https://www.shadertoy.com/view/DdSGzG                   lysergic_inception
 https://www.shadertoy.com/view/mlKyRK                   maze
+https://www.shadertoy.com/view/43SSzz                   milkdrop_disco
 https://www.shadertoy.com/view/7dVyDh                   mobius_maze
 https://www.shadertoy.com/view/mlKyRG                   moire_scope
 https://www.shadertoy.com/view/4ttGDH                   molten_glass
