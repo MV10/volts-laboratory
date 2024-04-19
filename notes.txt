@@ -100,6 +100,7 @@ https://www.shadertoy.com/view/DtGfzV                   color_puddle
 https://www.shadertoy.com/view/4t3Szj                   double_vision
 https://www.shadertoy.com/view/ct3yz8                   duplizoom
 https://www.shadertoy.com/view/tsdXDB                   extrusion
+https://www.shadertoy.com/view/McKGzR                   flashmaze
 https://www.shadertoy.com/view/Ds2Sz1                   glass_blocks
 https://www.shadertoy.com/view/dsSGWm                   hall_of_mirrors
 https://www.shadertoy.com/view/4Xl3Rj                   lumiglass
