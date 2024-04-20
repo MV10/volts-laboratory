@@ -26,6 +26,7 @@ PORTED FX AVAILABLE BUT NOT DISTRIBUTED (I don't like them much, but you might..
 https://www.shadertoy.com/view/ctVGWw                   glitch_fork
 https://www.shadertoy.com/view/WslyWn                   mirror_strips (could be improved...)
 https://www.shadertoy.com/view/Dlt3D7                   submerged (weird banding artifacts)
+https://www.vertexshaderart.com/art/d7bnfzEFFTWGyQNaT   spiralizer (not great at high-res)
 
 
 CROSSFADE PORTED, NOT WORKING or NEEDS WORK
