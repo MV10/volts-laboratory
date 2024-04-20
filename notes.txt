@@ -33,6 +33,7 @@ https://www.shadertoy.com/view/mt3SWs                   fractured
 https://www.shadertoy.com/view/4ddSDS                   fur_space
 https://www.shadertoy.com/view/MdXSzS					galaxy
 https://www.vertexshaderart.com/art/NP3rRKeHPZeXBhymB   hairy_eyeball
+https://www.shadertoy.com/view/McKGR3                   helldiver
 https://www.shadertoy.com/view/3d2fzK                   hex_sound
 https://www.shadertoy.com/view/wsl3WB					hexagone
 https://www.shadertoy.com/view/DlB3WG					hypercolor
