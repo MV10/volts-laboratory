@@ -18,6 +18,7 @@ https://www.shadertoy.com/view/MdtSD8					colorbeat
 https://www.shadertoy.com/view/ll2SRy					cube_field
 https://www.shadertoy.com/view/ldf3RH                   dalek
 https://www.shadertoy.com/view/Dtj3zW                   dancefloor
+https://www.shadertoy.com/view/XfBSDm                   dark_disco
 https://www.shadertoy.com/view/DtBSWw                   darkstar
 https://www.vertexshaderart.com/art/ntCWzzdvXfp33a6oz   dartboard
 https://www.shadertoy.com/view/lcV3Rz                   devilglass
