@@ -2,7 +2,7 @@ See notes.txt for links / credits to content that is distributed with Monkey Hi 
 These notes are for content in the repository which is not distributed and/or not working.
 
 
-VISUALIZERS PORTED, NOT WORKING or NEEDS WORK
+VISUALIZERS PORTED BUT NOT DISTRIBUTED, or NOT WORKING / NEEDS WORK
 ----------------------------------------------------------------------------------------------
 https://www.shadertoy.com/view/ml3cDj                   lightning_waves (audio disabled; pass 1 output banded/wrong)
 https://www.shadertoy.com/view/XdVGWt                   lightsabers (has audio; doesn't work right)
@@ -11,6 +11,15 @@ https://www.shadertoy.com/view/XtGSRD                   particle_bombs (not work
 https://www.shadertoy.com/view/4tKBRm                   spectrum (requires texture LOD support)
 https://www.shadertoy.com/view/wdyfDD                   rainbow_gatekeeper (not working at all)
 https://www.vertexshaderart.com/art/mmxfYzJp3mCehkHcH   wispy_blob (partly works, sphere surface is black)
+https://www.vertexshaderart.com/art/d7bnfzEFFTWGyQNaT   spiralizer (not great at high-res)
+https://www.shadertoy.com/view/ldscRB					kali_set (too spazzy)
+
+
+FX PORTED BUT NOT DISTRIBUTED (I don't like them much, but you might...)
+----------------------------------------------------------------------------------------------
+https://www.shadertoy.com/view/ctVGWw                   glitch_fork
+https://www.shadertoy.com/view/WslyWn                   mirror_strips (could be improved...)
+https://www.shadertoy.com/view/Dlt3D7                   submerged (weird banding artifacts)
 
 
 FX PORTED, NOT WORKING or NEEDS WORK
@@ -19,14 +28,6 @@ https://www.shadertoy.com/view/XtGBzy                   chaos_wave (almost works
 https://www.shadertoy.com/view/Msd3W2                   diffusion_warp (too slow/subtle at full-screen res)
 https://www.shadertoy.com/view/tdS3DR                   motion_dilation (works, some viz need to exclude)
 https://www.shadertoy.com/view/MdlBDn                   offset_blur (looks good w/video...)
-
-
-PORTED FX AVAILABLE BUT NOT DISTRIBUTED (I don't like them much, but you might...)
-----------------------------------------------------------------------------------------------
-https://www.shadertoy.com/view/ctVGWw                   glitch_fork
-https://www.shadertoy.com/view/WslyWn                   mirror_strips (could be improved...)
-https://www.shadertoy.com/view/Dlt3D7                   submerged (weird banding artifacts)
-https://www.vertexshaderart.com/art/d7bnfzEFFTWGyQNaT   spiralizer (not great at high-res)
 
 
 CROSSFADE PORTED, NOT WORKING or NEEDS WORK
