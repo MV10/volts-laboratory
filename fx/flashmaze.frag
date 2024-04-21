@@ -6,12 +6,14 @@ uniform vec2 resolution;
 uniform float time;
 uniform sampler2D input0;
 uniform sampler2D iChannel0;
+uniform float randomrun;
 out vec4 fragColor;
 
 #define fragCoord (fragCoord * resolution)
 #define iResolution resolution
 #define iTime time
 #define iChannel1 input0
+#define randomization (0.5 - randomrun)
 
 #define rotation(angle) mat2(cos(angle), -sin(angle), sin(angle), cos(angle));
 
@@ -79,9 +81,18 @@ float rando2(vec2 cid){
   return fract(23.3*sin(2.+1.3*cid.x)+15.34+sin(32.+7.243*cid.y));
 }
 
+mat2 rotationMatrix(float angle)
+{
+    return rotation(angle * PI);
+}
+
 void main()
 {
    vec2 uv = ( fragCoord - .5* iResolution.xy ) /iResolution.y;
+
+   // mcguirev10 - mo betta
+   uv *= rotationMatrix(time * 0.03 * randomization);
+
    vec3 col = vec3(0.);
    
    float tt = fract(.5*iTime);
