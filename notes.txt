@@ -77,6 +77,7 @@ https://www.shadertoy.com/view/ftK3zc                   seizure_kitty
 https://www.shadertoy.com/view/Xsd3Rn					shadow_vessels
 https://www.shadertoy.com/view/7tsSRB                   shattergrid
 https://www.shadertoy.com/view/Mdj3RV                   snap
+https://www.shadertoy.com/view/XcV3zm                   soundwire
 https://www.shadertoy.com/view/XsVSzW                   simple_plasma
 https://www.shadertoy.com/view/XtVGDz                   spectrasound
 https://www.shadertoy.com/view/mlcfW2                   spin_cycle
