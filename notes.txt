@@ -6,6 +6,7 @@ https://www.shadertoy.com/view/Wl3fzM                   apollonian_twist
 https://www.shadertoy.com/view/4tcXRr                   auditory_nerve
 https://www.shadertoy.com/view/lfjSWc                   aurora
 https://www.shadertoy.com/view/mtBSWc                   binary_black_holes
+https://www.shadertoy.com/view/dtyfzD                   blue_sphere
 https://www.shadertoy.com/view/mlyyWz                   brainstorm
 https://www.shadertoy.com/view/3tcBz7                   butterfly_effect
 https://www.shadertoy.com/view/4ttXDX                   candy_jar
