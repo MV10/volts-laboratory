@@ -6,6 +6,7 @@ uniform vec2 resolution;
 uniform float time;
 uniform float randomrun;
 uniform sampler2D eyecandyShadertoy;
+uniform float fxactive;
 out vec4 fragColor;
 
 // setting 1.0 enables; probably requires limiting resolution
@@ -75,6 +76,9 @@ float BallHit (vec3 ro, vec3 rd)
   //bRad = 0.025 
   // mcguirev10 - alter sphere radius with music beat
   bRad = 0.005 + texture(iChannel0, vec2(0.07, 0.25)).g * 0.1;
+
+  // mcguirev10 - hide the spehere when a post-processing FX is running
+  if(fxactive == 1.0) bRad = 0.0;
   
   b = dot (rd, ro);
   d = b * b + bRad * bRad - dot (ro, ro);
