@@ -17,6 +17,7 @@ https://www.shadertoy.com/view/XlX3Rj                   circuit_planet
 https://www.shadertoy.com/view/3l23Rh					cloud_tunnel
 https://www.vertexshaderart.com/art/ke5bF6hENE8zphaSp   clown_wig
 https://www.shadertoy.com/view/MdtSD8					colorbeat
+https://www.shadertoy.com/view/w3G3WV					color_skein
 https://www.shadertoy.com/view/ll2SRy					cube_field
 https://www.shadertoy.com/view/ldf3RH                   dalek
 https://www.shadertoy.com/view/Dtj3zW                   dancefloor
@@ -72,6 +73,7 @@ https://www.vertexshaderart.com/art/eMAJ5HydzdzbnzduF	plasma_grid
 https://www.shadertoy.com/view/MXlXzl                   plasma_wave
 https://www.vertexshaderart.com/art/bSWJchGnG97o3HQfE	pointy_eyeball
 https://www.shadertoy.com/view/dtBBRc                   psych_spin
+https://www.shadertoy.com/view/t33Xzl					pulse
 https://www.shadertoy.com/view/7lySW1					red_vs_blue
 https://www.youtube.com/watch?v=9fgGnWdObN4             ripple_grid
 https://www.shadertoy.com/view/Dtd3z2                   rollerbox
@@ -100,6 +102,7 @@ https://www.shadertoy.com/view/Msl3WH                   warp_speed
 https://www.shadertoy.com/view/XtdGR7                   warp_tunnel
 https://www.shadertoy.com/view/MtdXRS                   weave
 https://www.shadertoy.com/view/wddGWM                   what_dreams
+https://www.shadertoy.com/view/wXV3zt					whirlpool
 
 
 PORTED FX
