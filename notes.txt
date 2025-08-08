@@ -30,6 +30,7 @@ https://www.shadertoy.com/view/tdjfDR                   disco_tunnel
 https://www.shadertoy.com/view/432XWD                   dragon_ring
 https://www.shadertoy.com/view/dtK3Rh					first_ones
 https://www.shadertoy.com/view/MlfSWX                   first_ones_corridor
+https://www.shadertoy.com/view/33tSDS					fmri
 (multiple sources, see foggy.conf)                      foggy
 https://www.shadertoy.com/view/4cV3zy                   fortune_cookie
 https://www.shadertoy.com/view/4tBXRh                   fractal_anxiety
