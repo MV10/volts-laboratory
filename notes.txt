@@ -54,6 +54,7 @@ https://www.shadertoy.com/view/XtdfW2					jitterbugs
 https://www.shadertoy.com/view/llB3W1					julia_set
 https://www.shadertoy.com/view/l3fSDr                   lava_lamp
 https://www.vertexshaderart.com/art/CJqnsPPKxz3KGqWSZ	lisa_simpson
+https://www.shadertoy.com/view/33tGzN					liquid_glass
 https://www.shadertoy.com/view/DdSGzG                   lysergic_inception
 https://www.shadertoy.com/view/mlKyRK                   maze
 https://www.shadertoy.com/view/mslfR2                   miami_vice
