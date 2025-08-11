@@ -55,6 +55,7 @@ https://www.shadertoy.com/view/XtdfW2					jitterbugs
 https://www.shadertoy.com/view/llB3W1					julia_set
 https://www.shadertoy.com/view/l3fSDr                   lava_lamp
 https://www.vertexshaderart.com/art/CJqnsPPKxz3KGqWSZ	lisa_simpson
+https://www.shadertoy.com/view/4XVXDt					lightbox4d
 https://www.shadertoy.com/view/33tGzN					liquid_glass
 https://www.shadertoy.com/view/DdSGzG                   lysergic_inception
 https://www.shadertoy.com/view/mlKyRK                   maze
@@ -102,6 +103,7 @@ https://www.shadertoy.com/view/t3cGzf					terror_tunnel
 https://www.shadertoy.com/view/mds3WN                   the_machine
 https://www.shadertoy.com/view/cst3zl                   the_ring
 https://www.shadertoy.com/view/WtV3W3                   tiedye
+https://www.shadertoy.com/view/MffcRs					timetravel
 https://www.shadertoy.com/view/sd3yW8					toni_disk
 https://www.shadertoy.com/view/ldGyWW					tron_bowling
 https://www.shadertoy.com/view/7tGfRD                   unstable_plasma
