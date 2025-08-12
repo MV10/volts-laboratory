@@ -6,6 +6,7 @@ uniform vec2 resolution;
 uniform float time;
 uniform sampler2D inputA;
 uniform sampler2D eyecandyShadertoy;
+uniform sampler2D noisetexture;
 out vec4 fragColor;
 
 #define iResolution resolution
@@ -28,9 +29,7 @@ out vec4 fragColor;
 
 #define PI 3.14159265
 
-#define Hash1(t) fract(sin(t*785.587)*124.421)
 #define Rot(a) mat2(cos(a),sin(a),-sin(a),cos(a))
-#define random(range) (float(range) * clamp(Hash1(iTime), 0.0, 1.0))
 
 // speed
 #define tt (iTime * .6) 
@@ -39,7 +38,11 @@ out vec4 fragColor;
 #define PI 3.14159265
 
 // random
-#define H(P) fract(sin(dot(P,vec2(127.1,311.7)))*43758.545)
+//#define H(P) fract(sin(dot(P,vec2(127.1,311.7)))*43758.545)
+// mcguirev10 - This doesn't work right on my AMD Radeon 780M
+// so we replace it with a noise texture lookup that seems to
+// pretty accurately reproduce what I see on my NVIDIA GPU.
+#define H(P) texture(noisetexture, sin(P)).r
 
 // rotate 
 #define pR(a) mat2(cos(a),sin(a),-sin(a),cos(a))
