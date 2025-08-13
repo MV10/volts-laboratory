@@ -35,31 +35,32 @@ const vec2 noiseDir2 = vec2(1.0, 0.8000);
 float ringMultiplier(vec2 uv, float amp, float phase, float off, float power) 
 {
     // mcguirev10 - Since MHH uses the g channel for audio data, but Shadertoy
-    // uses the r channel, we swap all references to g and r. It also refers
-    // to the b channel, and I think the original refs to the g and b channels
-    // really only matter if the noise texture is used instead of audio (which
-    // has been omitted in the MHH port for simplification).
-
+    // uses the r channel, it is swapped in the line below, which was derived
+    // from a #if block in the original based on whether mic-in or a static
+    // noise texture was the input data. However, it's unclear how noise2 relates
+    // and all the subsequent references to r, g, and b actually work. Simply
+    // swapping r and g channels everywhere only produces a black screen.
     vec3 noise1 = texture(IN_DATA, noiseDir1 * phase            ).g * vec3(1.0);
-    vec3 noise2 = texture(IN_DATA, noiseDir2 - noiseDir1 * phase).grb;
+
+    vec3 noise2 = texture(IN_DATA, noiseDir2 - noiseDir1 * phase).rgb;
     vec2 d = vec2(off, 0.5);
     d.x += 0.6 * waves(
       uv,
-      vec2( 1.9 + 0.4 * noise1.g, 1.9 + 0.4 * noise1.r ) * 3.3,
-      vec2( 5.7 + 1.4 * noise1.b, 5.7 + 1.4 * noise2.g ) * 2.8,
-      vec2( noise1.g - noise2.g,  noise1.r + noise2.b  ) * 5.0,
+      vec2( 1.9 + 0.4 * noise1.r, 1.9 + 0.4 * noise1.g ) * 3.3,
+      vec2( 5.7 + 1.4 * noise1.b, 5.7 + 1.4 * noise2.r ) * 2.8,
+      vec2( noise1.r - noise2.r,  noise1.g + noise2.b  ) * 5.0,
       vec2( 1.1 )
     );
     d.y += 0.4 * waves(
       uv,
-      vec2( -1.7 - 0.9 * noise2.r,  1.7 + 0.9 * noise2.b ) * 3.1,
-      vec2(  5.9 + 0.8 * noise1.r, -5.9 - 0.8 * noise1.b ) * 3.7,
-      vec2( noise1.r + noise2.r,    noise1.b - noise2.g  ) * 5.0,
+      vec2( -1.7 - 0.9 * noise2.g,  1.7 + 0.9 * noise2.b ) * 3.1,
+      vec2(  5.9 + 0.8 * noise1.g, -5.9 - 0.8 * noise1.b ) * 3.7,
+      vec2( noise1.g + noise2.g,    noise1.b - noise2.r  ) * 5.0,
       vec2( -0.9 )
     );
-    float a = noise1.g * NOISE_AMP + 0.6 * (abs(d.x) + abs(d.y));
+    float a = noise1.r * NOISE_AMP + 0.6 * (abs(d.x) + abs(d.y));
     vec2 duv = uv + normalize(d) * a * amp * AMP_FACT;
-    return smoothstep( -power, power, pow(abs(length(duv) - uSize), noise1.g * noise2.g));
+    return smoothstep( -power, power, pow(abs(length(duv) - uSize), noise1.r * noise2.r));
 }
   
 vec3 getColor(vec2 uv, float s)
