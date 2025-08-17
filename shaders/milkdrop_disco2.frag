@@ -6,6 +6,7 @@ uniform vec2 resolution;
 uniform float time;
 uniform sampler2D input0;
 uniform sampler2D input1;
+uniform float shine_power = 0.35; // mcguirev10 - 1.0 is way too bright in MHH
 out vec4 fragColor;
 
 #define fragCoord (fragCoord * resolution)
@@ -72,7 +73,8 @@ void main()
       radi -= 1./float(anz);
     }
     
-    col = max(shine, col); // add shine
+    // mcguirev10 - tone down the shine a little bit
+    col = max(shine * shine_power, col); // add shine
 
     //col += clamp(shine,0.,1.);
 
