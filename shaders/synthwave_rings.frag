@@ -5,12 +5,14 @@ in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
 uniform sampler2D eyecandyShadertoy;
+uniform float glow_strength = 0.7; // mcguirev10 - replaces the #define POWER in the original
 out vec4 fragColor;
 
 #define iResolution resolution
 #define iTime time
 #define fragCoord (fragCoord * resolution)
 
+// mcguirev10 - from the mic-in option in the original
 #define IN_DATA eyecandyShadertoy
 #define NOISE_AMP 0.2
 
@@ -42,7 +44,9 @@ float ringMultiplier(vec2 uv, float amp, float phase, float off, float power)
     // swapping r and g channels everywhere only produces a black screen.
     vec3 noise1 = texture(IN_DATA, noiseDir1 * phase            ).g * vec3(1.0);
 
-    vec3 noise2 = texture(IN_DATA, noiseDir2 - noiseDir1 * phase).rgb;
+    // mcguirev10 - Swapping r and g channels here, too...
+    vec3 noise2 = texture(IN_DATA, noiseDir2 - noiseDir1 * phase).grb;
+
     vec2 d = vec2(off, 0.5);
     d.x += 0.6 * waves(
       uv,
@@ -60,7 +64,7 @@ float ringMultiplier(vec2 uv, float amp, float phase, float off, float power)
     );
     float a = noise1.r * NOISE_AMP + 0.6 * (abs(d.x) + abs(d.y));
     vec2 duv = uv + normalize(d) * a * amp * AMP_FACT;
-    return smoothstep( -power, power, pow(abs(length(duv) - uSize), noise1.r * noise2.r));
+    return smoothstep( -power, power, pow(abs(length(duv) - uSize), glow_strength * noise1.r * noise2.r));
 }
   
 vec3 getColor(vec2 uv, float s)
@@ -85,6 +89,7 @@ void main()
     float power = pow( uWidth * 0.1, uWidth );
     float size = uSize * 0.38;
     
+    // mcguirev10 - from color mode 3 in the original
     vec3 t1 = 1. - vec3(0.1, 0.5, 0.7), t2 = 1. - vec3(0.8, 0.1, 0.8);
  
     float xoff = 0.5 * (0.9 * cos(iTime * 0.6 + 1.1) + 0.4 * cos(iTime * 2.4));
