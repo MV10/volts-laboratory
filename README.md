@@ -2,6 +2,8 @@
 
 A collection of visualizations and FX files for the [Monkey Hi Hat](https://github.com/MV10/monkey-hi-hat) music visualization program. Refer to the README in that repository for more information.
 
+> Thumbnails of the [visualizations](https://github.com/MV10/volts-laboratory/wiki/Thumbnails-1:-Visualizers) and [FX](https://github.com/MV10/volts-laboratory/wiki/Thumbnails-2:-FX-Post%E2%80%90Processing) are now available in the wiki.
+
 ## Compatibility
 Unless you build your own copy of Monkey Hi Hat from the source repo, you should use the collection zipped in the Monkey Hi Hat "Releases" section. The latest files in this repository often reflect program features and changes that have not yet been released.
 
