@@ -4,6 +4,8 @@ precision highp float;
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
+uniform float randomrun;
+uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
 #define iResolution resolution
@@ -12,6 +14,9 @@ out vec4 fragColor;
 // arrrrgh I hate this "golfing" obfuscation nonsense...
 #define o fragColor
 #define u (fragCoord * resolution)
+
+const float pi_deg = 3.141592 / 180.0;
+#define rotationMatrix(angle) mat2(cos(angle*pi_deg),-sin(angle*pi_deg),sin(angle*pi_deg),cos(angle*pi_deg))
 
 void main()
 {
@@ -23,6 +28,9 @@ void main()
 
     // Convert pixel coordinates to normalized space [-1, 1]
     vec2 uv = (u - r.xy * 0.5) / r.y;
+
+    // mcguirev10 - spinny
+    uv *= rotationMatrix(iTime * 1.0 * (randomrun - 0.5) + (4.0 * sign(randomrun - 0.5)));
 
     // Initialize output color
     o = vec4(0.0);
@@ -36,8 +44,15 @@ void main()
         // Add sin-based color accumulation (fog/glow effect)
         o += sin(d  +vec4(0.3, 0.9, 0.5+ p.z, 0.0)) / (abs(s) + 1e-4);
 
+        // mcguirev10 - add a little more based on the sound
+        o += (texture(eyecandyShadertoy, vec2(0.2, 0.25)).g 
+            + texture(eyecandyShadertoy, vec2(0.5, 0.25)).g
+            + texture(eyecandyShadertoy, vec2(0.8, 0.25)).g) * 4.0;
+
         // Ray position in space
-        p = vec3(uv * d, d + iTime);
+        // mcguirev10 - and jiggle with the audio
+        p = vec3(uv * d, d + iTime) 
+            + ((texture(eyecandyShadertoy, vec2(0.7, 0.25)).g - 0.5) * 0.5);
 
         // Symmetric space folding and oscillatory deformation
         //p = 0.55 - abs(abs(p) - (cos(iTime * 0.01 + 2.0) + sin(iTime * 0.05) * 0.5));
