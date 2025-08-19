@@ -4,11 +4,14 @@ precision highp float;
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
+uniform float randomrun;
 out vec4 fragColor;
 
 #define fragCoord (fragCoord * resolution)
-#define iTime time
 #define iResolution resolution
+
+// mcguirev10 - original was pretty spazzy
+#define iTime (time / (15.0 * sign(0.5 - randomrun)))
 
 // --- Tweakable Parameters ---
 #define ITERATIONS 100.0
