@@ -5,6 +5,8 @@ in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
 uniform sampler2D inputA;
+uniform sampler2D eyecandyShadertoy;
+uniform float randomrun;
 out vec4 fragColor;
 
 // mcguirev10 - on Shadertoy this is 3.0, but for whatever reason
@@ -15,6 +17,9 @@ uniform float gammaFactor = 16.0;
 #define iResolution resolution
 #define iTime time
 #define iChannel0 inputA
+
+const float pi_deg = 3.141592 / 180.0;
+#define rotationMatrix(angle) mat2(cos(angle*pi_deg),-sin(angle*pi_deg),sin(angle*pi_deg),cos(angle*pi_deg))
 
 #define PHI 1.61803
 #define PI  3.14159
@@ -96,6 +101,11 @@ void main()
     vec2 uv = (fragCoord.xy - .5*iResolution.xy)/iResolution.y;
     
     uv.x = abs(uv.x);
+
+    // mcguirev10 - spinny with sound
+    float s = sign(randomrun - 0.5);
+    float freq = texture(eyecandyShadertoy, vec2(0.05, 0.25)).g * s;
+    uv *= rotationMatrix(time * freq * s);
    
     vec3 col = vec3(0);
     // vec3 col = colNoise(uv*2.) + colNoise(uv)*1.2 + .25*colNoise(uv*.4)+.1*colNoise(uv*.1);
