@@ -4,6 +4,7 @@ precision highp float;
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
+uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
 #define iResolution resolution
@@ -30,9 +31,12 @@ void main()
         //Sample point (from ray direction)
         vec3 p = z*normalize(vec3(I+I,0)-iResolution.xyx)+.1;
         
+        // mcguirev10 - slightly tweak with audio
+        p += texture(eyecandyShadertoy, vec2(0.07, 0.25)).g;
+        
         //Polar coordinates and additional transformations
         p = vec3(atan(p.z+=9.,p.x+.1)*2., .6*p.y+t+t, length(p.xz)-3.);
-        
+
         //Apply turbulence and refraction effect
         for(d=0.; d++<7.;)
             p += sin(p.yzx*d+t+.5*i)/d;
