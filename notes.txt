@@ -15,6 +15,7 @@ https://www.shadertoy.com/view/4ttXDX                   candy_jar
 https://www.shadertoy.com/view/ctyfRh                   cathedral
 https://www.shadertoy.com/view/4stBzr                   chaos_columns
 https://www.shadertoy.com/view/XlX3Rj                   circuit_planet
+https://www.shadertoy.com/view/wcfyRM					cleanflight
 https://www.shadertoy.com/view/3l23Rh					cloud_tunnel
 https://www.vertexshaderart.com/art/ke5bF6hENE8zphaSp   clown_wig
 https://www.shadertoy.com/view/MdtSD8					colorbeat
