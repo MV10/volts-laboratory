@@ -26,7 +26,12 @@ vec3 scaled_sobel()
     if(uv.x < 0.0 || uv.x > 1.0 || uv.y < 0.0 || uv.y > 1.0) return vec3(0.0);
 
     // x2 to brighten it up
-    return texture(input2, uv).rgb * 2.0;
+    vec3 color = texture(input2, uv).rgb * 2.0;
+
+    // bluish tint
+    color *= vec3(0.25, 0.75, 1.0);
+
+    return color;
 }
 
 vec3 audio_pulse()
