@@ -2,7 +2,7 @@
 precision highp float;
 
 // Adapted from unpublished Grok code
-// https://www.shadertoy.com/view/wfSyRm
+// https://www.shadertoy.com/view/wfjyWR
 
 in vec2 fragCoord;
 uniform vec2 resolution;
@@ -15,9 +15,11 @@ out vec4 fragColor;
 #define iResolution resolution
 #define iTime time
 
+#define INPUT0_SCALE 0.7
+
 // Smooth noise function for continuous viewpoint modulation
 vec2 smoothNoise(vec2 uv, float time) {
-    vec2 noiseVal = texture(noise, uv * 0.02 + time * 0.05).xy; // Very low frequency for ultra-smooth variation
+    vec2 noiseVal = texture(noise, uv * 0.02 + time * 0.05).xy; // Low frequency for smooth variation
     return noiseVal * 2.0 - 1.0; // Map to [-1, 1]
 }
 
@@ -51,76 +53,34 @@ vec2 wanderOffset(float time) {
     offset += interpolateNoise(uv + vec2(0.3, 0.4), time * 0.03) * 0.08; // Small noise for organic drift
     
     // Scale to ensure good coverage without reaching image edges
-    return offset * 0.4; // Adjusted for viewport coverage
+    return offset * 0.1; // Reduced scale for UV offset
 }
-
-// Ray-plane intersection for a simpler concave surface approximation
-float rayPlaneIntersect(vec3 ro, vec3 rd, vec3 planeNormal, vec3 planePoint) {
-    float denom = dot(rd, planeNormal);
-    if (abs(denom) < 1e-6) return -1.0; // Ray parallel to plane
-    float t = dot(planePoint - ro, planeNormal) / denom;
-    if (t < 0.0) return -1.0; // Intersection behind camera
-    return t;
-}
-
 void main()
 {
     // Normalized pixel coordinates (from 0 to 1)
     vec2 uv = fragCoord / iResolution.xy;
     
-    // Viewport aspect ratio
-    float aspect = iResolution.x / iResolution.y;
-    
-    // Camera setup with wandering viewpoint
+    // Compute wandering offset
     vec2 wander = wanderOffset(iTime * 1.25); // Increased motion speed
-    vec3 ro = vec3(wander * 0.5 * aspect, 0.8); // Camera closer, z = 0.8, x adjusted for aspect
-    vec3 lookAt = vec3(wander * 0.5 * aspect, 0.0); // Look at center with wander offset
-    vec3 up = vec3(0.0, 1.0, 0.0);
     
-    // Camera direction
-    vec3 forward = normalize(lookAt - ro);
-    vec3 right = normalize(cross(forward, up));
-    up = cross(right, forward);
+    // Apply offset to texture coordinates, centered and scaled to extend beyond viewport
+    vec2 texUV = (uv - vec2(0.5)) * INPUT0_SCALE + 0.5; // Scale to enlarge image
+    texUV += wander; // Apply wander offset directly
     
-    // Ray direction for current pixel
-    vec2 p = (uv - vec2(0.5)) * vec2(aspect, 1.0) * 2.0; // Map to [-aspect, aspect] x [-1, 1]
-    vec3 rd = normalize(p.x * right + p.y * up + forward * 0.7); // Narrow FOV
+    // Compute vignette effect (1% of viewport width/height)
+    float vignette = 1.0;
+    float edgeDist = 0.01; // 1% of viewport for fade
+    vignette *= smoothstep(0.0, edgeDist, texUV.x); // Left edge
+    vignette *= smoothstep(0.0, edgeDist, 1.0 - texUV.x); // Right edge
+    vignette *= smoothstep(0.0, edgeDist, texUV.y); // Bottom edge
+    vignette *= smoothstep(0.0, edgeDist, 1.0 - texUV.y); // Top edge
     
-    // Concave surface approximated as a plane with curvature in UV mapping
-    vec3 planePoint = vec3(0.0, 0.0, 0.0);
-    vec3 planeNormal = vec3(0.0, 0.0, 1.0); // Plane facing camera
+    // Sample texture from iChannel0
+    vec3 col = texture(input0, texUV).rgb;
     
-    // Ray-plane intersection
-    float t = rayPlaneIntersect(ro, rd, planeNormal, planePoint);
+    // Apply vignette effect
+    col *= vignette;
     
-    if (t > 0.0) {
-        // Intersection point
-        vec3 pos = ro + t * rd;
-        
-        // Simulate concave surface by warping UVs
-        vec2 texUV = pos.xy / vec2(aspect, 1.0); // Adjust for viewport aspect ratio
-        float dist = length(texUV);
-        // Apply gentle curvature for concave effect
-        texUV *= 1.0 + 0.2 * dist * dist; // Quadratic warping
-        
-        // Map to texture coordinates [0, 1], scaled to extend beyond viewport
-        texUV = texUV * 0.2 + 0.5; // Further reduced scaling for larger image
-        
-        // Ensure texture coordinates are within bounds
-        if (texUV.x >= 0.0 && texUV.x <= 1.0 && texUV.y >= 0.0 && texUV.y <= 1.0) {
-            // Sample texture from iChannel0
-            vec3 col = texture(input0, texUV).rgb;
-            
-            // Simple shading for concave effect
-            float lighting = max(0.0, 1.0 - 0.1 * dist); // Subtle falloff
-            col *= 0.7 + 0.3 * lighting;
-            
-            fragColor = vec4(col, 1.0);
-        } else {
-            fragColor = vec4(0.0, 0.0, 0.0, 1.0); // Black outside texture bounds
-        }
-    } else {
-        // Background color if no intersection
-        fragColor = vec4(0.0, 0.0, 0.0, 1.0);
-    }}
+    fragColor = vec4(col, 1.0);
+}
 
