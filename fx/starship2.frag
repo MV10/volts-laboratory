@@ -9,6 +9,8 @@ uniform sampler2D input2;
 uniform sampler2D ship;
 uniform sampler2D windows;
 uniform sampler2D screens;
+uniform sampler2D buttons;
+uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
 vec3 scaled_sobel()
@@ -29,7 +31,16 @@ vec3 scaled_sobel()
 
 vec3 audio_pulse()
 {
-    return vec3(1.0);
+    // Base color: yellow-white (1.00, 0.97, 0.73)
+    vec3 color = vec3(1.00, 0.97, 0.73);
+
+    float beat = texture(eyecandyShadertoy, vec2(0.09, 0.25)).g;
+
+    // Reduce brightness by 50% at beat = 0.0, scale to full white (1.0, 1.0, 1.0) at beat = 1.0
+    float brightness = mix(0.5, 1.0, beat); // Linearly interpolate brightness
+    vec3 pulsedColor = mix(color * 0.5, vec3(1.0), beat); // Interpolate between dimmed color and white
+
+    return clamp(pulsedColor, 0.0, 1.0); // Ensure color values stay within valid range}
 }
 
 void main()
@@ -37,18 +48,17 @@ void main()
     vec3 starship = texture(ship, fragCoord).rgb;
     vec3 exterior = texture(input1, fragCoord).rgb;
     vec3 computer = scaled_sobel();
-    vec3 buttons  = audio_pulse();
+    vec3 blinkers  = audio_pulse();
 
     vec3 window_mask = texture(windows, fragCoord).rgb;
     vec3 computer_mask = texture(screens, fragCoord).rgb;
-    // vec3 buttons_mask = texture(buttons, fragCoord).rgb;
-
-    vec3 all_masks = window_mask + computer_mask; // + buttons_mask;
+    vec3 buttons_mask = texture(buttons, fragCoord).rgb;
+    vec3 all_masks = window_mask + computer_mask + buttons_mask;
 
     fragColor.rgb = 
         (starship * (1.0 - all_masks)) 
         + (exterior * window_mask)
-        + (computer * computer_mask);
-        // + (buttons * buttons_mask);
+        + (computer * computer_mask)
+        + (blinkers * buttons_mask);
 }
 
