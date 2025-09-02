@@ -37,17 +37,16 @@ void main()
     // scale coords
     u = (u+u-p.xy)/p.y;
     
-    // cinema bars
-    //if (abs(u.y) > .8) { o = vec4(0); return; }
-    
     // camera movement
     u += vec2(cos(t*.4)*.3, cos(t*.8)*.1);
     
     for(o*=i; i++<128.;
         
         // accumulate distance
-        d += s = min(.01+.4*abs(s),e=max(.8*e, .01)),
-        
+        //d += s = min(.01+.4*abs(s), e=max(.8*e, .01)),
+        // mcguirev10 - removes the "entity" orb, per original author
+        d += s =.01+.4*abs(s),
+
         // purple, blue color with audio reactive color shift
         o += (1.+cos(.1*p.z*vec4(3,1,0,0) + bass*COLOR_SHIFT_AMOUNT)) * bassBoost/(s+e*2.))
         
