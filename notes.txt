@@ -88,6 +88,7 @@ https://www.shadertoy.com/view/MfG3Ry                   rubik_sound
 https://www.shadertoy.com/view/XXX3W8                   scales
 https://www.shadertoy.com/view/ftK3zc                   seizure_kitty
 https://www.shadertoy.com/view/Xsd3Rn					shadow_vessels
+https://www.shadertoy.com/view/Xdf3zM					shard
 https://www.shadertoy.com/view/7tsSRB                   shattergrid
 https://www.shadertoy.com/view/Mdj3RV                   snap
 https://www.shadertoy.com/view/XcV3zm                   soundwire
