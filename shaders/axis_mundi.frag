@@ -388,4 +388,6 @@ void main()
                 o.a = kval[i];
         }
     }
+
+    o.a = 1.0;
  }

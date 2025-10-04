@@ -104,4 +104,5 @@ void main()
     }
     
     fragColor.xyz = pow(col,vec3(.4545));
+    fragColor.a = 1.0;  
 }

@@ -39,4 +39,6 @@ void main()
     // uncomment this to see what's in the backbuffer
     //vec2 uv = fragCoord / resolution;
     //fragColor = texture(iChannel0, uv);
+
+    fragColor.a = 1.0;
 }

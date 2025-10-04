@@ -55,4 +55,6 @@ void main()
             p = p * e - vec3(12, 3, 3) + 2.0 * fft((e) / 99.0);
         g += e = length(p.xz) / s;
     }
+
+    fragColor.a = 1.0;
  }

@@ -174,4 +174,6 @@ void main()
     O += eff1(C,1.);
   }
   O.xyz = bars(O.xyz*O.xyz);
+
+  O.a = 1.0;
 }

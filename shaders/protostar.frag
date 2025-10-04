@@ -50,4 +50,6 @@ void main()
     }
     //Tanh tonemap
     O = tanh(O*O/2e7);
+
+    O.a = 1.0;
 }

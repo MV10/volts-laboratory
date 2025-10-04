@@ -78,4 +78,6 @@ void main()
     // tanh tonemap, brightness, light off-screen
     u += (u.yx*.9+.3-vec2(-1.,.5));
     o = tanh(o/6./max(dot(u,u), .001));
+
+    o.a = 1.0;
 }

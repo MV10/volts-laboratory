@@ -84,4 +84,6 @@ void main()
   //vec3 godrayEffect = godray(fragColor.xyz, normalize(vec3((fragCoord * 2.0 - iResolution.xy) / iResolution.y, 1.0)));
   //fragColor.xyz = mix(fragColor.xyz, godrayEffect, 0.5);
   fragColor.xyz = aces_approx(fragColor.xyz);
+
+  fragColor.a = 1.0;
 }

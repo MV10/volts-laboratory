@@ -31,4 +31,6 @@ void main()
 
     for (int k; k < 25; k++)      
         O += gk1s[k] * texture(iChannel0, uv + ( vec2(k%5,k/5) - 2. ) / R );
+
+    O.a = 1.0;
 }

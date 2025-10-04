@@ -22,4 +22,6 @@ void main()
     fragColor *= 1. - dot(uv,uv)*0.7;
     fragColor = max(fragColor, 0.);
     fragColor = pow(fragColor, vec4(0.45454));
+
+    fragColor.a = 1.0;
 }

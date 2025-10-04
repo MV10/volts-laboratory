@@ -65,4 +65,5 @@ void main()
     col = smoothstep(0.0, 1.0 + 0.3 * sin(iTime + p.x * 4.0 + p.z * 4.0), col);
     fragColor.xyz = col;
     fragColor.xyz = sqrt(fragColor.xyz);
+    fragColor.a = 1.0;
 }

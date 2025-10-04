@@ -47,4 +47,5 @@ void main()
         a += d = abs(length(p) - .2) - .001,
         
         o.rgb += exp(-d * 5.) * cor(a + t * .25) * .03;
+        o.a = 1.0;
 }

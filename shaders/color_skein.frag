@@ -81,4 +81,5 @@ void main()
 
     // Tone mapping and gamma correction
     o = pow(tanh(o * o / 2.5e7), vec4(0.4545));
+    o.a = 1.0;
 }

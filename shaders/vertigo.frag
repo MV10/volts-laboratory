@@ -203,4 +203,6 @@ void main()
     brightness = clamp(brightness, 0., 1.);
     
     fragColor = vec4(sqrt(col*10.), brightness);
+
+    fragColor.a = 1.0;
 }

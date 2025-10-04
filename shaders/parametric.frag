@@ -76,4 +76,6 @@ void main()
   fragColor.x= pow(fragColor.x, 0.9);
   fragColor.y= pow(fragColor.y, 0.9);
   fragColor.z= pow(fragColor.z, 0.9);
+
+  fragColor.a = 1.0;
 }

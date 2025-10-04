@@ -149,4 +149,6 @@ void main()
     col = pow(col, vec3(1.2))*1.4;
    
     fragColor = vec4(col, 1.0 - t * 0.3);
+
+    fragColor.a = 1.0;
 }

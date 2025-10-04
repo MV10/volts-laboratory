@@ -74,5 +74,5 @@ void main()
 	col += 3.0*em*vec3(1.0,0.10,0.1);
 	col = clamp(col,0.0,1.0);
 
-    fragColor = vec4(col,0.);
+    fragColor = vec4(col,1.);
 }

@@ -68,5 +68,7 @@ void main()
         + (exterior * window_mask)
         + (computer * computer_mask)
         + (blinkers * buttons_mask);
+
+    fragColor.a = 1.0;
 }
 

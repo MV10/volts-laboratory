@@ -40,5 +40,5 @@ void main()
     
     vec2 srd = vec2(ivec2(sin(rd.x*(1.0+float(int(mod(time*3.0,4.0)))))*3.14159*1.0+time*4.0));
     fragColor.xyz += vec3(sin(srd.x),cos(srd.x),-sin(srd.x));
-    fragColor.a = 0.0;
+    fragColor.a = 1.0;
 }

@@ -37,5 +37,7 @@ void main()
     color *= 0.5 + 0.5*cos(time + uv.xyx + vec3(0,2,4));
 
     fragColor.rgb = color;
+
+    fragColor.a = 1.0;
 }
 
