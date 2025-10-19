@@ -5,15 +5,16 @@ A collection of visualizations and FX files for the [Monkey Hi Hat](https://gith
 > Thumbnails of the [visualizations](https://github.com/MV10/volts-laboratory/wiki/Thumbnails-1:-Visualizers) and [FX](https://github.com/MV10/volts-laboratory/wiki/Thumbnails-2:-FX-Post%E2%80%90Processing) are now available in the wiki.
 
 ## Compatibility
-Unless you build your own copy of Monkey Hi Hat from the source repo, you should use the collection zipped in the Monkey Hi Hat "Releases" section. The latest files in this repository often reflect program features and changes that have not yet been released.
+
+Unless you build your own copy of Monkey Hi Hat from the source repo, you should use the collection installed by Monkey Hi Hat. The latest files in this repository often reflect program features and changes that have not yet been released.
 
 ## Contributions
 
 > YES: I am interested in PRs for new visualizations and FX!
 
-Since the project is still new and under active new-feature development, most of these are adaptations from [Shadertoy](https://www.shadertoy.com/) or [VertexShaderArt](https://www.vertexshaderart.com/). Attribution links to the originals are available in the comments at the start of each `.conf` file (when applicable) and the `notes.txt` file in this repo. I have tried to avoid any content which explicitly states usage-restrictions or restrictive copyright terms, but if you see any content here which you own, or which you know is not openly available for this type of adaptation, please open an issue and I will review (and thanks in advance).
+Most of these are adaptations from [Shadertoy](https://www.shadertoy.com/) or [VertexShaderArt](https://www.vertexshaderart.com/). Attribution links to the originals are available in the comments at the start of each `.conf` file (when applicable) and the `notes.txt` file in this repo. I have tried to avoid any content which explicitly states usage-restrictions or restrictive copyright terms, but if you see any content here which you own and want removed, or which you know is not openly available for this type of adaptation, please open an issue and I will review (and thanks in advance).
 
-I don't see much point in actually sharing playlists, they're easy to create and "favorites" will be highly subjective, but [`demo_playlist.conf`](playlists/demo_playlist.conf) is here as a reference for playlist configuration and all supported settings and options. The others are here simply as offsite safekeeping. The `variety.conf` is distributed with the program because it references all of the visualizers available here (but this is not guaranteed).
+I don't see much point in actually sharing playlists, they're easy to create (just text file lists) and "favorites" will be highly subjective, but [`demo_playlist.conf`](playlists/demo_playlist.conf) is here as a reference for playlist configuration and all supported settings and options. The others are here simply as offsite safekeeping. The `variety.conf` is distributed with the program because it references all of the visualizers available here (but this is not guaranteed).
 
 ## Content
 

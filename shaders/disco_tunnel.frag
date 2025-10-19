@@ -287,7 +287,7 @@ void main(){
             tx = smoothstep(.1, .55, tx);
 
             vec3 tx2 = texture(iChannel1, fract(tnuv2 - .5 - vec2(iTime/(sc)/2., 0))).xyz; tx2 *= tx2;
-            tx2 = smoothstep(.18, .5, tx2);//*vec3(1.1, 1, .9); 
+            tx2 = smoothstep(.18, .5, tx2); // *vec3(1.1, 1, .9); 
             
             // Apply the textures to the sample color. 
             sampleCol *= tx*tx2*4.; 
