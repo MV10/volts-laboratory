@@ -3,9 +3,7 @@ precision highp float;
 
 // This is the same basic internal crossfader implemented by
 // Monkey Hi Hat when crossfade randomization is disabled.
-// By convention any filename crossfade_*.frag is assumed to be
-// a transition shader that can be randomly selected by the MHH
-// Crossfade renderer. These are found and cached at startup.
+// These are found and cached at startup.
 
 // All crossfade shaders need these:
 in vec2 fragCoord;
