@@ -86,30 +86,30 @@ vec4 turnPage(vec2 coord)
 {
     vec2 uv = coord.xy / iResolution.yy;
     float ratio = iResolution.x/iResolution.y;
-    
+
     vec2 Mouse2 = getDragPosition();
     if(swap_x) Mouse2.x = iResolution.x - Mouse2.x;
-    
+
     vec2 mpoint = Mouse2.xy;
 
     vec2 midmpoint = mpoint * 0.5;
     float mdist = distance(coord, mpoint);
     float e = e0 * pow(mdist / iResolution.y, 2.0) + 0.02 * e0 * smoothstep(0.0, 0.12, mdist / iResolution.y);
     float angle = -atan(mpoint.x / mpoint.y) + pi * 0.5;
-    
+
     vec2 uv2 = uv;
     if(swap_x) uv2.x = ratio - uv2.x;
-    
+
     vec2 uvr = rotateVec(uv2 - midmpoint / iResolution.yy, angle);
-    
+
     float pagefunc = pageFunction(uvr.x, e);
     vec2 uvr2 = vec2(pagefunc, uvr.y); 
     vec2 uvr3 = rotateVec(uvr2, -angle) - vec2(1., -1.) * midmpoint / iResolution.yy;
     vec2 uvr2b = vec2(-pagefunc, uvr.y); 
     vec2 uvr3b = rotateVec(uvr2b, -angle) - vec2(1.0, -1.0) * midmpoint / iResolution.yy;
-    
+
     if(swap_x) uvr3b.x = ratio - uvr3b.x;
-        
+
     vec4 i; 
     // Turned page
     if (uvr.x > 0.0 && uvr3b.y > 0.0)
@@ -119,7 +119,7 @@ vec4 turnPage(vec2 coord)
         float pagefunccorr = pageFunction(uvrcorr.x, e);
         vec2 uvrcorr2 = vec2(-pagefunccorr, uvrcorr.y); 
         vec2 uvrcorr3 = rotateVec(uvrcorr2, -angle) - vec2(1.0, -1.0) * midmpoint / iResolution.yy;
-    
+
         float pagefuncder = pageFunctionDer(uvr.x, e);
         float intfac = 1.0 - diffint*(1.0 - 1.0 / pagefuncder);
 
@@ -133,7 +133,7 @@ vec4 turnPage(vec2 coord)
         	vec2 uvr2s = vec2(pagefuncs, uvrs.y); 
         	vec2 uvr3s = rotateVec(uvr2s, -angle) - vec2(1.0, -1.0) * midmpoint / iResolution.yy;
         	float shadow = 1.0 - (1.0 - smoothstep(-shadowsmoothness, shadowsmoothness, uvr3s.x)) * (1.0 - smoothstep(shadowsmoothness, -shadowsmoothness, uvr3s.y));
-            
+
             float difft = intfac * (1.0 - ambientt) + ambientt;
         	difft = difft * (shadow*shadowint + 1.0 - shadowint) / 2.0 + mix(1.0 - shadowint, difft, shadow) / 2.0;
             i = difft * (texture(oldBuffer, mod((uvr3b - uvrcorr3) / vec2(-ratio, 1.0), 1.0)));
@@ -151,30 +151,8 @@ vec4 turnPage(vec2 coord)
     else
     {
         // "Background" with simple shadow
-        vec2 mpointbg = vec2(0.2, 0.01);
-        vec2 midmpointbg = mpointbg * 0.5;
-        float mdistbg = distance(coord, mpointbg);
-        float ebg = e0 * pow(mdistbg / iResolution.y, 2.0) + 0.01 * e0 * smoothstep(0.0, 0.12, mdistbg / iResolution.y);
-        float anglebg = 0.001;
-        vec2 uvrbg = rotateVec(uv - midmpointbg / iResolution.yy, anglebg);
-        float pagefuncbg;
-        if (uvrbg.x < 0.15)
-           pagefuncbg = uvrbg.x;
-        else
-           pagefuncbg = mix(uvrbg.x, pageFunction(uvrbg.x, ebg), smoothstep(mpoint.x / iResolution.x + 0.1, mpoint.x / iResolution.x, uvrbg.x));
-        
-        vec2 uvr2bbg = vec2(-pagefuncbg, uvrbg.y); 
-        vec2 uvr3bbg = rotateVec(uvr2bbg, -anglebg) - vec2(1.0, -1.0) * midmpointbg / iResolution.yy;
-        vec2 uvcorrbg = vec2(ratio, 1.0);
-        vec2 uvrcorrbg = rotateVec(uvcorrbg - midmpointbg / iResolution.yy, anglebg);
-        float pagefunccorrbg = pageFunction(uvrcorrbg.x, ebg);
-        vec2 uvrcorr2bg = vec2(-pagefunccorrbg, uvrcorrbg.y); 
-        vec2 uvrcorr3bg = rotateVec(uvrcorr2bg, -anglebg) - vec2(1.0, -1.0) * midmpointbg / iResolution.yy;       
-        float pagefuncderbg = pageFunctionDer(uvrbg.x, ebg);
-        float intfacbg = 1.0 - diffint * (1.0 - 1.0 / pagefuncderbg);
-        float difftbg = intfacbg * (1.0 - ambientt) + ambientt;
-        
-        i = texture(newBuffer, mod((uvr3bbg - uvrcorr3bg) / vec2(-ratio, 1.0), 1.0));
+        vec2 backgroundUV = fragCoord.xy / iResolution.xy;
+        i = texture(newBuffer, backgroundUV);
 
         float bgshadow = 1.0 + shadowint * smoothstep(-0.08 + shadowsmoothness * 4.0, -0.08, uvr3b.y) - shadowint;
         if (uvr3b.y < 0.0)
