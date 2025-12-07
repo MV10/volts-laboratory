@@ -11,11 +11,11 @@ out vec4 fragColor;
 #define iResolution resolution
 #define iTime time
 
-//iq noise fn
 float hash( float n )
 {
     return fract(sin(n)*43758.5453);
 }
+
 float noise( in vec3 x )
 {
     vec3 p = floor(x);
@@ -29,7 +29,6 @@ float noise( in vec3 x )
                    mix( hash(n+170.0), hash(n+171.0),f.x),f.y),f.z);
 }
 
-//x3
 vec3 noise3( in vec3 x)
 {
 	return vec3( noise(x+vec3(123.456,.567,.37)),
@@ -98,41 +97,55 @@ mat2 rotationMatrix(float angle)
                  s,  c );
 }
 
+// mcguirev10 - library functions
+vec3 rgb2hsv(vec3 c);
+vec3 hsv2rgb(vec3 c);
+
 void main()
 {
 	vec2 uv = fragCoord.xy / iResolution.xy;
 	uv.x *= iResolution.x / iResolution.y;
 
-    // mcguirev10 - rotation is fun
-    uv *= rotationMatrix(time * (randomrun - 0.5) * 30.0);
-	
-	float t = iTime * 1.276;
-	
-	float slow = t *0.002;
-	uv *= 1. + .5*slow*sin(slow*10.);
-	
-	float ts = t *0.37;
-	float change = gain(fract(ts),0.0008)+floor(ts);	//flick to a different view 
-						
-	vec3 p = vec3(uv*.2,slow+change);					//coordinate + slight change over time
-	
-	vec3 axis = 4. * fbm(p, 0.5, 2., 8);				//random fbm axis of rotation
-	
-	vec3 colorVec = 0.5 * 5. * fbm(p*0.3,0.5,2.,7);		//random base color
+	// mcguirev10 - rotation is fun
+	uv *= rotationMatrix(time * (randomrun - 0.5) * 30.0);
+
+	float time = iTime * 1.276;
+	float slow = time * 0.002;
+	uv *= 1.0 + 0.5 * slow * sin(slow * 10.0);
+
+	float ts = time * 0.37;
+	float change = gain(fract(ts), 0.0008) + floor(ts);	// flick to a different view
+
+	vec3 p = vec3(uv * 0.2, slow + change);				// coordinate + slight change over time
+
+	vec3 axis = 4.0 * fbm(p, 0.5, 2.0, 8);				// random fbm axis of rotation
+
+	vec3 colorVec = 0.5 + 5.0 * fbm(p * 0.3, 0.5, 2.0, 7); // random base color
 	p += colorVec;
-	
-	float mag = 4e5;	//published, rather garish?
-//	float mag = 0.75e5; //still clips a bit
-//	mag = mag * (1.+sin(2.*3.1415927*ts)*0.75);
-	vec3 colorMod = mag * smf(p,0.7,2.,8,.2);			//multifractal saturation
+
+	float mag = 0.75e5;
+	vec3 colorMod = mag * smf(p, 0.7, 2.0, 8, 0.2);		// multifractal saturation
+
 	colorVec += colorMod;
-	
-	colorVec = rotation(3.*length(axis)+slow*10.,normalize(axis))*colorVec;
-	
+
+	colorVec = rotation(3.0 * length(axis) + slow * 10.0, normalize(axis)) * colorVec;
+
 	colorVec *= 0.05;
-			
-//	colorVec = colorVec / (1. + length(colorVec));	//tone it all down a bit
-	
-	colorVec = pow(colorVec,vec3(1./2.2));		//gamma
-	fragColor = vec4(colorVec,1.0);
+
+	// counteract smf compression
+	colorVec = colorVec / (1.0 + 0.00085 * length(colorMod));
+
+	// color enhancement in HSV space
+	vec3 hsv = rgb2hsv(colorVec);
+	hsv.y = pow(hsv.y, 0.45);    // strong saturation boost
+	hsv.z = pow(hsv.z, 0.80);    // gentle contrast
+	colorVec = hsv2rgb(hsv);
+
+	colorVec *= 1.32;            // final exposure
+
+	colorVec = pow(colorVec, vec3(1.0 / 2.2)); // gamma
+
+	fragColor = vec4(colorVec, 1.0);
+
+
 }
