@@ -7,14 +7,18 @@ uniform float time;
 uniform sampler2D noise;
 uniform samplerCube skybox;
 uniform sampler2D eyecandyShadertoy;
+uniform float randomrun;
 out vec4 fragColor;
+
+// time multipler 1 or -1 but avoid 0 from sign(r - 0.5)
+float direction = step(0.5, randomrun) * 2.0 - 1.0;
 
 #define fragCoord (fragCoord * resolution)
 #define iResolution resolution
 #define iChannel0 noise
 #define iChannel1 skybox
 #define iChannel2 eyecandyShadertoy
-#define iTime time
+#define iTime (time * direction)
 
 const float eps = 0.01;
 const float texelSize = 1.0 / 64.0;

@@ -8,8 +8,11 @@ uniform float randomrun;
 uniform sampler2D eyecandyShadertoy;
 out vec4 fragColor;
 
+// time multipler 1 or -1 but avoid 0 from sign(r - 0.5)
+float direction = step(0.5, randomrun) * 2.0 - 1.0;
+
 #define iResolution resolution
-#define iTime time
+#define iTime (time * direction)
 #define iChannel0 eyecandyShadertoy
 
 #define cor(a) (cos(a * 6.3 + vec3(0, 23, 21)) * .5 + .5)

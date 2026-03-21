@@ -4,10 +4,14 @@ precision highp float;
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
+uniform float randomrun;
 out vec4 fragColor;
 
+// time multipler 1 or -1 but avoid 0 from sign(r - 0.5)
+float direction = step(0.5, randomrun) * 2.0 - 1.0;
+
 #define iResolution resolution
-#define iTime time
+#define iTime (time * direction)
 
 // arrrrgh I hate this "golfing" obfuscation nonsense...
 #define O fragColor

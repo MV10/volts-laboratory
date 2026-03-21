@@ -4,12 +4,16 @@ precision highp float;
 in vec2 fragCoord;
 uniform vec2 resolution;
 uniform float time;
+uniform float randomrun;
 out vec4 fragColor;
+
+// time multipler 1 or -1 but avoid 0 from sign(r - 0.5)
+float direction = step(0.5, randomrun) * 2.0 - 1.0;
 
 #define fragCoord (fragCoord * resolution)
 
 #define RESOLUTION  resolution
-#define TIME        time
+#define TIME        (time * direction)
 #define PI          3.141592654
 #define PI_2        (0.5*PI)
 #define TAU         (2.0*PI)
